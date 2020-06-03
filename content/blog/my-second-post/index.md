@@ -1,13 +1,11 @@
 ---
-title: My Second Post!
-date: "2015-05-06T23:46:37.121Z"
+title: How To Display Data from the DigitalOcean API with Django
+date: "2019-12-20T23:46:37.121Z"
 ---
 
-Wow! I love blogging so much already.
+In this tutorial you will build a Django project that will display your DigitalOcean account's Droplet information using the [DigitalOcean v2 API](https://developers.digitalocean.com/documentation/v2/). Specifically, you will be creating a website that will display a table of droplets listing each of their IP addresses, IDs, hosting regions, and resources. Your website will be using [Bulma CSS](https://bulma.io/) to style the page so you can focus on development while also having something nice to looking at in the end.
+Once you complete this tutorial, you should have a Django project that can produce a webpage that looks like this:
 
-Did you know that "despite its name, salted duck eggs can also be made from
-chicken eggs, though the taste and texture will be somewhat different, and the
-egg yolk will be less rich."?
-([Wikipedia Link](https://en.wikipedia.org/wiki/Salted_duck_egg))
+This tutorial was created as a part of DigitalOcean's [Write for DOnations program](https://www.digitalocean.com/write-for-donations/). [You can check it out here at DigitalOcean Tutorials.](https://www.digitalocean.com/community/tutorials/how-to-display-data-from-the-digitalocean-api-with-django)
 
-Yeah, I didn't either.
+Article cover photo from DigitalOcean.
