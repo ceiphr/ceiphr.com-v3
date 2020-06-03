@@ -1,0 +1,10 @@
+{
+    "redirects": [
+      {
+        "source": "/blog/(.*)",
+        "destination": "/$1",
+        "statusCode": 301
+      }
+    ]
+  }
+  
