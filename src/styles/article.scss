@@ -1,0 +1,170 @@
+@import "article-contents.scss";
+@import "syntax-highlighting.scss";
+@import "carbonads.scss";
+
+// Mobile version of the sidebar
+
+@media (max-width: 680px) {
+    .referral {
+        margin-bottom: 1rem !important;
+
+        a {
+            display: flex;
+            color: $dark;
+
+            .referral__logo {
+                margin-right: 1em;
+
+                img {
+                    min-width: 130px;
+                    margin-top: -0.5rem;
+                    margin-bottom: -0.5rem;
+                }
+            }
+        }
+    }
+}
+
+// Post styling used for formatting
+// images, the body and sidebar content
+
+article {
+    pre {
+        border-radius: $radius-large !important;
+        border-width: 0 !important;
+        code {
+            font-family: "Roboto Mono", monospace !important;
+        }
+    }
+
+    code {
+        background: hsl(0, 0%, 92%);
+    }
+
+    .hero-body {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .post-columns {
+        display: grid;
+        justify-content: space-between;
+        grid-gap: 2em;
+        grid-template-columns: 4fr;
+
+        .post-full-content {
+            grid-column: 1 / span 3;
+        }
+
+        .post-sidebar {
+            grid-column: 4 / span 1;
+        }
+
+        .post-sidebar {
+            max-width: 158px;
+            font-size: 0.8em;
+            margin-top: 4em;
+            margin-bottom: 2em;
+
+            @media (max-width: 680px) {
+                margin-top: 0;
+                margin-bottom: 16px;
+            }
+
+            .post-sidebar-widgets {
+                .card {
+                    padding: 1em;
+                }
+
+                a {
+                    text-decoration: none;
+                    color: $black !important;
+                }
+                position: -webkit-sticky; /* Safari */
+                position: sticky;
+
+                @media (min-width: 680px) {
+                    top: 1em;
+                }
+            }
+        }
+
+        @media (max-width: 680px) {
+            .post-full-content {
+                grid-column: 1 / span 4;
+            }
+
+            .post-sidebar {
+                grid-column: 1 / span 4;
+                max-width: 100%;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
+
+                .post-side-widgets,
+                #carbonads {
+                    height: 140px;
+                    font-size: 12px;
+                    width: 100%;
+                    display: block;
+                }
+            }
+        }
+    }
+
+    img {
+        border-radius: $radius-large;
+    }
+
+    figcaption {
+        text-align: center;
+        padding: 1em;
+        color: $grey;
+    }
+}
+
+// Footer recommendations for the most recent
+// articles published
+
+.post-recommendations {
+    display: grid;
+    justify-content: space-between;
+    grid-gap: 1em;
+    margin-bottom: 1em;
+
+    @media (min-width: 680px) {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    @media (max-width: 680px) {
+        grid-template-columns: 1fr;
+    }
+
+    .post-card-image {
+        border-top-left-radius: $radius-large;
+        border-top-right-radius: $radius-large;
+    }
+}
+
+// Commento tweaks for looking
+// similar to Bulma styles
+
+.commento-root {
+    margin-bottom: -4rem;
+}
+
+.commento-logo-text {
+    display: none !important;
+}
+
+.commento-markdown-help {
+    pre {
+        padding: 0 0 !important;
+        border-radius: 2px;
+    }
+}
+
+#commento-textarea-container-root,
+.commento-root textarea {
+    border-radius: $radius-large !important;
+}

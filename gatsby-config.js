@@ -12,6 +12,7 @@ module.exports = {
     },
   },
   plugins: [
+    `gatsby-plugin-sass`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -81,3 +82,7 @@ module.exports = {
     // `gatsby-plugin-offline`,
   ],
 }
+
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`,
+})

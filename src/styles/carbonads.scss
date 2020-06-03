@@ -1,0 +1,119 @@
+// Styles for overriding the generic styles
+// used on carbon ads
+
+.carbon-ads-wrapper {
+    margin-top: 2em !important;
+}
+
+#carbonads {
+    overflow: hidden;
+    width: 100%;
+    margin-top: 1em;
+    background-color: white !important;
+    border-radius: $radius-large !important;
+    box-shadow: 0 0.2em 0.5em -0.125em rgba($scheme-invert, 0.1),
+        0 0px 0 1px rgba($scheme-invert, 0.02) !important;
+    padding: 1em;
+    transition-duration: 200ms;
+
+    .carbon-img img {
+        border-radius: 2px !important;
+    }
+
+    &:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 0.5em 1em -0.125em rgba($scheme-invert, 0.1),
+            0 0px 0 1px rgba($scheme-invert, 0.02) !important;
+    }
+
+    a {
+        text-decoration: none;
+    }
+
+    span {
+        display: block;
+        overflow: hidden;
+    }
+
+    @media (min-width: 680px) {
+        .carbon-img {
+            display: block;
+
+            img {
+                width: 100% !important;
+                max-width: 100% !important;
+            }
+
+            margin-bottom: 8px;
+            line-height: 1;
+        }
+
+        .carbon-text {
+            padding-left: 0 !important;
+            margin-top: 120px !important;
+            margin-bottom: 8px;
+            color: #637381;
+        }
+
+        .carbon-poweredby {
+            padding-left: 0 !important;
+            font-size: 8px;
+            font-weight: 500;
+            text-transform: uppercase;
+            line-height: 1;
+            letter-spacing: 1px;
+        }
+    }
+
+    // Mobile formatting of carbon ads
+
+    @media (max-width: 680px) {
+        height: 100% !important;
+
+        & span {
+            position: relative;
+            display: block;
+            overflow: hidden;
+        }
+
+        .carbon-img {
+            float: left;
+            margin-right: 1em;
+        }
+
+        .carbon-img img {
+            display: block;
+        }
+
+        .carbon-text {
+            display: block;
+            float: left;
+            max-width: calc(100% - 130px - 1em);
+            text-align: left;
+            color: $dark;
+        }
+
+        .carbon-poweredby {
+            position: absolute;
+            left: 142px;
+            bottom: 0;
+            display: block;
+            font-size: 8px;
+            font-weight: 500;
+            text-transform: uppercase;
+            line-height: 1;
+            letter-spacing: 1px;
+        }
+    }
+}
+
+// Dark theming of carbon ads
+
+@media (prefers-color-scheme: dark) {
+    #carbonads {
+        background-color: $dark !important;
+        a {
+            color: white !important;
+        }
+    }
+}
