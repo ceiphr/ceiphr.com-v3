@@ -32,6 +32,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
             <div className="hero-body">
               <div className="container">
                 <h1 className="title">{post.frontmatter.title}</h1>
+                <Bio />
               </div>
             </div>
           </section>
