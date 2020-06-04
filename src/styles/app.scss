@@ -114,7 +114,7 @@ body {
 // glyph, and fullheight pages (e.g. 404)
 
 .hero-homepage {
-    background-image: url("../../static/images/background.svg");
+    // background-image: url("../../static/images/background.svg");
     background-size: cover;
     overflow: hidden;
 }
@@ -133,7 +133,7 @@ body {
     top: 0;
     left: 0;
     right: 0;
-    background-image: url("../../static/images/background.svg");
+    // background-image: url("../../static/images/background.svg");
     background-size: cover;
     overflow: hidden;
 }
@@ -242,5 +242,6 @@ body {
 @import "../../node_modules/bulma/sass/components/navbar.sass";
 @import "../../node_modules/bulma/sass/components/card.sass";
 @import "../../node_modules/bulma/sass/components/media.sass";
+@import "../../node_modules/bulma/sass/grid/_all.sass";
 @import "../../node_modules/bulma/sass/layout/hero.sass";
 @import "../../node_modules/bulma/sass/layout/section.sass";

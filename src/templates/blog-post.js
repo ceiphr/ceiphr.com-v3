@@ -1,6 +1,7 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
 import { DiscussionEmbed } from "disqus-react"
+import { CarbonAds } from "../components/common"
 
 import Bio from "../components/bio"
 import Layout from "../components/layout"
@@ -11,7 +12,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
   const post = data.markdownRemark
   const siteTitle = data.site.siteMetadata.title
   const { previous, next } = pageContext
-  
+
   const title = post.frontmatter.title
   const slug = post.frontmatter.slug
   const disqusConfig = {
@@ -25,22 +26,45 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
         title={post.frontmatter.title}
         description={post.frontmatter.description || post.excerpt}
       />
-      <article>
-        <header>
-          <h1>
-            {post.frontmatter.title}
-          </h1>
-          <p>
-            {post.frontmatter.date}
-          </p>
-        </header>
-        <section dangerouslySetInnerHTML={{ __html: post.html }} />
-        <hr />
-        <footer>
-          <Bio />
-        </footer>
-      </article>
-
+      <div className="container">
+        <article className="content">
+          <section className="hero">
+            <div className="hero-body">
+              <div className="container">
+                <h1 className="title">{post.frontmatter.title}</h1>
+              </div>
+            </div>
+          </section>
+          <div className="post-columns">
+            <section className="post-full-content">
+              {/* The main post content */}
+              <div
+                className="content-body load-external-scripts"
+                dangerouslySetInnerHTML={{ __html: post.html }}
+              />
+            </section>
+            <section className="post-sidebar">
+              <div className="post-sidebar-widgets">
+                <div className="card referral">
+                  <a
+                    href="https://m.do.co/c/b95c2a8a5568"
+                    aria-label="DigitalOcean"
+                    rel="noopener"
+                  >
+                    <div className="referral__logo">
+                      {/* <img src={`/images/icons/do.svg`} alt="DigitalOcean" /> */}
+                    </div>
+                    <p>
+                      This website is hosted on DigitalOcean. Use my referral
+                      link for a discount.
+                    </p>
+                  </a>
+                </div>
+                <CarbonAds />
+              </div>
+            </section>
+          </div>
+        </article>
       <nav>
         <ul>
           <li>
@@ -60,6 +84,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
         </ul>
       </nav>
       <DiscussionEmbed {...disqusConfig} />
+      </div>
     </Layout>
   )
 }
