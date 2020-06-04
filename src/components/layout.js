@@ -2,39 +2,35 @@ import React from "react"
 import { Link } from "gatsby"
 
 import "../styles/app.scss"
-// import { rhythm, scale } from "../utils/typography"
 
 const Layout = ({ location, title, children }) => {
   const rootPath = `${__PATH_PREFIX__}/`
   let header
 
-  if (location.pathname === rootPath) {
+  if (location.pathname !== rootPath) {
     header = (
-      <h1>
-        <Link to={`/`}>{title}</Link>
-      </h1>
-    )
-  } else {
-    header = (
-      <h3>
-        <Link to={`/`}>{title}</Link>
-      </h3>
+      <nav className="navbar" role="navigation" aria-label="main navigation">
+        <div className="navbar-brand">
+          <Link className="navbar-item" to={`/`}>
+            {title}
+          </Link>
+        </div>
+      </nav>
     )
   }
+
   return (
     <div>
-      <div className="viewport">
         <header>{header}</header>
-        <main className="site-main section">
-          {/* All the main content gets inserted here, index.js, post.js */}
+        <main className="site-main">
           {children}
         </main>{" "}
-        <div className="viewport-bottom section">
+        <div className="section">
           {/* The footer at the very bottom of the screen */}
           <footer className="footer">
             <div className="container">
-              <div class="columns is-desktop">
-                <div class="column">
+              <div className="columns is-desktop">
+                <div className="column">
                   <span className="footer-links">
                     <a
                       target="_blank"
@@ -81,7 +77,7 @@ const Layout = ({ location, title, children }) => {
                     the license.
                   </p>
                 </div>
-                <div class="column">
+                <div className="column">
                   <span className="footer-links">
                     <a
                       target="_blank"
@@ -109,7 +105,6 @@ const Layout = ({ location, title, children }) => {
           </footer>
         </div>
       </div>
-    </div>
   )
 }
 

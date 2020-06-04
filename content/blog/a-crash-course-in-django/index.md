@@ -1,6 +1,7 @@
 ---
 title: A Crash Course in Django
 date: "2019-06-28T22:12:03.284Z"
+featuredImage: fabian-grohs-unsplash.jpg
 description: "This crash course is a quick way to get started making a basic Django website without going in-depth about the underlying concepts."
 ---
 
@@ -98,7 +99,7 @@ To see the development server in action go to [127.0.0.1:8000](http://127.0.0.1:
 Next grab your favorite text editor or python IDE because we're going to delve into Django. We're going to start by creating a Django app where we will write all of our models for this project.
 
 ```bash
-$ python manage.py startapp blog
+python manage.py startapp blog
 ```
 
 In order for our core project to recognize this app we need to let it know our `blog` app exists by adding it to `INSTALLED_APPS` in `django_cc/settings.py` like so:
@@ -219,8 +220,8 @@ class Post(models.Model):
 Finish off our models with the following two commands that essentially tell Django that we've made some changes and that they should be applied to our database:
 
 ```console
-$ python3 manage.py makemigrations
-$ python3 manage.py migrate
+python3 manage.py makemigrations
+python3 manage.py migrate
 ```
 
 Congratulations! Our database is all set up for our posts. There is one issue though. We can't edit them right now. Let's get you set up with the Django admin panel so you make some posts.
