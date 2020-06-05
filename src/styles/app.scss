@@ -12,6 +12,9 @@ $radius-large: 8px;
 
 $widescreen-enabled: false;
 $fullhd-enabled: false;
+$easing: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+
+$card-background-color: $white-bis;
 $card-shadow: 0 0.2em 0.5em -0.125em rgba($scheme-invert, 0.1),
 0 0px 0 1px rgba($scheme-invert, 0.02);
 
@@ -21,7 +24,7 @@ $input-shadow: none;
 
 html,
 body {
-    background: $white;
+    background-color: $white;
 }
 
 ::selection {
@@ -66,10 +69,6 @@ body {
     }
 }
 
-body {
-    background-color: $white;
-}
-
 // Navigation styles for home page, templates
 // and for handling mobile nav visibility
 
@@ -110,7 +109,6 @@ body {
         .card-image {
             float: right;
             width: 40%;
-            background-color: linear-gradient(45deg, blue, red);
 
             .card-image__content {
                 border-top-right-radius: $radius-large;

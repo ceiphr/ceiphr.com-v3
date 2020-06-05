@@ -28,10 +28,6 @@
         vertical-align: middle;
     }
 
-    img {
-        border-radius: $radius-large;
-    }
-
     fieldset {
         margin: 0;
         padding: 0;
@@ -42,13 +38,13 @@
         resize: vertical;
     }
 
-    p,
-    ul,
-    ol,
-    dl,
-    blockquote {
-        margin: 0 0 1.5em 0;
-    }
+    // p,
+    // ul,
+    // ol,
+    // dl,
+    // blockquote {
+    //     margin: 0 0 1.5em 0;
+    // }
 
     ol,
     ul {
@@ -113,17 +109,18 @@
         font-size: 0.9em;
         opacity: 0.8;
     }
-    /* Quotation marks */
-    blockquote small:before {
-        content: "\2014 \00A0";
-    }
 
-    blockquote cite {
-        font-weight: bold;
-    }
-    blockquote cite a {
-        font-weight: normal;
-    }
+    /* Quotation marks */
+    // blockquote small:before {
+    //     content: "\2014 \00A0";
+    // }
+
+    // blockquote cite {
+    //     font-weight: bold;
+    // }
+    // blockquote cite a {
+    //     font-weight: normal;
+    // }
 
     a {
         color: $link;
@@ -148,6 +145,7 @@
         font-size: 4rem;
         font-weight: 700;
     }
+
     @media (max-width: 500px) {
         h1 {
             font-size: 2rem;
@@ -158,6 +156,7 @@
         margin: 1.5em 0 0.5em 0;
         font-size: 2rem;
     }
+
     @media (max-width: 500px) {
         h2 {
             font-size: 1.8rem;
@@ -169,6 +168,7 @@
         font-size: 1.8rem;
         font-weight: 500;
     }
+
     @media (max-width: 500px) {
         h3 {
             font-size: 1.7rem;

@@ -1,7 +1,6 @@
 // https://nehalist.io/adding-commento-to-react-apps-like-gatsby/
 
 import React, { useEffect } from "react"
-import PropTypes from "prop-types"
 
 // Helper to add scripts to our page
 const insertScript = (src, id, parentElement) => {
@@ -15,7 +14,7 @@ const insertScript = (src, id, parentElement) => {
 }
 
 // The actual component
-const CarbonAds = ({ id }) => {
+const CarbonAds = () => {
   useEffect(() => {
     // If there's no window there's nothing to do
     if (!window) {
@@ -30,13 +29,9 @@ const CarbonAds = ({ id }) => {
         window.document.getElementById(`carbonads__wrapper`)
       )
     }
-  }, [id])
+  })
 
   return <div id={`carbonads__wrapper`} />
-}
-
-CarbonAds.propTypes = {
-  id: PropTypes.string.isRequired,
 }
 
 export default CarbonAds

@@ -27,15 +27,15 @@ As long as you're comfortable with all that, you're good.
 
 ---
 
-## Introduction
+## <a name="introduction"></a>Introduction
 
 **This is not a tutorial.** This crash course is a quick way to get started making a basic Django website **without** going in-depth about the underlying concepts that are required to make complex web applications. For every step of this crash course I will link a more thorough explanation of the tools and concept you're using so you can get a better understanding of Django while creating your first project.
 
-### Our Goal
+### <a name="our-goal"></a>Our Goal
 
 We're making a website where you can **upload an image with a title, date and description**. Simple.
 
-### So what is Django
+### <a name="so-what-is-django"></a>So what is Django
 
 **Django** _/JANG-oh/_ — A type of tool ([web framework](https://en.wikipedia.org/wiki/Web_framework)) most known for helping people make neat websites quickly with few mistakes.
 
@@ -51,7 +51,7 @@ Django does more complex (and really fun) things, but if you're starting out tha
 
 ---
 
-## Setting up our project
+## <a name="setting-up-our-project"></a>Setting up our project
 
 > **NOTICE: Windows Users**.
 > By default Windows doesn't have a Unix command line, which is a prerequisite for this crash course. The October 2018 update for Windows 10 offers Linux subsystems, such as Ubuntu. Please install and set up a Linux subsystem to utilize the Unix command line.
@@ -92,9 +92,9 @@ python3 manage.py runserver
 
 To see the development server in action go to [127.0.0.1:8000](http://127.0.0.1:8000/) in your browser. A Django start up page should appear:
 
-![Django Development Server Default Page](https://cdn.ceiphr.io/articles/a-crash-course-in-django/django-cc-default.png)
+![Django Development Server Default Page](django-cc-default.png)
 
-### The Database
+### <a name="the-database"></a>The Database
 
 Next grab your favorite text editor or python IDE because we're going to delve into Django. We're going to start by creating a Django app where we will write all of our models for this project.
 
@@ -118,7 +118,7 @@ INSTALLED_APPS = [
 ]
 ```
 
-### Media file support
+### <a name="media-file-support"></a>Media file support
 
 Let's add the following to the bottom of `settings.py` so Django knows where to store media files such as the images that we upload:
 
@@ -175,7 +175,7 @@ Great, our project is now set up, and we can begin by writing our models.
 
 ---
 
-## Writing our models
+## <a name="writing-our-models"></a>Writing our models
 
 Inside of our new `blog` app we will find a `models.py` file where we will write our models for our database. The class `Post` will act as our first model for uploading a post with an image, title, description, and date published.
 
@@ -215,7 +215,7 @@ class Post(models.Model):
 
 [**[in-depth]**](https://docs.djangoproject.com/en/2.2/ref/models/options/#ordering)
 
-### Migrating our new models
+### <a name="migrating-our-new-models"></a>Migrating our new models
 
 Finish off our models with the following two commands that essentially tell Django that we've made some changes and that they should be applied to our database:
 
@@ -226,7 +226,7 @@ python3 manage.py migrate
 
 Congratulations! Our database is all set up for our posts. There is one issue though. We can't edit them right now. Let's get you set up with the Django admin panel so you make some posts.
 
-### Admin control panel
+### <a name="admin-control-panel"></a>Admin control panel
 
 Inside of our `blog` app go to `admin.py` and add the following:
 
@@ -253,13 +253,13 @@ Superuser created successfully.
 
 Once completed head over to [127.0.0.1:8000/admin](http://127.0.0.1:8000/admin) and sign in with the credentials you just wrote. You should see this page:
 
-![Django Development Server Admin Panel](https://cdn.ceiphr.io/articles/a-crash-course-in-django/django-cc-admin.png)
+![Django Development Server Admin Panel](django-cc-admin.png)
 
 From here you can add posts to your Django project. We are officially done with our models. Next will design our view so Django can serve our posts.
 
 ---
 
-## View logic
+## <a name="view-logic"></a>View logic
 
 A view is how Django knows what to do when we ask for a page. The first thing we have to do is create a `views.py` file in `django_cc`. In that file paste the following:
 
@@ -315,7 +315,7 @@ Our basic view logic is now complete, now we need to build our index template fo
 
 ---
 
-## Templates with Style
+## <a name="templates-with-style"></a>Templates with Style
 
 In the root of our Django project where you can find our `database` and `django_cc` folders create a `templates` folder and make an `index.html` file inside. For the design of our site we're going to use the framework [Bulma](https://bulma.io/documentation/) so we won't need to write any CSS. Here is a boilerplate we can use for our template.
 
@@ -368,7 +368,7 @@ Django templates utilize a DRY version of HTML called Django HTML. This is how w
 
 When we visit [127.0.0.1:8000](http://127.0.0.1:8000) there should be a list of all the posts we've added in the control panel:
 
-![Django Crash Course Post Feed](https://cdn.ceiphr.io/articles/a-crash-course-in-django/django-cc-feed-posts.png)
+![Django Crash Course Post Feed](django-cc-feed-posts.png)
 
 Now we have a website that displays what we add to our control panel in Bulma cards. Neat.
 
@@ -376,7 +376,7 @@ Now we have a website that displays what we add to our control panel in Bulma ca
 
 ---
 
-## Wrap Up
+## <a name="wrap-up"></a>Wrap Up
 
 Django is a wonderful framework for building websites and other complex things. Today you've created a very basic website that is capable of displaying posts akin to Instagram and in the future hopefully you can build Instagram yourself. For now I suggest learning more about Django either through [their documentation](https://docs.djangoproject.com/en/2.2/) or [this introduction (which got me started)](https://rnvarma.gitbooks.io/intro-to-django-real/content/).
 
