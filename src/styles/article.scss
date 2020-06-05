@@ -40,7 +40,9 @@
 
 article {
     .bio {
-        margin-top: 3.2em;
+        @media (min-width: 680px) {
+            margin-top: 3.2em;
+        }
 
         img {
             border-radius: 100%;
@@ -49,14 +51,18 @@ article {
 
     .article-title {
         color: $white;
-        font-size: 3rem;
         line-height: .85;
-        transform: translateY(5px);
 
         @media (min-width: 680px) {
             animation: .65s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s slideUp;
             font-size: 6rem;
             line-height: .85;
+            transform: translateY(5px);
+        }
+
+        @media (max-width: 680px) {
+            font-size: 3rem;
+            transform: translateY(1.06em);
         }
     }
 

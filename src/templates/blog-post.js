@@ -3,11 +3,7 @@ import { graphql } from "gatsby"
 import BackgroundImage from "gatsby-background-image"
 
 import { DiscussionEmbed } from "disqus-react"
-import { CarbonAds, Recommendation } from "../components/common"
-
-import Layout from "../components/layout"
-import SEO from "../components/seo"
-import Bio from "../components/bio"
+import { CarbonAds, Recommendation, SEO, Bio, Layout, Referral } from "../components"
 
 const BlogPostTemplate = ({ data, location }) => {
   const post = data.markdownRemark
@@ -51,14 +47,13 @@ const BlogPostTemplate = ({ data, location }) => {
         </BackgroundImage>
         <div className="container">
           <div className="post-columns">
+            {/* Article body and license footer */}
             <section className="post-full-content">
-              {/* The main post content */}
               <Bio />
               <div
                 className="content-body load-external-scripts"
                 dangerouslySetInnerHTML={{ __html: post.html }}
               />
-              <br />
               <div>
                 This article is licensed under{" "}
                 <a
@@ -73,37 +68,25 @@ const BlogPostTemplate = ({ data, location }) => {
               </div>
               <br />
             </section>
+            {/* Article sidebar advertisement and referral link */}
             <section className="post-sidebar">
               <div className="post-sidebar-widgets">
-                <div className="card referral">
-                  <a
-                    href="https://m.do.co/c/b95c2a8a5568"
-                    aria-label="DigitalOcean"
-                    rel="noopener"
-                  >
-                    <div className="referral__logo">
-                      <img src={`/do.svg`} alt="DigitalOcean" />{" "}
-                    </div>
-                    <p>
-                      Host your Node API, Headless CMS, and more on
-                      DigitalOcean.
-                    </p>
-                  </a>
-                </div>
+                <Referral />
                 <CarbonAds />
               </div>
             </section>
           </div>
         </div>
       </article>
-      <div className="container">
+      {/* Post blog-post recommendations and comment section */}
+      <section className="container">
         <div className="post-recommendations">
           {recommendedPosts.map(({ node }) => (
             <Recommendation key={node.fields.slug} post={node} />
           ))}
         </div>
         <DiscussionEmbed {...disqusConfig} />
-      </div>
+      </section>
     </Layout>
   )
 }

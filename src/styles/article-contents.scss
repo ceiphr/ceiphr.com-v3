@@ -28,6 +28,10 @@
         vertical-align: middle;
     }
 
+    img {
+        box-shadow: $card-shadow !important;
+    }
+
     fieldset {
         margin: 0;
         padding: 0;
