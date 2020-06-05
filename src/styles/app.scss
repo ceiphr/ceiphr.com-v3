@@ -1,12 +1,11 @@
 @charset "utf-8";
 @import "../../node_modules/bulma/sass/utilities/_all.sass";
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital@0;1&family=IBM+Plex+Sans:ital,wght@0,100;0,400;0,700;1,100;1,400;1,700&display=swap');
 
-$family-sans-serif: "Roboto",
-"Helvetica Neue",
-Arial,
+$family-sans-serif: "IBM Plex Sans",
 sans-serif;
 
-$family-code: "Roboto Mono",
+$family-code: "IBM Plex Mono",
 monospace;
 
 $radius-large: 8px;
@@ -56,13 +55,13 @@ body {
     }
 }
 
-.footer-links {
-    a:after {
+.footer-links a {
+    &:after {
         color: $black;
         content: " \00b7 ";
     }
 
-    a:last-child:after {
+    &:last-child:after {
         content: none;
     }
 }

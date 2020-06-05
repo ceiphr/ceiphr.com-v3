@@ -21,90 +21,77 @@ const Layout = ({ location, title, children }) => {
 
   return (
     <div>
-        <header>{header}</header>
-        <main className="site-main">
-          {children}
-        </main>{" "}
-        <div className="section">
-          {/* The footer at the very bottom of the screen */}
-          <footer className="footer">
-            <div className="container">
-              <div className="columns is-desktop">
-                <div className="column">
-                  <span className="footer-links">
-                    <a
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      href="https://github.com/ceiphr/"
-                    >
-                      GitHub
-                    </a>
-                    <a
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      href="https://www.linkedin.com/in/ari/"
-                    >
-                      LinkedIn
-                    </a>
-                    <a
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      href="https://twitter.com/ceiphr/"
-                    >
-                      Twitter
-                    </a>
-                  </span>
-                  <p>
-                    Source code licensed
-                    {` `}
-                    <a
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      href="https://github.com/ceiphr/gatsby-ceiphr/blob/master/LICENSE"
-                    >
-                      GNU GPL v3.0
-                    </a>
-                    .{` `}
-                    Articles licensed{` `}
-                    <a
-                      rel="noopener noreferrer"
-                      target="_blank"
-                      href="https://creativecommons.org/licenses/by-nc-sa/4.0/"
-                    >
-                      CC BY-NC-SA 4.0
-                    </a>
-                    . You may redistribute articles if you follow the terms of
-                    the license.
-                  </p>
-                </div>
-                <div className="column">
-                  <span className="footer-links">
-                    <a
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      href="https://www.iubenda.com/privacy-policy/18781590"
-                    >
-                      Privacy Policy
-                    </a>
-                    {` `}
-                    <a
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      href="https://www.iubenda.com/privacy-policy/18781590/cookie-policy"
-                    >
-                      Cookie Policy
-                    </a>
-                  </span>
-                  <p>
-                    Unless otherwise noted, all content copyright 2016 &mdash;
-                    2020 Ari Birnbaum (Ceiphr).
-                  </p>
-                </div>
+      <header>{header}</header>
+      <main className="site-main">{children}</main>{" "}
+      <div className="section">
+        {/* The footer at the very bottom of the screen */}
+        <footer className="footer">
+          <div className="container">
+            <div className="columns is-desktop">
+              <div className="column">
+                <span className="footer-links">
+                  <a
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    href="https://github.com/ceiphr/"
+                  >
+                    GitHub
+                  </a>
+                  <a
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    href="https://www.linkedin.com/in/ari/"
+                  >
+                    LinkedIn
+                  </a>
+                  <a
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    href="https://twitter.com/ceiphr/"
+                  >
+                    Twitter
+                  </a>
+                </span>
+                <p>
+                  Unless otherwise noted, all content © 2016-2020 Ari Birnbaum.
+                </p>
+              </div>
+              <div className="column">
+                <span className="footer-links">
+                  <a
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    href="https://www.iubenda.com/privacy-policy/18781590"
+                  >
+                    Privacy Policy
+                  </a>
+                  {` `}
+                  <a
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    href="https://www.iubenda.com/privacy-policy/18781590/cookie-policy"
+                  >
+                    Cookie Policy
+                  </a>
+                </span>
+                <p>
+                  Source code licensed
+                  {` `}
+                  <a
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    href="https://github.com/ceiphr/gatsby-ceiphr/blob/master/LICENSE"
+                  >
+                    GNU GPL v3.0
+                  </a>
+                  .{` `}Fork it on GitHub.
+                </p>
               </div>
             </div>
-          </footer>
-        </div>
+          </div>
+        </footer>
       </div>
+    </div>
   )
 }
 

@@ -42,6 +42,25 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
                 className="content-body load-external-scripts"
                 dangerouslySetInnerHTML={{ __html: post.html }}
               />
+              <a
+                rel="license"
+                href="http://creativecommons.org/licenses/by-nc-sa/4.0/"
+              >
+                <img
+                  alt="Creative Commons License"
+                  src="https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png"
+                />
+              </a>
+              <br />
+              This work is licensed under a{" "}
+              <a
+                rel="license"
+                href="http://creativecommons.org/licenses/by-nc-sa/4.0/"
+              >
+                Creative Commons Attribution-NonCommercial-ShareAlike 4.0
+                International License
+              </a>
+              .
             </section>
             <section className="post-sidebar">
               <div className="post-sidebar-widgets">
@@ -65,25 +84,25 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
             </section>
           </div>
         </article>
-      <nav>
-        <ul>
-          <li>
-            {previous && (
-              <Link to={previous.fields.slug} rel="prev">
-                ← {previous.frontmatter.title}
-              </Link>
-            )}
-          </li>
-          <li>
-            {next && (
-              <Link to={next.fields.slug} rel="next">
-                {next.frontmatter.title} →
-              </Link>
-            )}
-          </li>
-        </ul>
-      </nav>
-      <DiscussionEmbed {...disqusConfig} />
+        <nav>
+          <ul>
+            <li>
+              {previous && (
+                <Link to={previous.fields.slug} rel="prev">
+                  ← {previous.frontmatter.title}
+                </Link>
+              )}
+            </li>
+            <li>
+              {next && (
+                <Link to={next.fields.slug} rel="next">
+                  {next.frontmatter.title} →
+                </Link>
+              )}
+            </li>
+          </ul>
+        </nav>
+        <DiscussionEmbed {...disqusConfig} />
       </div>
     </Layout>
   )

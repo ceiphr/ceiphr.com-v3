@@ -53,25 +53,32 @@ const BlogIndex = ({ data, location }: PageProps<Data>) => {
       <div className="container">
         <section className="post-feed post-feed--index">
           {posts.map(({ node }) => {
-            const featuredImgFluid = node.frontmatter.featuredImage.childImageSharp.fluid              
+            const featuredImgFluid =
+              node.frontmatter.featuredImage.childImageSharp.fluid
             const title = node.frontmatter.title || node.fields.slug
             return (
-              <article key={node.fields.slug}>
-                <header>
-                  <Img fluid={featuredImgFluid} />
-                  <h3>
-                    <Link to={node.fields.slug}>{title}</Link>
-                  </h3>
-                  <small>{node.frontmatter.date}</small>
-                </header>
-                <section>
-                  <p
-                    dangerouslySetInnerHTML={{
-                      __html: node.frontmatter.description || node.excerpt,
-                    }}
-                  />
-                </section>
-              </article>
+              <Link to={node.fields.slug}>
+                <div className="card">
+                  <div className="card-image">
+                    <Img className="post-card-image" fluid={featuredImgFluid} />
+                  </div>
+                  <div className="card-content">
+                    <div className="media">
+                      <div className="media-content">
+                        <p className="title is-4">{title}</p>
+                        <p className="subtitle is-6">{node.frontmatter.date}</p>
+                      </div>
+                    </div>
+                    <div className="content">
+                      <p
+                        dangerouslySetInnerHTML={{
+                          __html: node.frontmatter.description || node.excerpt,
+                        }}
+                      />
+                    </div>
+                  </div>
+                </div>
+              </Link>
             )
           })}
         </section>

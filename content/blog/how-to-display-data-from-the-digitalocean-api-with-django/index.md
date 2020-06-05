@@ -1,6 +1,6 @@
 ---
 title: How To Display Data from the DigitalOcean API with Django
-featuredImage: fabian-grohs-unsplash.jpg
+featuredImage: digitalocean.jpeg
 date: "2019-12-20T23:46:37.121Z"
 ---
 
