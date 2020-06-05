@@ -138,10 +138,10 @@ body {
 }
 
 // Theme Stylings
-@import "dark-theme.scss";
+@import "dark-theme";
 
 // Template Stylings
-@import "article.scss";
+@import "blog-post";
 
 // Bulma styles
 @import "../../node_modules/bulma/sass/base/_all.sass";

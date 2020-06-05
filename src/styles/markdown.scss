@@ -4,8 +4,10 @@
 .post-full-content {
     overflow: hidden;
 
-    code {
-        border-radius: 4px;
+    pre, code {
+        border-radius: $radius-large !important;
+        border-width: 0 !important;
+        background: $white-bis
     }
 
     hr {
@@ -110,18 +112,6 @@
         font-size: 0.9em;
         opacity: 0.8;
     }
-
-    /* Quotation marks */
-    // blockquote small:before {
-    //     content: "\2014 \00A0";
-    // }
-
-    // blockquote cite {
-    //     font-weight: bold;
-    // }
-    // blockquote cite a {
-    //     font-weight: normal;
-    // }
 
     a {
         color: $link;
