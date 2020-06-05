@@ -40,7 +40,7 @@ body {
     border-radius: $radius-large;
     transition-duration: 200ms;
 
-    .post-card-image {
+    .card-image__content {
         margin: 0 0 10px 0;
         width: auto;
         height: 200px;
@@ -73,9 +73,19 @@ body {
 // Navigation styles for home page, templates
 // and for handling mobile nav visibility
 
-.navbar-brand {
-    flex-grow: 1;
-    justify-content: center;
+.navbar {
+    position: absolute !important;
+
+    .navbar-brand {
+        position: inherit;
+        left: 50vw;
+        transform: translateX(-50%);
+    }
+
+    &.is-transparent {
+        background-color: transparent;
+        background-image: none;
+    }
 }
 
 // Index styling used for formatting
@@ -99,9 +109,10 @@ body {
 
         .card-image {
             float: right;
-            width: 50%;
+            width: 40%;
+            background-color: linear-gradient(45deg, blue, red);
 
-            .post-card-image {
+            .card-image__content {
                 border-top-right-radius: $radius-large;
                 border-bottom-right-radius: $radius-large;
 
@@ -114,13 +125,13 @@ body {
 
         .card-content {
             float: left;
-            width: 50%;
+            width: 60%;
         }
     }
 
     @media (max-width: 980px) {
         .card {
-            .post-card-image {
+            .card-image__content {
                 border-top-left-radius: $radius-large;
                 border-top-right-radius: $radius-large;
             }

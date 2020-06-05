@@ -141,6 +141,7 @@
         word-break: normal;
         word-wrap: normal;
         color: #eee;
+        text-shadow: none;
         background: $dark;
         font-family: Roboto Mono, monospace;
         font-size: 1em;
@@ -285,6 +286,7 @@
 
     .token.operator {
         color: #89ddff;
+        background-color: transparent;
     }
 
     .token.prolog {

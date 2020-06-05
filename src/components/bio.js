@@ -7,7 +7,7 @@
 
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
-import Image from "gatsby-image"
+import Img from "gatsby-image"
 
 const Bio = () => {
   const data = useStaticQuery(graphql`
@@ -36,7 +36,7 @@ const Bio = () => {
   const { author, social } = data.site.siteMetadata
   return (
     <div>
-      <Image
+      <Img
         fixed={data.avatar.childImageSharp.fixed}
         alt={author.name}
       />

@@ -1,9 +1,9 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
+
 import { DiscussionEmbed } from "disqus-react"
 import { CarbonAds } from "../components/common"
 
-import Bio from "../components/bio"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
@@ -14,6 +14,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
 
   const title = post.frontmatter.title
   const slug = post.frontmatter.slug
+  const featuredImgFluid = post.frontmatter.featuredImage.publicURL
   const disqusConfig = {
     shortname: process.env.GATSBY_DISQUS_NAME,
     config: { identifier: slug, title },
@@ -25,16 +26,27 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
         title={post.frontmatter.title}
         description={post.frontmatter.description || post.excerpt}
       />
-      <div className="container">
-        <article className="content">
-          <section className="hero">
-            <div className="hero-body">
-              <div className="container">
-                <h1 className="title">{post.frontmatter.title}</h1>
-                <Bio />
-              </div>
+      <article className="content">
+        <section
+          class="hero is-medium hero-background-image"
+          style={{
+              background: `linear-gradient(
+                rgba(128, 128, 128, 0.5), 
+                rgba(128, 128, 128, 0.5)
+              ),url('${featuredImgFluid}')`,
+                backgroundSize: `cover`
+          }}
+        >
+          <div class="hero-body"></div>
+          <div class="hero-footer">
+            <div class="container">
+              <h1 className="article-title title is-uppercase">
+                {post.frontmatter.title}
+              </h1>
             </div>
-          </section>
+          </div>
+        </section>
+        <div className="container">
           <div className="post-columns">
             <section className="post-full-content">
               {/* The main post content */}
@@ -43,7 +55,8 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
                 dangerouslySetInnerHTML={{ __html: post.html }}
               />
               <a
-                rel="license"
+                target="_blank"
+                rel="license noopener noreferrer"
                 href="http://creativecommons.org/licenses/by-nc-sa/4.0/"
               >
                 <img
@@ -54,11 +67,12 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
               <br />
               This work is licensed under a{" "}
               <a
-                rel="license"
+                target="_blank"
+                rel="license noopener noreferrer"
                 href="http://creativecommons.org/licenses/by-nc-sa/4.0/"
               >
-                Creative Commons Attribution-NonCommercial-ShareAlike 4.0
-                International License
+                CC Attribution-NonCommercial-ShareAlike 4.0 International
+                License
               </a>
               .
             </section>
@@ -71,7 +85,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
                     rel="noopener"
                   >
                     <div className="referral__logo">
-                      {/* <img src={`/images/icons/do.svg`} alt="DigitalOcean" /> */}
+                      <img src={`/do.svg`} alt="DigitalOcean" />{" "}
                     </div>
                     <p>
                       This website is hosted on DigitalOcean. Use my referral
@@ -83,7 +97,9 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
               </div>
             </section>
           </div>
-        </article>
+        </div>
+      </article>
+      <div className="container">
         <nav>
           <ul>
             <li>
@@ -125,6 +141,9 @@ export const pageQuery = graphql`
         title
         date(formatString: "MMMM DD, YYYY")
         description
+        featuredImage {
+          publicURL
+        }
       }
     }
   }

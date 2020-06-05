@@ -2,6 +2,16 @@
 @import "syntax-highlighting.scss";
 @import "carbonads.scss";
 
+@keyframes slideUp {
+    0% {
+        transform: translateY(125%);
+    }
+
+    100% {
+        transform: translateY(5px);
+    }
+}
+
 // Mobile version of the sidebar
 
 @media (max-width: 680px) {
@@ -29,9 +39,23 @@
 // images, the body and sidebar content
 
 article {
+    .article-title {
+        color: $white;
+        font-size: 3rem;
+        line-height: .85;
+        transform: translateY(5px);
+
+        @media (min-width: 680px) {
+            animation: .65s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s slideUp;
+            font-size: 6rem;
+            line-height: .85;    
+        }
+    }
+
     pre {
         border-radius: $radius-large !important;
         border-width: 0 !important;
+
         code {
             font-family: "Roboto Mono", monospace !important;
         }
@@ -80,7 +104,9 @@ article {
                     text-decoration: none;
                     color: $black !important;
                 }
-                position: -webkit-sticky; /* Safari */
+
+                position: -webkit-sticky;
+                /* Safari */
                 position: sticky;
 
                 @media (min-width: 680px) {

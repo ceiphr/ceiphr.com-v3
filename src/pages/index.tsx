@@ -60,16 +60,12 @@ const BlogIndex = ({ data, location }: PageProps<Data>) => {
               <Link to={node.fields.slug}>
                 <div className="card">
                   <div className="card-image">
-                    <Img className="post-card-image" fluid={featuredImgFluid} />
+                    <Img className="card-image__content" fluid={featuredImgFluid} />
                   </div>
                   <div className="card-content">
-                    <div className="media">
-                      <div className="media-content">
-                        <p className="title is-4">{title}</p>
-                        <p className="subtitle is-6">{node.frontmatter.date}</p>
-                      </div>
-                    </div>
                     <div className="content">
+                      <p className="title is-4">{title}</p>
+                      <p className="subtitle is-6">{node.frontmatter.date}</p>
                       <p
                         dangerouslySetInnerHTML={{
                           __html: node.frontmatter.description || node.excerpt,

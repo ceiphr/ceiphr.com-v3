@@ -18,8 +18,12 @@
         }
     }
 
+    .article-title {
+        color: $scheme-invert-ter !important;
+    }
+
     html,
-    body {
+    body, {
         background-color: $scheme-invert-ter !important;
     }
 
