@@ -39,6 +39,14 @@
 // images, the body and sidebar content
 
 article {
+    .bio {
+        margin-top: 3.2em;
+
+        img {
+            border-radius: 100%;
+        }
+    }
+
     .article-title {
         color: $white;
         font-size: 3rem;

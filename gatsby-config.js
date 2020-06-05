@@ -3,7 +3,7 @@ module.exports = {
     title: `Ceiphr`,
     author: {
       name: `Ari Birnbaum`,
-      summary: `who is a Computational Mathematics BS at RIT.`,
+      summary: `Bachelor of Computational Mathematics at RIT. Freelance Technical Writer at DigitalOcean.`,
     },
     description: `I'm Ari Birnbaum, an aspiring software engineer currently studying Computational Mathematics as a freshman at the Rochester Institute of Technology.`,
     siteUrl: `https://www.ceiphr.com`,

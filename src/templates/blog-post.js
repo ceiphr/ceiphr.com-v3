@@ -7,6 +7,7 @@ import { CarbonAds, Recommendation } from "../components/common"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+import Bio from "../components/bio"
 
 const BlogPostTemplate = ({ data, location }) => {
   const post = data.markdownRemark
@@ -52,11 +53,12 @@ const BlogPostTemplate = ({ data, location }) => {
           <div className="post-columns">
             <section className="post-full-content">
               {/* The main post content */}
+              <Bio />
               <div
                 className="content-body load-external-scripts"
                 dangerouslySetInnerHTML={{ __html: post.html }}
               />
-              <br/>
+              <br />
               <div>
                 This article is licensed under{" "}
                 <a
@@ -83,8 +85,8 @@ const BlogPostTemplate = ({ data, location }) => {
                       <img src={`/do.svg`} alt="DigitalOcean" />{" "}
                     </div>
                     <p>
-                      This website is hosted on DigitalOcean. Use my referral
-                      link for a discount.
+                      Host your Node API, Headless CMS, and more on
+                      DigitalOcean.
                     </p>
                   </a>
                 </div>
@@ -97,7 +99,7 @@ const BlogPostTemplate = ({ data, location }) => {
       <div className="container">
         <div className="post-recommendations">
           {recommendedPosts.map(({ node }) => (
-            <Recommendation key={node.id} post={node} />
+            <Recommendation key={node.fields.slug} post={node} />
           ))}
         </div>
         <DiscussionEmbed {...disqusConfig} />

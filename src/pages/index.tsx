@@ -4,7 +4,6 @@ import { PageProps, Link, graphql } from "gatsby"
 import Img from "gatsby-image"
 import type { FluidObject } from "gatsby-image"
 
-import Bio from "../components/bio"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
@@ -46,7 +45,8 @@ const BlogIndex = ({ data, location }: PageProps<Data>) => {
       <section className="hero hero-homepage is-halfheight is-primary">
         <div className="hero-body">
           <div className="container">
-            <Bio />
+            <h1 className="title is-uppercase">Ari Birnbaum</h1>
+            <h2 className="subtitle">Comp. Math at RIT</h2>
           </div>
         </div>
       </section>
@@ -60,7 +60,10 @@ const BlogIndex = ({ data, location }: PageProps<Data>) => {
               <Link to={node.fields.slug}>
                 <div className="card">
                   <div className="card-image">
-                    <Img className="card-image__content" fluid={featuredImgFluid} />
+                    <Img
+                      className="card-image__content"
+                      fluid={featuredImgFluid}
+                    />
                   </div>
                   <div className="card-content">
                     <div className="content">
