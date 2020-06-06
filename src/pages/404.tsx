@@ -18,8 +18,14 @@ const NotFoundPage = ({ data, location }: PageProps<Data>) => {
   return (
     <Layout location={location} title={siteTitle}>
       <SEO title="404: Not Found" />
-      <h1>Not Found</h1>
-      <p>You just hit a route that doesn&#39;t exist... the sadness.</p>
+      <section className="hero is-primary is-fullheight">
+        <div className="hero-body">
+          <div className="container">
+            <h1 className="title">Not Found</h1>
+            <h2 className="subtitle">You just hit a route that doesn&#39;t exist... the sadness.</h2>
+          </div>
+        </div>
+      </section>
     </Layout>
   )
 }
