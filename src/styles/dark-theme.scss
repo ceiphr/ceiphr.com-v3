@@ -1,0 +1,44 @@
+// Styles overriding general theme colors
+// for dark theming
+
+@media (prefers-color-scheme: dark) {
+    hr {
+        border-top: 1px solid $dark !important;
+    }
+
+    body,
+    strong,
+    p,
+    .card,
+    .title {
+        color: $white !important;
+    }
+
+    a {
+        color: $link !important;
+
+        &:hover {
+            color: $white !important;
+        }
+    }
+
+    .article-title, .article-date {
+        color: $scheme-invert-ter !important;
+    }
+
+    html,
+    body {
+        background-color: $scheme-invert-ter !important;
+    }
+
+    code,
+    .card {
+        background-color: $dark !important;
+    }
+
+    .footer-links {
+        a:after {
+            color: $white;
+        }
+    }
+}

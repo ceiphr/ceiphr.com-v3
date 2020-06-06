@@ -1,68 +1,112 @@
+/**
+ * layout is the primary layout for all
+ * pages on this site. It provides the navigation bar
+ * and footer for each page.
+ */
+
 import React from "react"
 import { Link } from "gatsby"
 
-import { rhythm, scale } from "../utils/typography"
+import "../styles/index.scss"
 
 const Layout = ({ location, title, children }) => {
   const rootPath = `${__PATH_PREFIX__}/`
   let header
 
-  if (location.pathname === rootPath) {
+  // Display the navigation bar on pages that aren't the homepage
+  if (location.pathname !== rootPath) {
     header = (
-      <h1
-        style={{
-          ...scale(1.5),
-          marginBottom: rhythm(1.5),
-          marginTop: 0,
-        }}
+      <nav
+        className="navbar is-transparent"
+        role="navigation"
+        aria-label="main navigation"
       >
-        <Link
-          style={{
-            boxShadow: `none`,
-            color: `inherit`,
-          }}
-          to={`/`}
-        >
-          {title}
-        </Link>
-      </h1>
-    )
-  } else {
-    header = (
-      <h3
-        style={{
-          fontFamily: `Montserrat, sans-serif`,
-          marginTop: 0,
-        }}
-      >
-        <Link
-          style={{
-            boxShadow: `none`,
-            color: `inherit`,
-          }}
-          to={`/`}
-        >
-          {title}
-        </Link>
-      </h3>
+        <div className="navbar-brand">
+          <Link className="navbar-item" to={`/`}>
+            {title}
+          </Link>
+        </div>
+      </nav>
     )
   }
+
   return (
-    <div
-      style={{
-        marginLeft: `auto`,
-        marginRight: `auto`,
-        maxWidth: rhythm(24),
-        padding: `${rhythm(1.5)} ${rhythm(3 / 4)}`,
-      }}
-    >
+    <div>
       <header>{header}</header>
-      <main>{children}</main>
-      <footer>
-        © {new Date().getFullYear()}, Built with
-        {` `}
-        <a href="https://www.gatsbyjs.org">Gatsby</a>
-      </footer>
+      <main className="site-main">{children}</main>{" "}
+      <div className="section">
+        
+        {/* The footer at the very bottom of the screen */}
+        <footer className="footer">
+          <div className="container">
+            <div className="columns is-desktop">
+
+              {/* Left side of footer: social links and copyright notice */}
+              <div className="column">
+                <span className="footer-links">
+                  <a
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    href="https://github.com/ceiphr/"
+                  >
+                    GitHub
+                  </a>
+                  <a
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    href="https://www.linkedin.com/in/ari/"
+                  >
+                    LinkedIn
+                  </a>
+                  <a
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    href="https://twitter.com/ceiphr/"
+                  >
+                    Twitter
+                  </a>
+                </span>
+                <p>
+                  Unless otherwise noted, all content © 2016-2020 Ari Birnbaum.
+                </p>
+              </div>
+
+              {/* Right side of footer: privacy notice and OSS license */}
+              <div className="column">
+                <span className="footer-links">
+                  <a
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    href="https://www.iubenda.com/privacy-policy/18781590"
+                  >
+                    Privacy Policy
+                  </a>
+                  {` `}
+                  <a
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    href="https://www.iubenda.com/privacy-policy/18781590/cookie-policy"
+                  >
+                    Cookie Policy
+                  </a>
+                </span>
+                <p>
+                  Source code licensed
+                  {` `}
+                  <a
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    href="https://github.com/ceiphr/gatsby-ceiphr/blob/master/LICENSE"
+                  >
+                    GNU GPL v3.0
+                  </a>
+                  .{` `}Fork it on GitHub.
+                </p>
+              </div>
+            </div>
+          </div>
+        </footer>
+      </div>
     </div>
   )
 }

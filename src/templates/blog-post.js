@@ -1,79 +1,121 @@
+/**
+ * blog-post is the template used for blog post markdown
+ * data found in content/blog.
+ */
+
 import React from "react"
-import { Link, graphql } from "gatsby"
+import { graphql } from "gatsby"
+import BackgroundImage from "gatsby-background-image"
 
-import Bio from "../components/bio"
-import Layout from "../components/layout"
-import SEO from "../components/seo"
-import { rhythm, scale } from "../utils/typography"
+import { DiscussionEmbed } from "disqus-react"
+import {
+  CarbonAds,
+  Recommendation,
+  SEO,
+  Bio,
+  Layout,
+  Referral,
+} from "../components"
 
-const BlogPostTemplate = ({ data, pageContext, location }) => {
-  const post = data.markdownRemark
+const BlogPostTemplate = ({ data, location }) => {
+  // Site data from gatsby-config
   const siteTitle = data.site.siteMetadata.title
-  const { previous, next } = pageContext
+
+  // Data for the article
+  const post = data.markdownRemark
+  const title = post.frontmatter.title
+  const slug = post.frontmatter.slug
+
+  // Uses gatsby-background-image for an opacity gradient
+  // then a lazy-loaded and optimized background image
+  const featuredImgFluid = [
+    `linear-gradient(
+      rgba(128, 128, 128, 0.5), 
+      rgba(128, 128, 128, 0.5)
+    )`,
+    post.frontmatter.featuredImage.childImageSharp.fluid,
+  ]
+
+  // Data for two article cards at the bottom of the template
+  const recommendedPosts = data.allMarkdownRemark.edges
+
+  // Config for Disqus using the GATSBY_DISQUS_NAME found in dotENV
+  const disqusConfig = {
+    shortname: process.env.GATSBY_DISQUS_NAME,
+    config: { identifier: slug, title },
+  }
 
   return (
     <Layout location={location} title={siteTitle}>
+      {/* SEO data */}
       <SEO
         title={post.frontmatter.title}
         description={post.frontmatter.description || post.excerpt}
       />
-      <article>
-        <header>
-          <h1
-            style={{
-              marginTop: rhythm(1),
-              marginBottom: 0,
-            }}
-          >
-            {post.frontmatter.title}
-          </h1>
-          <p
-            style={{
-              ...scale(-1 / 5),
-              display: `block`,
-              marginBottom: rhythm(1),
-            }}
-          >
-            {post.frontmatter.date}
-          </p>
-        </header>
-        <section dangerouslySetInnerHTML={{ __html: post.html }} />
-        <hr
-          style={{
-            marginBottom: rhythm(1),
-          }}
-        />
-        <footer>
-          <Bio />
-        </footer>
+      <article className="content">
+        {/* Header background image and title */}
+        <BackgroundImage
+          Tag="section"
+          className="hero is-medium"
+          fluid={featuredImgFluid}
+        >
+          <div className="hero-body">
+          </div>
+          <div className="hero-footer">
+            <div className="container">
+              <p className="article-date subtitle">
+                {post.frontmatter.date}
+              </p>
+              <h1 className="article-title title is-uppercase">
+                {post.frontmatter.title}
+              </h1>
+            </div>
+          </div>
+        </BackgroundImage>
+        <div className="container">
+          <div className="post-columns">
+            {/* Article body and license footer */}
+            <section className="post-full-content">
+              <Bio />
+              <div
+                className="content-body load-external-scripts"
+                dangerouslySetInnerHTML={{ __html: post.html }}
+              />
+              <div>
+                This article is licensed under{" "}
+                <a
+                  rel="license noopener noreferrer"
+                  target="_blank"
+                  href="https://creativecommons.org/licenses/by-nc-sa/4.0/"
+                >
+                  Creative Commons Attribution-NonCommercial-ShareAlike 4.0
+                  International
+                </a>
+                .
+              </div>
+              <br />
+            </section>
+
+            {/* Article sidebar advertisement and referral link */}
+            <section className="post-sidebar">
+              <div className="post-sidebar-widgets">
+                <Referral />
+                <CarbonAds />
+              </div>
+            </section>
+          </div>
+        </div>
       </article>
 
-      <nav>
-        <ul
-          style={{
-            display: `flex`,
-            flexWrap: `wrap`,
-            justifyContent: `space-between`,
-            listStyle: `none`,
-            padding: 0,
-          }}
-        >
-          <li>
-            {previous && (
-              <Link to={previous.fields.slug} rel="prev">
-                ← {previous.frontmatter.title}
-              </Link>
-            )}
-          </li>
-          <li>
-            {next && (
-              <Link to={next.fields.slug} rel="next">
-                {next.frontmatter.title} →
-              </Link>
-            )}
-          </li>
-        </ul>
-      </nav>
+      {/* Post blog-post recommendations and comment section */}
+      <section className="container">
+        <div className="post-recommendations">
+          {recommendedPosts.map(({ node }) => (
+            <Recommendation key={node.fields.slug} post={node} />
+          ))}
+        </div>
+        <DiscussionEmbed {...disqusConfig} />
+      </section>
     </Layout>
   )
 }
@@ -95,6 +137,39 @@ export const pageQuery = graphql`
         title
         date(formatString: "MMMM DD, YYYY")
         description
+        featuredImage {
+          childImageSharp {
+            fluid(quality: 90, maxWidth: 1920) {
+              ...GatsbyImageSharpFluid_withWebp
+            }
+          }
+        }
+      }
+    }
+    allMarkdownRemark(
+      sort: { fields: [frontmatter___date], order: DESC }
+      limit: 2
+      filter: { fields: { slug: { ne: $slug } } }
+    ) {
+      edges {
+        node {
+          excerpt
+          fields {
+            slug
+          }
+          frontmatter {
+            date(formatString: "MMMM DD, YYYY")
+            title
+            description
+            featuredImage {
+              childImageSharp {
+                fluid(quality: 70, maxWidth: 960) {
+                  ...GatsbyImageSharpFluid_withWebp
+                }
+              }
+            }
+          }
+        }
       }
     }
   }

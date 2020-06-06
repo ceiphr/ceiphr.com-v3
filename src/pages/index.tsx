@@ -1,11 +1,15 @@
-// Gatsby supports TypeScript natively!
+/**
+ * Index of the site. Offers the header graphic through lottie.
+ * Displays a feed of the most recent posts.
+ */
+
 import React from "react"
 import { PageProps, Link, graphql } from "gatsby"
+import Img from "gatsby-image"
+import type { FluidObject } from "gatsby-image"
 
-import Bio from "../components/bio"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import { rhythm } from "../utils/typography"
 
 type Data = {
   site: {
@@ -21,6 +25,11 @@ type Data = {
           title: string
           date: string
           description: string
+          featuredImage: {
+            childImageSharp: {
+              fluid: FluidObject
+            }
+          }
         }
         fields: {
           slug: string
@@ -37,33 +46,46 @@ const BlogIndex = ({ data, location }: PageProps<Data>) => {
   return (
     <Layout location={location} title={siteTitle}>
       <SEO title="All posts" />
-      <Bio />
-      {posts.map(({ node }) => {
-        const title = node.frontmatter.title || node.fields.slug
-        return (
-          <article key={node.fields.slug}>
-            <header>
-              <h3
-                style={{
-                  marginBottom: rhythm(1 / 4),
-                }}
-              >
-                <Link style={{ boxShadow: `none` }} to={node.fields.slug}>
-                  {title}
-                </Link>
-              </h3>
-              <small>{node.frontmatter.date}</small>
-            </header>
-            <section>
-              <p
-                dangerouslySetInnerHTML={{
-                  __html: node.frontmatter.description || node.excerpt,
-                }}
-              />
-            </section>
-          </article>
-        )
-      })}
+      <section className="hero hero-homepage is-halfheight is-primary">
+        <div className="hero-body">
+          <div className="container">
+            <h1 className="title is-uppercase">Ari Birnbaum</h1>
+            <h2 className="subtitle">Comp. Math at RIT</h2>
+          </div>
+        </div>
+      </section>
+      <div className="container">
+        <section className="post-feed post-feed--index">
+          {posts.map(({ node }) => {
+            const featuredImgFluid =
+              node.frontmatter.featuredImage.childImageSharp.fluid
+            const title = node.frontmatter.title || node.fields.slug
+            return (
+              <Link to={node.fields.slug}>
+                <div className="card">
+                  <div className="card-image">
+                    <Img
+                      className="card-image__content"
+                      fluid={featuredImgFluid}
+                    />
+                  </div>
+                  <div className="card-content">
+                    <div className="content">
+                      <p className="title is-4">{title}</p>
+                      <p className="subtitle is-6">{node.frontmatter.date}</p>
+                      <p
+                        dangerouslySetInnerHTML={{
+                          __html: node.frontmatter.description || node.excerpt,
+                        }}
+                      />
+                    </div>
+                  </div>
+                </div>
+              </Link>
+            )
+          })}
+        </section>
+      </div>
     </Layout>
   )
 }
@@ -88,6 +110,13 @@ export const pageQuery = graphql`
             date(formatString: "MMMM DD, YYYY")
             title
             description
+            featuredImage {
+              childImageSharp {
+                fluid(quality: 70, maxWidth: 960) {
+                  ...GatsbyImageSharpFluid_withWebp
+                }
+              }
+            }
           }
         }
       }

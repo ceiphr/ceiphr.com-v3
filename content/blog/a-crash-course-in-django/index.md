@@ -1,34 +1,18 @@
 ---
 title: A Crash Course in Django
 date: "2019-06-28T22:12:03.284Z"
+featuredImage: fabian-grohs-unsplash.jpg
 description: "This crash course is a quick way to get started making a basic Django website without going in-depth about the underlying concepts."
----
-
-## Prerequisites
-
-[Basic Python](https://www.learnpython.org/en/Hello%2C_World%21), [HTML](https://www.w3schools.com/html/), [CSS](https://www.w3schools.com/css/) and [Unix Command Line](https://www.learnenough.com/command-line-tutorial/basics).
-As long as you're comfortable with all that, you're good.
-
-## Table of Contents
-
-1. [Introduction](#introduction)
-   1. [Our Goal](#our-goal)
-   2. [So what is Django?](#so-what-is-django)
-2. [Setting up our project](#setting-up-our-project)
-   1. [The Database](#the-database)
-   2. [Media file support](#media-file-support)
-3. [Writing our models](#writing-our-models)
-   1. [Migrating our new models](#migrating-our-new-models)
-   2. [Admin control panel](#admin-control-panel)
-4. [View logic](#view-logic)
-5. [Templates with Style](#templates-with-style)
-6. [Wrap Up](#wrap-up)
-
 ---
 
 ## Introduction
 
 **This is not a tutorial.** This crash course is a quick way to get started making a basic Django website **without** going in-depth about the underlying concepts that are required to make complex web applications. For every step of this crash course I will link a more thorough explanation of the tools and concept you're using so you can get a better understanding of Django while creating your first project.
+
+### Prerequisites
+
+[Basic Python](https://www.learnpython.org/en/Hello%2C_World%21), [HTML](https://www.w3schools.com/html/), [CSS](https://www.w3schools.com/css/) and [Unix Command Line](https://www.learnenough.com/command-line-tutorial/basics).
+As long as you're comfortable with all that, you're good.
 
 ### Our Goal
 
@@ -52,8 +36,8 @@ Django does more complex (and really fun) things, but if you're starting out tha
 
 ## Setting up our project
 
-> **NOTICE: Windows Users**.
-> By default Windows doesn't have a Unix command line, which is a prerequisite for this crash course. The October 2018 update for Windows 10 offers Linux subsystems, such as Ubuntu. Please install and set up a Linux subsystem to utilize the Unix command line.
+**NOTICE for Windows users:**
+By default Windows doesn't have a Unix command line, which is a prerequisite for this crash course. The October 2018 update for Windows 10 offers Linux subsystems, such as Ubuntu. Please install and set up a Linux subsystem to utilize the Unix command line.
 
 We're going to use your computer's terminal to set up our python environment and Django. Let's make the project in our computer's `Documents` folder, so enter these commands
 
@@ -91,14 +75,14 @@ python3 manage.py runserver
 
 To see the development server in action go to [127.0.0.1:8000](http://127.0.0.1:8000/) in your browser. A Django start up page should appear:
 
-![Django Development Server Default Page](https://cdn.ceiphr.io/articles/a-crash-course-in-django/django-cc-default.png)
+![Django Development Server Default Page](django-cc-default.png)
 
 ### The Database
 
 Next grab your favorite text editor or python IDE because we're going to delve into Django. We're going to start by creating a Django app where we will write all of our models for this project.
 
 ```bash
-$ python manage.py startapp blog
+python manage.py startapp blog
 ```
 
 In order for our core project to recognize this app we need to let it know our `blog` app exists by adding it to `INSTALLED_APPS` in `django_cc/settings.py` like so:
@@ -218,9 +202,9 @@ class Post(models.Model):
 
 Finish off our models with the following two commands that essentially tell Django that we've made some changes and that they should be applied to our database:
 
-```console
-$ python3 manage.py makemigrations
-$ python3 manage.py migrate
+```bash
+python3 manage.py makemigrations
+python3 manage.py migrate
 ```
 
 Congratulations! Our database is all set up for our posts. There is one issue though. We can't edit them right now. Let's get you set up with the Django admin panel so you make some posts.
@@ -241,7 +225,7 @@ admin.site.register(Post)
 
 Next we will create a superuser, so we can log into the admin panel. Type the following command and follow the prompts. You only need to fill out the username and passwords prompts.
 
-```console
+```bash
 $ python3 manage.py createsuperuser
 Username (leave blank to use 'ari'):
 Email address:
@@ -252,7 +236,7 @@ Superuser created successfully.
 
 Once completed head over to [127.0.0.1:8000/admin](http://127.0.0.1:8000/admin) and sign in with the credentials you just wrote. You should see this page:
 
-![Django Development Server Admin Panel](https://cdn.ceiphr.io/articles/a-crash-course-in-django/django-cc-admin.png)
+![Django Development Server Admin Panel](django-cc-admin.png)
 
 From here you can add posts to your Django project. We are officially done with our models. Next will design our view so Django can serve our posts.
 
@@ -367,7 +351,7 @@ Django templates utilize a DRY version of HTML called Django HTML. This is how w
 
 When we visit [127.0.0.1:8000](http://127.0.0.1:8000) there should be a list of all the posts we've added in the control panel:
 
-![Django Crash Course Post Feed](https://cdn.ceiphr.io/articles/a-crash-course-in-django/django-cc-feed-posts.png)
+![Django Crash Course Post Feed](django-cc-feed-posts.png)
 
 Now we have a website that displays what we add to our control panel in Bulma cards. Neat.
 

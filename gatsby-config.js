@@ -3,7 +3,7 @@ module.exports = {
     title: `Ceiphr`,
     author: {
       name: `Ari Birnbaum`,
-      summary: `who is a Computational Mathematics BS at RIT.`,
+      summary: `Bachelor of Computational Mathematics at RIT. Freelance Technical Writer at DigitalOcean.`,
     },
     description: `I'm Ari Birnbaum, an aspiring software engineer currently studying Computational Mathematics as a freshman at the Rochester Institute of Technology.`,
     siteUrl: `https://www.ceiphr.com`,
@@ -12,6 +12,8 @@ module.exports = {
     },
   },
   plugins: [
+    `gatsby-plugin-sitemap`,
+    `gatsby-plugin-sass`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -53,31 +55,42 @@ module.exports = {
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
-        //trackingId: `ADD YOUR TRACKING ID HERE`,
+        trackingId: `UA-158198449-1`,
       },
     },
     `gatsby-plugin-feed`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Gatsby Starter Blog`,
-        short_name: `GatsbyJS`,
+        name: `Ari Birnbaum (Ceiphr)`,
+        short_name: `Ceiphr`,
         start_url: `/`,
         background_color: `#ffffff`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `content/assets/gatsby-icon.png`,
-      },
+        icon: `content/assets/gatsby-icon.png`
+      }
     },
     `gatsby-plugin-react-helmet`,
-    {
-      resolve: `gatsby-plugin-typography`,
-      options: {
-        pathToConfigModule: `src/utils/typography`,
-      },
-    },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
   ],
 }
+
+const { createFilePath } = require(`gatsby-source-filesystem`)
+exports.onCreateNode = ({ node, actions, getNode }) => {
+  const { createNodeField } = actions
+  if (node.internal.type === `MarkdownRemark`) {
+    const value = createFilePath({ node, getNode })
+    createNodeField({
+      name: `slug`,
+      node,
+      value,
+    })
+  }
+}
+
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`,
+})
