@@ -1,4 +1,8 @@
-// Gatsby supports TypeScript natively!
+/**
+ * Index of the site. Offers the header graphic through lottie.
+ * Displays a feed of the most recent posts.
+ */
+
 import React from "react"
 import { PageProps, Link, graphql } from "gatsby"
 import Img from "gatsby-image"

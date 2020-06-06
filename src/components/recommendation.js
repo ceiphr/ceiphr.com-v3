@@ -1,3 +1,8 @@
+/**
+ * Recommendation component takes the data from the post
+ * parameter to create a basic recommendation card.
+ */
+
 import React from "react"
 import Img from "gatsby-image"
 import { Link } from "gatsby"

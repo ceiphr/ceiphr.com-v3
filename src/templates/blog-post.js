@@ -1,16 +1,33 @@
+/**
+ * blog-post is the template used for blog post markdown
+ * data found in content/blog.
+ */
+
 import React from "react"
 import { graphql } from "gatsby"
 import BackgroundImage from "gatsby-background-image"
 
 import { DiscussionEmbed } from "disqus-react"
-import { CarbonAds, Recommendation, SEO, Bio, Layout, Referral } from "../components"
+import {
+  CarbonAds,
+  Recommendation,
+  SEO,
+  Bio,
+  Layout,
+  Referral,
+} from "../components"
 
 const BlogPostTemplate = ({ data, location }) => {
-  const post = data.markdownRemark
+  // Site data from gatsby-config
   const siteTitle = data.site.siteMetadata.title
 
+  // Data for the article
+  const post = data.markdownRemark
   const title = post.frontmatter.title
   const slug = post.frontmatter.slug
+
+  // Uses gatsby-background-image for an opacity gradient
+  // then a lazy-loaded and optimized background image
   const featuredImgFluid = [
     `linear-gradient(
       rgba(128, 128, 128, 0.5), 
@@ -18,19 +35,25 @@ const BlogPostTemplate = ({ data, location }) => {
     )`,
     post.frontmatter.featuredImage.childImageSharp.fluid,
   ]
+
+  // Data for two article cards at the bottom of the template
+  const recommendedPosts = data.allMarkdownRemark.edges
+
+  // Config for Disqus using the GATSBY_DISQUS_NAME found in dotENV
   const disqusConfig = {
     shortname: process.env.GATSBY_DISQUS_NAME,
     config: { identifier: slug, title },
   }
-  const recommendedPosts = data.allMarkdownRemark.edges
 
   return (
     <Layout location={location} title={siteTitle}>
+      {/* SEO data */}
       <SEO
         title={post.frontmatter.title}
         description={post.frontmatter.description || post.excerpt}
       />
       <article className="content">
+        {/* Header background image and title */}
         <BackgroundImage
           Tag="section"
           className="hero is-medium"
@@ -47,6 +70,7 @@ const BlogPostTemplate = ({ data, location }) => {
         </BackgroundImage>
         <div className="container">
           <div className="post-columns">
+
             {/* Article body and license footer */}
             <section className="post-full-content">
               <Bio />
@@ -68,6 +92,7 @@ const BlogPostTemplate = ({ data, location }) => {
               </div>
               <br />
             </section>
+
             {/* Article sidebar advertisement and referral link */}
             <section className="post-sidebar">
               <div className="post-sidebar-widgets">
@@ -78,6 +103,7 @@ const BlogPostTemplate = ({ data, location }) => {
           </div>
         </div>
       </article>
+
       {/* Post blog-post recommendations and comment section */}
       <section className="container">
         <div className="post-recommendations">

@@ -1,3 +1,9 @@
+/**
+ * layout is the primary layout for all
+ * pages on this site. It provides the navigation bar
+ * and footer for each page.
+ */
+
 import React from "react"
 import { Link } from "gatsby"
 
@@ -7,9 +13,14 @@ const Layout = ({ location, title, children }) => {
   const rootPath = `${__PATH_PREFIX__}/`
   let header
 
+  // Display the navigation bar on pages that aren't the homepage
   if (location.pathname !== rootPath) {
     header = (
-      <nav className="navbar is-transparent" role="navigation" aria-label="main navigation">
+      <nav
+        className="navbar is-transparent"
+        role="navigation"
+        aria-label="main navigation"
+      >
         <div className="navbar-brand">
           <Link className="navbar-item" to={`/`}>
             {title}
@@ -24,10 +35,13 @@ const Layout = ({ location, title, children }) => {
       <header>{header}</header>
       <main className="site-main">{children}</main>{" "}
       <div className="section">
+        
         {/* The footer at the very bottom of the screen */}
         <footer className="footer">
           <div className="container">
             <div className="columns is-desktop">
+
+              {/* Left side of footer: social links and copyright notice */}
               <div className="column">
                 <span className="footer-links">
                   <a
@@ -56,6 +70,8 @@ const Layout = ({ location, title, children }) => {
                   Unless otherwise noted, all content © 2016-2020 Ari Birnbaum.
                 </p>
               </div>
+
+              {/* Right side of footer: privacy notice and OSS license */}
               <div className="column">
                 <span className="footer-links">
                   <a

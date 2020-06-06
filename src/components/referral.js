@@ -1,3 +1,8 @@
+/**
+ * referral component that provides a basic sidebar referral 
+ * item for the blog-post template.
+ */
+
 import React from "react"
 
 const Referral = () => {
@@ -9,6 +14,7 @@ const Referral = () => {
       rel="noopener"
     >
       <div className="referral__logo">
+        {/* The DigitalOcean SVG can be found in the root of static */}
         <img src={`/do.svg`} alt="DigitalOcean" />{" "}
       </div>
       <p>

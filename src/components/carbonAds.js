@@ -1,4 +1,10 @@
-// https://nehalist.io/adding-commento-to-react-apps-like-gatsby/
+/**
+ * carbonAds component that insersts the carbonAds 
+ * script on page load. This code is inspired by 
+ * Nehalist's commento implementation.
+ * 
+ * https://nehalist.io/adding-commento-to-react-apps-like-gatsby/
+ */
 
 import React, { useEffect } from "react"
 
