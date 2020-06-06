@@ -1,11 +1,20 @@
 // Styles used for formatting the general
 // post text and media
 
+.content-body img {
+    box-shadow: $card-shadow !important;
+    border-radius: 2px !important;
+}
+
 .post-full-content {
     overflow: hidden;
 
-    pre,
     code {
+        border-radius: 2px !important;
+        border-width: 0 !important;
+    }
+
+    pre {
         border-radius: $radius-large !important;
         border-width: 0 !important;
         background: $white-bis
@@ -29,11 +38,6 @@
     svg,
     video {
         vertical-align: middle;
-    }
-
-    img {
-        box-shadow: $card-shadow !important;
-        border-radius: 2px !important;
     }
 
     fieldset {

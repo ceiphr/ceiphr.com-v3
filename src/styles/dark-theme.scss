@@ -2,6 +2,10 @@
 // for dark theming
 
 @media (prefers-color-scheme: dark) {
+    hr {
+        border-top: 1px solid $dark !important;
+    }
+
     body,
     strong,
     p,
