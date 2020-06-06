@@ -202,7 +202,7 @@ class Post(models.Model):
 
 Finish off our models with the following two commands that essentially tell Django that we've made some changes and that they should be applied to our database:
 
-```console
+```bash
 python3 manage.py makemigrations
 python3 manage.py migrate
 ```
@@ -225,7 +225,7 @@ admin.site.register(Post)
 
 Next we will create a superuser, so we can log into the admin panel. Type the following command and follow the prompts. You only need to fill out the username and passwords prompts.
 
-```console
+```bash
 $ python3 manage.py createsuperuser
 Username (leave blank to use 'ari'):
 Email address:
