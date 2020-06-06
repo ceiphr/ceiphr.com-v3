@@ -1,13 +1,7 @@
 {
-  "redirects": [
-    {
-      "source": "/blog/(.*)",
-      "destination": "/$1",
-      "statusCode": 301
-    }
-  ],
   "routes": [
     { "handle": "filesystem" },
-    { "src": "/(.*)", "status": 404, "dest": "/src/pages/404.js" }
+    { "src": "/(.*)", "status": 404, "dest": "/src/pages/404.js" },
+    { "src": "/blog/(.*)", "status": 301, "dest": "/$1" }
   ]
 }
