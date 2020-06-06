@@ -4,7 +4,8 @@
 .post-full-content {
     overflow: hidden;
 
-    pre, code {
+    pre,
+    code {
         border-radius: $radius-large !important;
         border-width: 0 !important;
         background: $white-bis
@@ -32,6 +33,7 @@
 
     img {
         box-shadow: $card-shadow !important;
+        border-radius: 2px !important;
     }
 
     fieldset {
@@ -111,11 +113,6 @@
         margin: 0.8em 0 0.8em 1.5em;
         font-size: 0.9em;
         opacity: 0.8;
-    }
-
-    a {
-        color: $link;
-        text-decoration: none;
     }
 
     h1,

@@ -39,9 +39,24 @@ body {
 // Component styles used for generaly styling
 // generic components which are frequently used
 
+@media (max-width: 1024px) {
+    .container {
+        padding: 0 1.5rem 0 1.5rem;
+    }
+
+    .section {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+}
+
 .card {
     border-radius: $radius-large;
     transition-duration: 200ms;
+
+    .media-content {
+        overflow: hidden;
+    }
 
     .card-image__content {
         margin: 0 0 10px 0;
@@ -138,7 +153,7 @@ body {
 }
 
 // Theme Stylings
-@import "dark-theme";
+// @import "dark-theme";
 
 // Template Stylings
 @import "blog-post";
