@@ -80,6 +80,7 @@ module.exports = {
           }
         }
       `,
+      //TODO
         feeds: [
           {
             serialize: ({ query: { site, allMarkdownRemark } }) => {

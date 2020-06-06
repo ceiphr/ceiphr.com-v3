@@ -3,6 +3,6 @@
   "routes": [
     { "handle": "filesystem" },
     { "src": "/(.*)", "status": 404, "dest": "/404.html" },
-    { "src": "/blog/(.*)", "status": 301, "dest": "/$1" }
+    { "src": "/blog/(.*)", "status": 308, "headers": { "Location": "/$1" } }
   ]
 }
