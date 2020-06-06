@@ -1,7 +1,11 @@
 {
   "version": 2,
   "routes": [
-    { "src": "/blog/(<slug>[^/]*)", "dest": "/$slug" },
+    {
+      "src": "/blog/(.*)",
+      "status": 301,
+      "headers": { "Location": "/$1" }
+    },
     { "handle": "filesystem" },
     { "src": "/(.*)", "status": 404, "dest": "/404.html" }
   ]
