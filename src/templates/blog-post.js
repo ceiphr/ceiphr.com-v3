@@ -59,9 +59,13 @@ const BlogPostTemplate = ({ data, location }) => {
           className="hero is-medium"
           fluid={featuredImgFluid}
         >
-          <div className="hero-body"></div>
+          <div className="hero-body">
+          </div>
           <div className="hero-footer">
             <div className="container">
+              <p className="article-date subtitle">
+                {post.frontmatter.date}
+              </p>
               <h1 className="article-title title is-uppercase">
                 {post.frontmatter.title}
               </h1>
@@ -70,7 +74,6 @@ const BlogPostTemplate = ({ data, location }) => {
         </BackgroundImage>
         <div className="container">
           <div className="post-columns">
-
             {/* Article body and license footer */}
             <section className="post-full-content">
               <Bio />

@@ -37,12 +37,25 @@ article {
             animation: .65s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s slideUp;
             font-size: 6rem;
             line-height: .85;
-            transform: translateY(5px);
+            transform: translateY(6px);
         }
 
         @media (max-width: 680px) {
-            font-size: 2.9rem;
+            font-size: 2rem;
             transform: translateY(2px);
+        }
+    }
+
+    .article-date {
+        color: $white;
+
+        @media (min-width: 680px) {
+            font-size: 2rem;
+
+        }
+
+        @media (max-width: 680px) {
+            font-size: 1rem;
         }
     }
 
