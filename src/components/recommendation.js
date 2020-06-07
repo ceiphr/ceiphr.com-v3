@@ -7,6 +7,9 @@ import React from "react"
 import Img from "gatsby-image"
 import { Link } from "gatsby"
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faArrowRight } from "@fortawesome/free-solid-svg-icons"
+
 const Recommendation = ({ post }) => {
   const featuredImgFluid = post.frontmatter.featuredImage.childImageSharp.fluid
   const title = post.frontmatter.title || post.fields.slug
@@ -25,7 +28,17 @@ const Recommendation = ({ post }) => {
             </div>
           </div>
           <div className="content">
-            <p>{post.excerpt}</p>
+            <p
+              dangerouslySetInnerHTML={{
+                __html: post.frontmatter.description || post.excerpt,
+              }}
+            />
+            <button className="button is-primary">
+              <span>See Post</span>
+              <span className="icon is-small">
+                <FontAwesomeIcon icon={faArrowRight} className="fas fa-times" />
+              </span>
+            </button>
           </div>
         </div>
       </div>

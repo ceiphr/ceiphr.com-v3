@@ -8,6 +8,9 @@ import { PageProps, Link, graphql } from "gatsby"
 import Img from "gatsby-image"
 import type { FluidObject } from "gatsby-image"
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faArrowRight } from "@fortawesome/free-solid-svg-icons"
+
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
@@ -78,6 +81,12 @@ const BlogIndex = ({ data, location }: PageProps<Data>) => {
                           __html: node.frontmatter.description || node.excerpt,
                         }}
                       />
+                      <button className="button is-primary">
+                        <span>See Post</span>
+                        <span className="icon is-small">
+                          <FontAwesomeIcon icon={ faArrowRight } className="fas fa-times" />
+                        </span>
+                      </button>
                     </div>
                   </div>
                 </div>
@@ -112,7 +121,7 @@ export const pageQuery = graphql`
             description
             featuredImage {
               childImageSharp {
-                fluid(maxWidth: 480) {
+                fluid(maxWidth: 720) {
                   ...GatsbyImageSharpFluid_withWebp
                 }
               }

@@ -106,6 +106,10 @@ body {
 // Index styling used for formatting
 // the main feed based on media width
 
+.card-content .button {
+    margin-top: 1em;
+}
+
 .post-feed--index {
     transform: translateY(-6rem);
     margin-bottom: -6rem;
