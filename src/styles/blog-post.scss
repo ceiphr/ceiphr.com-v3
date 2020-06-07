@@ -154,8 +154,26 @@ article {
 // Commento tweaks for looking
 // similar to Bulma styles
 
+.commento-sort-policy-buttons,
+.commento-sort-policy-button-selected,
+.commento-login-box-container,
+.commento-email-button,
+.commento-email-button:hover,
+.commento-root a,
+.commento-mod-tools::before {
+    color: $primary;
+}
+
+.commento-avatar {
+    background: rgb(57, 106, 177) none repeat scroll 0% 0%; //change
+}
+
 .commento-root {
     margin-bottom: -4rem;
+
+    .commento-submit-button {
+        background: $primary;
+    }
 }
 
 .commento-logo-text {
