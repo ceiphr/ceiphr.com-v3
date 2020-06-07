@@ -6,6 +6,7 @@
 import React from "react"
 import { graphql } from "gatsby"
 import BackgroundImage from "gatsby-background-image"
+import { useMediaPredicate } from "react-media-hook"
 
 import { DiscussionEmbed } from "disqus-react"
 import {
@@ -17,6 +18,28 @@ import {
   Referral,
 } from "../components"
 
+
+function dimBackground( post, isDark ) {
+  // Uses gatsby-background-image for an opacity gradient
+  // then a lazy-loaded and optimized background image
+  if (isDark) {
+    return [
+      `linear-gradient(
+        rgba(255, 255, 255, 0.3), 
+        rgba(255, 255, 255, 0.25)
+      )`,
+      post.frontmatter.featuredImage.childImageSharp.fluid,
+    ]
+  } 
+  return [
+    `linear-gradient(
+      rgba(0, 0, 0, 0.3), 
+      rgba(0, 0, 0, 0.3)
+    )`,
+    post.frontmatter.featuredImage.childImageSharp.fluid,
+  ]
+}
+
 const BlogPostTemplate = ({ data, location }) => {
   // Site data from gatsby-config
   const siteTitle = data.site.siteMetadata.title
@@ -26,15 +49,8 @@ const BlogPostTemplate = ({ data, location }) => {
   const title = post.frontmatter.title
   const slug = post.frontmatter.slug
 
-  // Uses gatsby-background-image for an opacity gradient
-  // then a lazy-loaded and optimized background image
-  const featuredImgFluid = [
-    `linear-gradient(
-      rgba(128, 128, 128, 0.5), 
-      rgba(128, 128, 128, 0.5)
-    )`,
-    post.frontmatter.featuredImage.childImageSharp.fluid,
-  ]
+  const isDark = useMediaPredicate("(prefers-color-scheme: dark)");
+  const featuredImgFluid = dimBackground( post, isDark );
 
   // Data for two article cards at the bottom of the template
   const recommendedPosts = data.allMarkdownRemark.edges
@@ -59,13 +75,10 @@ const BlogPostTemplate = ({ data, location }) => {
           className="hero is-medium"
           fluid={featuredImgFluid}
         >
-          <div className="hero-body">
-          </div>
+          <div className="hero-body"></div>
           <div className="hero-footer">
             <div className="container">
-              <p className="article-date subtitle">
-                {post.frontmatter.date}
-              </p>
+              <p className="article-date subtitle">{post.frontmatter.date}</p>
               <h1 className="article-title title is-uppercase">
                 {post.frontmatter.title}
               </h1>

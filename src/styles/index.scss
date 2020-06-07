@@ -92,9 +92,27 @@ body {
     position: absolute !important;
 
     .navbar-brand {
+        .navbar-item {
+            padding: 0;
+
+            @media (min-width: 680px) {
+                img {
+                    max-height: 100%;
+                }
+            }
+        }
+
         position: inherit;
+
         left: 50vw;
         transform: translateX(-50%);
+
+        width: 64px;
+        height: 64px;
+
+        @media (min-width: 680px) {
+            margin-top: 1em;
+        }
     }
 
     &.is-transparent {
