@@ -150,3 +150,26 @@ article {
         border-top-right-radius: $radius-large;
     }
 }
+
+// Commento tweaks for looking
+// similar to Bulma styles
+
+.commento-root {
+    margin-bottom: -4rem;
+}
+
+.commento-logo-text {
+    display: none !important;
+}
+
+.commento-markdown-help {
+    pre {
+        padding: 0 0 !important;
+        border-radius: 2px;
+    }
+}
+
+#commento-textarea-container-root,
+.commento-root textarea {
+    border-radius: $radius-large !important;
+}

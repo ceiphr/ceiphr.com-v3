@@ -28,10 +28,10 @@ body {
     background-color: $white;
 }
 
-::selection {
-    text-shadow: none;
-    background: $primary;
-}
+// ::selection {
+//     text-shadow: none;
+//     background: $primary;
+// }
 
 // *:focus {
 //     outline: 2px solid $dark;
@@ -39,6 +39,25 @@ body {
 
 // Component styles used for generaly styling
 // generic components which are frequently used
+
+.hero-banner {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+
+    img {
+        width: 100%;
+        position: relative;
+        z-index: 1;
+    }
+
+    @media (max-width: 680px) {
+        & {
+            width: 100%;
+        }
+    }
+}
 
 @media (max-width: 1024px) {
     .container {

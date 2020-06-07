@@ -8,11 +8,13 @@ import { PageProps, Link, graphql } from "gatsby"
 import Img from "gatsby-image"
 import type { FluidObject } from "gatsby-image"
 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons"
+// import Lottie from 'react-lottie'
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+import animationData from "../../static/banner/data.json"
 
 type Data = {
   site: {
@@ -45,6 +47,14 @@ type Data = {
 const BlogIndex = ({ data, location }: PageProps<Data>) => {
   const siteTitle = data.site.siteMetadata.title
   const posts = data.allMarkdownRemark.edges
+  const lottieOptions = {
+    loop: true,
+    autoplay: true,
+    animationData: animationData,
+    rendererSettings: {
+        preserveAspectRatio: `xMidYMid slice`,
+    },
+}
 
   return (
     <Layout location={location} title={siteTitle}>
@@ -52,10 +62,12 @@ const BlogIndex = ({ data, location }: PageProps<Data>) => {
       <section className="hero hero-homepage is-halfheight is-primary">
         <div className="hero-body">
           <div className="container">
-            <h1 className="title is-uppercase">Ari Birnbaum</h1>
-            <h2 className="subtitle">Comp. Math at RIT</h2>
+            <div className="hero-banner">
+              <img src={`/gradient-logo.svg`} alt={siteTitle} />
+            </div>
           </div>
         </div>
+        {/* <Lottie options={lottieOptions} /> */}
       </section>
       <div className="container">
         <section className="post-feed post-feed--index">
@@ -84,7 +96,10 @@ const BlogIndex = ({ data, location }: PageProps<Data>) => {
                       <button className="button is-primary">
                         <span>See Post</span>
                         <span className="icon is-small">
-                          <FontAwesomeIcon icon={ faArrowRight } className="fas fa-times" />
+                          <FontAwesomeIcon
+                            icon={faArrowRight}
+                            className="fas fa-times"
+                          />
                         </span>
                       </button>
                     </div>

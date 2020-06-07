@@ -10,7 +10,14 @@
     strong,
     p,
     .card,
-    .title {
+    .title,
+    .commento-root *,
+    .commento-footer,
+    .commento-logo-container,
+    .commento-logo-text,
+    #commento-textarea-super-container-root b,
+    #commento-textarea-super-container-root a {
+
         color: $white !important;
     }
 
@@ -22,17 +29,39 @@
         }
     }
 
-    .article-title, .article-date {
+    .commento-email-button {
+        border-left: 0px !important;
+    }
+
+    .article-title,
+    .article-date {
         color: $scheme-invert-ter !important;
     }
 
+    .commento-email,
+    .commento-email *,
     html,
     body {
         background-color: $scheme-invert-ter !important;
     }
 
+    .commento-root .commento-card {
+        border-top: 1px solid $dark !important;
+    }
+
+    .commento-login-box-container,
+    .commento-login-box {
+        background-color: $black !important;
+    }
+
+    .commento-root .commento-card .commento-option-button {
+        background: $white !important;
+    }
+
     code,
-    .card {
+    .card,
+    .commento-textarea-container,
+    .commento-root textarea {
         background-color: $dark !important;
     }
 
