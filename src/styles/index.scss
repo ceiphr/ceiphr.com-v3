@@ -1,4 +1,7 @@
 @charset "utf-8";
+
+$primary: #ef486c;
+
 @import "../../node_modules/bulma/sass/utilities/_all.sass";
 @import url(https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital@0;1&family=IBM+Plex+Sans:ital,wght@0,100;0,400;0,700;1,100;1,400;1,700&display=swap);
 
@@ -39,6 +42,27 @@ body {
 
 // Component styles used for generaly styling
 // generic components which are frequently used
+
+.hero-background__wrapper {
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 50vh;
+}
+
+.hero-background {
+    position: absolute;
+    top: -5vh;
+    left: -5vw;
+    width: 110vw;
+    height: 60vh;
+    background-image: url(/banner.svg);
+    background-size: cover;
+    background-position: center; 
+    filter: url("#turbulence");
+}
 
 .hero-banner {
     display: block;

@@ -49,6 +49,7 @@ const BlogIndex = ({ data, location }: PageProps<Data>) => {
   return (
     <Layout location={location} title={siteTitle}>
       <SEO title="All posts" />
+
       <section className="hero hero-homepage is-halfheight is-primary">
         <div className="hero-body">
           <div className="container">
@@ -58,6 +59,44 @@ const BlogIndex = ({ data, location }: PageProps<Data>) => {
           </div>
         </div>
       </section>
+      <div className="hero-background__wrapper">
+        <div className="hero-background">
+          <svg>
+            <filter id="turbulence" x="0" y="0" width="100%" height="100%">
+              <feTurbulence
+                id="fluid"
+                numOctaves="0.1"
+                seed="1"
+                baseFrequency="0.001 0.001"
+                type="fractalNoise"
+              ></feTurbulence>
+              <feDisplacementMap
+                in2="turbulence"
+                in="SourceGraphic"
+                scale="200"
+                xChannelSelector="R"
+                yChannelSelector="G"
+              ></feDisplacementMap>
+              <animate
+                xlinkHref="#fluid"
+                attributeName="baseFrequency"
+                dur="60s"
+                values="0.001 0.001;0.004 0.006;0.001 0.003;0.005 0.003;0.003 0.004;0.001 0.001"
+                keySplines="
+                  .52 .02 .62 .99;
+                  .52 .02 .62 .99;
+                  .52 .02 .62 .99;
+                  .52 .02 .62 .99;
+                  .52 .02 .62 .99"
+                keyTimes="
+                  0;0.2;0.4;0.6;0.8;1"
+                calcMode="spline"
+                repeatCount="indefinite"
+              />
+            </filter>
+          </svg>
+        </div>
+      </div>
       <div className="container">
         <section className="post-feed post-feed--index">
           {posts.map(({ node }) => {
@@ -65,7 +104,7 @@ const BlogIndex = ({ data, location }: PageProps<Data>) => {
               node.frontmatter.featuredImage.childImageSharp.fluid
             const title = node.frontmatter.title || node.fields.slug
             return (
-              <Link to={node.fields.slug}>
+              <Link key={node.fields.slug} to={node.fields.slug}>
                 <div className="card">
                   <div className="card-image">
                     <Img
