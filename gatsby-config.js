@@ -66,13 +66,14 @@ module.exports = {
         short_name: `Ceiphr`,
         start_url: `/`,
         background_color: `#ffffff`,
-        theme_color: `#663399`,
+        theme_color: `#ef486c`,
         display: `minimal-ui`,
-        icon: `content/assets/gatsby-icon.png`
+        icon: `content/assets/favicon-white.png`
       }
     },
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-offline`,
+    
   ],
 }
 

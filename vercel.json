@@ -10,7 +10,7 @@
         "X-Frame-Options": "SAMEORIGIN",
         "X-Xss-Protection": "1; mode=block",
         "Feature-Policy": "accelerometer 'none'; camera 'none'; geolocation 'none'; gyroscope 'none'; magnetometer 'none'; microphone 'none'; payment 'none'; usb 'none'",
-        "Cache-Control": "max-age=31536000"
+        "Cache-Control": "s-maxage=1, stale-while-revalidate"
       },
       "continue": true
     },
@@ -28,6 +28,9 @@
     },
     {
       "src": "/rss",
+      "headers": {
+        "content-type": "application/rss+xml; charset=UTF-8"
+      },
       "dest": "/rss.xml"
     },
     {
@@ -38,6 +41,9 @@
     },
     {
       "src": "/sitemap",
+      "headers": {
+        "content-type": "application/xml; charset=UTF-8"
+      },
       "dest": "/sitemap.xml"
     },
     {
