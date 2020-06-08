@@ -3,7 +3,7 @@ module.exports = {
     title: `Ceiphr`,
     author: {
       name: `Ari Birnbaum`,
-      summary: `Bachelor of Computational Mathematics at RIT. Freelance Technical Writer at DigitalOcean.`,
+      summary: `Studying Computational Mathematics at RIT. Freelance Technical Writer at DigitalOcean.`,
     },
     description: `I'm Ari Birnbaum, an aspiring software engineer currently studying Computational Mathematics as a sophomore at the Rochester Institute of Technology.`,
     siteUrl: `https://www.ceiphr.com`,
@@ -69,7 +69,8 @@ module.exports = {
         theme_color: `#ef486c`,
         display: `minimal-ui`,
         icon: `content/assets/icon.png`,
-        include_favicon: false
+        include_favicon: false,
+        theme_color_in_head: false
       }
     },
     `gatsby-plugin-react-helmet`,
