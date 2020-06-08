@@ -128,8 +128,11 @@ body {
         .navbar-item {
             padding: 0;
 
-            @media (min-width: 680px) {
-                img {
+            img {
+                max-height: 3rem;
+
+                @media (min-width: 680px) {
+
                     max-height: 100%;
                 }
             }
