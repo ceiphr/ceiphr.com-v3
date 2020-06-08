@@ -154,8 +154,13 @@ article {
 // Commento tweaks for looking
 // similar to Bulma styles
 
+.commento-root-font * {
+    font-family: $body-family !important;
+}
+
 .commento-submit-button {
     background: $primary !important;
+    text-transform: none !important;
 }
 
 .commento-root a,
