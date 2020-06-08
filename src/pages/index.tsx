@@ -13,7 +13,6 @@ import { faArrowRight } from "@fortawesome/free-solid-svg-icons"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import animationData from "../../static/banner/data.json"
 
 type Data = {
   site: {
@@ -46,14 +45,6 @@ type Data = {
 const BlogIndex = ({ data, location }: PageProps<Data>) => {
   const siteTitle = data.site.siteMetadata.title
   const posts = data.allMarkdownRemark.edges
-  const lottieOptions = {
-    loop: true,
-    autoplay: true,
-    animationData: animationData,
-    rendererSettings: {
-      preserveAspectRatio: `xMidYMid slice`,
-    },
-  }
 
   return (
     <Layout location={location} title={siteTitle}>
