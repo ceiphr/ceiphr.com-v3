@@ -5,7 +5,7 @@ module.exports = {
       name: `Ari Birnbaum`,
       summary: `Bachelor of Computational Mathematics at RIT. Freelance Technical Writer at DigitalOcean.`,
     },
-    description: `I'm Ari Birnbaum, an aspiring software engineer currently studying Computational Mathematics as a freshman at the Rochester Institute of Technology.`,
+    description: `I'm Ari Birnbaum, an aspiring software engineer currently studying Computational Mathematics as a sophomore at the Rochester Institute of Technology.`,
     siteUrl: `https://www.ceiphr.com`,
     social: {
       twitter: `ceiphr`,
@@ -62,13 +62,14 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Ari Birnbaum (Ceiphr)`,
+        name: `Ceiphr`,
         short_name: `Ceiphr`,
         start_url: `/`,
         background_color: `#ffffff`,
         theme_color: `#ef486c`,
         display: `minimal-ui`,
-        icon: `content/assets/favicon-white.png`
+        icon: `content/assets/icon.png`,
+        include_favicon: false
       }
     },
     `gatsby-plugin-react-helmet`,

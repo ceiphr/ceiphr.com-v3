@@ -31,15 +31,6 @@ body {
     background-color: $white;
 }
 
-// ::selection {
-//     text-shadow: none;
-//     background: $primary;
-// }
-
-// *:focus {
-//     outline: 2px solid $dark;
-// }
-
 // Component styles used for generaly styling
 // generic components which are frequently used
 
@@ -58,9 +49,8 @@ body {
     left: -5vw;
     width: 110vw;
     height: 60vh;
-    background-image: url(/banner.svg);
     background-size: cover;
-    background-position: center; 
+    background-position: center;
     filter: url("#turbulence");
 }
 
@@ -172,8 +162,15 @@ body {
 }
 
 .post-feed--index {
-    transform: translateY(-6rem);
-    margin-bottom: -6rem;
+
+    @media (max-height: 680px) {
+        transform: translateY(2rem);
+    }
+
+    @media (min-height: 680px) {
+        transform: translateY(-6rem);
+        margin-bottom: -6rem;
+    }
 }
 
 .post-feed {

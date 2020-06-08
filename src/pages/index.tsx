@@ -7,6 +7,7 @@ import React from "react"
 import { PageProps, Link, graphql } from "gatsby"
 import Img from "gatsby-image"
 import type { FluidObject } from "gatsby-image"
+import BackgroundImage from "gatsby-background-image"
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons"
@@ -40,6 +41,11 @@ type Data = {
       }
     }[]
   }
+  file: {
+    childImageSharp: {
+      fluid: FluidObject
+    }
+  }
 }
 
 const BlogIndex = ({ data, location }: PageProps<Data>) => {
@@ -48,7 +54,7 @@ const BlogIndex = ({ data, location }: PageProps<Data>) => {
 
   return (
     <Layout location={location} title={siteTitle}>
-      <SEO title="All posts" />
+      <SEO title="Ari Birnbaum" />
 
       <section className="hero hero-homepage is-halfheight is-primary">
         <div className="hero-body">
@@ -60,7 +66,11 @@ const BlogIndex = ({ data, location }: PageProps<Data>) => {
         </div>
       </section>
       <div className="hero-background__wrapper">
-        <div className="hero-background">
+        <BackgroundImage
+          Tag="section"
+          className="hero-background"
+          fluid={data.file.childImageSharp.fluid}
+        >
           <svg>
             <filter id="turbulence" x="0" y="0" width="100%" height="100%">
               <feTurbulence
@@ -95,7 +105,7 @@ const BlogIndex = ({ data, location }: PageProps<Data>) => {
               />
             </filter>
           </svg>
-        </div>
+        </BackgroundImage>
       </div>
       <div className="container">
         <section className="post-feed post-feed--index">
@@ -170,6 +180,13 @@ export const pageQuery = graphql`
               }
             }
           }
+        }
+      }
+    }
+    file(relativePath: { eq: "banner.png" }) {
+      childImageSharp {
+        fluid(quality: 100, maxWidth: 1200) {
+          ...GatsbyImageSharpFluid_withWebp
         }
       }
     }
