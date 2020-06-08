@@ -73,14 +73,14 @@ const BlogIndex = ({ data, location }: PageProps<Data>) => {
               <feDisplacementMap
                 in2="turbulence"
                 in="SourceGraphic"
-                scale="200"
+                scale="155"
                 xChannelSelector="R"
                 yChannelSelector="G"
               ></feDisplacementMap>
               <animate
                 xlinkHref="#fluid"
                 attributeName="baseFrequency"
-                dur="60s"
+                dur="10s"
                 values="0.001 0.001;0.004 0.006;0.001 0.003;0.005 0.003;0.003 0.004;0.001 0.001"
                 keySplines="
                   .52 .02 .62 .99;
