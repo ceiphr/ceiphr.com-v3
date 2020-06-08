@@ -3,9 +3,9 @@ module.exports = {
     title: `Ceiphr`,
     author: {
       name: `Ari Birnbaum`,
-      summary: `Bachelor of Computational Mathematics at RIT. Freelance Technical Writer at DigitalOcean.`,
+      summary: `Studying Computational Mathematics at RIT. Freelance Technical Writer at DigitalOcean.`,
     },
-    description: `I'm Ari Birnbaum, an aspiring software engineer currently studying Computational Mathematics as a freshman at the Rochester Institute of Technology.`,
+    description: `I'm Ari Birnbaum, an aspiring software engineer currently studying Computational Mathematics as a sophomore at the Rochester Institute of Technology.`,
     siteUrl: `https://www.ceiphr.com`,
     social: {
       twitter: `ceiphr`,
@@ -62,19 +62,20 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Ari Birnbaum (Ceiphr)`,
+        name: `Ceiphr`,
         short_name: `Ceiphr`,
         start_url: `/`,
         background_color: `#ffffff`,
-        theme_color: `#663399`,
+        theme_color: `#ef486c`,
         display: `minimal-ui`,
-        icon: `content/assets/gatsby-icon.png`
+        icon: `content/assets/icon.png`,
+        include_favicon: false,
+        theme_color_in_head: false
       }
     },
     `gatsby-plugin-react-helmet`,
-    // this (optional) plugin enables Progressive Web App + Offline functionality
-    // To learn more, visit: https://gatsby.dev/offline
-    // `gatsby-plugin-offline`,
+    `gatsby-plugin-offline`,
+    
   ],
 }
 

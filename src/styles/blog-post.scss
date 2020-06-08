@@ -41,7 +41,7 @@ article {
         }
 
         @media (max-width: 680px) {
-            font-size: 2rem;
+            font-size: 2.5rem;
             transform: translateY(2px);
         }
     }
@@ -149,4 +149,50 @@ article {
         border-top-left-radius: $radius-large;
         border-top-right-radius: $radius-large;
     }
+}
+
+// Commento tweaks for looking
+// similar to Bulma styles
+
+#commento-error {
+    margin-bottom: 5em;
+}
+
+.commento-root-font * {
+    font-family: $body-family !important;
+}
+
+.commento-submit-button {
+    background: $primary !important;
+    text-transform: none !important;
+}
+
+.commento-root a,
+.commento-mod-tools::before {
+    color: $link !important;
+}
+
+.commento-avatar {
+    background: rgb(57, 106, 177) none repeat scroll 0% 0%; //change
+}
+
+.commento-root {
+    margin-bottom: -5rem;
+    margin-top: 2rem;
+}
+
+.commento-logo-text {
+    display: none !important;
+}
+
+.commento-markdown-help {
+    pre {
+        padding: 0 0 !important;
+        border-radius: 2px;
+    }
+}
+
+#commento-textarea-container-root,
+.commento-root textarea {
+    border-radius: $radius-large !important;
 }

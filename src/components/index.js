@@ -1,4 +1,5 @@
 export { default as CarbonAds } from './carbonAds'
+export { default as Commento } from './commento'
 export { default as Recommendation } from './recommendation'
 export { default as Bio } from './bio'
 export { default as Layout } from './layout'

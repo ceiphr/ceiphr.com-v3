@@ -18,7 +18,7 @@ const Referral = () => {
         <img src={`/do.svg`} alt="DigitalOcean" />{" "}
       </div>
       <p>
-        Host your Node API, Headless CMS, and more on
+        Host your Django API, Headless CMS, and more on
         DigitalOcean.
       </p>
     </a>

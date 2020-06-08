@@ -1,4 +1,7 @@
 @charset "utf-8";
+
+$primary: #ef486c;
+
 @import "../../node_modules/bulma/sass/utilities/_all.sass";
 @import url(https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital@0;1&family=IBM+Plex+Sans:ital,wght@0,100;0,400;0,700;1,100;1,400;1,700&display=swap);
 
@@ -28,17 +31,47 @@ body {
     background-color: $white;
 }
 
-::selection {
-    text-shadow: none;
-    background: $primary;
-}
-
-// *:focus {
-//     outline: 2px solid $dark;
-// }
-
 // Component styles used for generaly styling
 // generic components which are frequently used
+
+.hero-background__wrapper {
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 50vh;
+}
+
+.hero-background {
+    position: absolute;
+    top: -5vh;
+    left: -5vw;
+    width: 110vw;
+    height: 60vh;
+    background-size: cover;
+    background-position: center;
+    filter: url("#turbulence");
+}
+
+.hero-banner {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+
+    img {
+        width: 100%;
+        position: relative;
+        z-index: 1;
+    }
+
+    @media (max-width: 680px) {
+        & {
+            width: 100%;
+        }
+    }
+}
 
 @media (max-width: 1024px) {
     .container {
@@ -92,9 +125,30 @@ body {
     position: absolute !important;
 
     .navbar-brand {
+        .navbar-item {
+            padding: 0;
+
+            img {
+                max-height: 3rem;
+
+                @media (min-width: 680px) {
+
+                    max-height: 100%;
+                }
+            }
+        }
+
         position: inherit;
+
         left: 50vw;
         transform: translateX(-50%);
+
+        width: 64px;
+        height: 64px;
+
+        @media (min-width: 680px) {
+            margin-top: 1em;
+        }
     }
 
     &.is-transparent {
@@ -106,9 +160,20 @@ body {
 // Index styling used for formatting
 // the main feed based on media width
 
+.card-content .button {
+    margin-top: 1em;
+}
+
 .post-feed--index {
-    transform: translateY(-6rem);
-    margin-bottom: -6rem;
+
+    @media (max-height: 680px) {
+        transform: translateY(2rem);
+    }
+
+    @media (min-height: 680px) {
+        transform: translateY(-6rem);
+        margin-bottom: -6rem;
+    }
 }
 
 .post-feed {

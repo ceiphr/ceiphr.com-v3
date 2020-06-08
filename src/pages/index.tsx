@@ -7,6 +7,10 @@ import React from "react"
 import { PageProps, Link, graphql } from "gatsby"
 import Img from "gatsby-image"
 import type { FluidObject } from "gatsby-image"
+import BackgroundImage from "gatsby-background-image"
+
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faArrowRight } from "@fortawesome/free-solid-svg-icons"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
@@ -37,6 +41,11 @@ type Data = {
       }
     }[]
   }
+  file: {
+    childImageSharp: {
+      fluid: FluidObject
+    }
+  }
 }
 
 const BlogIndex = ({ data, location }: PageProps<Data>) => {
@@ -45,15 +54,59 @@ const BlogIndex = ({ data, location }: PageProps<Data>) => {
 
   return (
     <Layout location={location} title={siteTitle}>
-      <SEO title="All posts" />
+      <SEO title="Ari Birnbaum" />
+
       <section className="hero hero-homepage is-halfheight is-primary">
         <div className="hero-body">
           <div className="container">
-            <h1 className="title is-uppercase">Ari Birnbaum</h1>
-            <h2 className="subtitle">Comp. Math at RIT</h2>
+            <div className="hero-banner">
+              <img src={`/gradient-logo.svg`} alt={siteTitle} />
+            </div>
           </div>
         </div>
       </section>
+      <div className="hero-background__wrapper">
+        <BackgroundImage
+          Tag="section"
+          className="hero-background"
+          fluid={data.file.childImageSharp.fluid}
+        >
+          <svg>
+            <filter id="turbulence" x="0" y="0" width="100%" height="100%">
+              <feTurbulence
+                id="fluid"
+                numOctaves="0.1"
+                seed="1"
+                baseFrequency="0.001 0.001"
+                type="fractalNoise"
+              ></feTurbulence>
+              <feDisplacementMap
+                in2="turbulence"
+                in="SourceGraphic"
+                scale="155"
+                xChannelSelector="R"
+                yChannelSelector="G"
+              ></feDisplacementMap>
+              <animate
+                xlinkHref="#fluid"
+                attributeName="baseFrequency"
+                dur="60s"
+                values="0.001 0.001;0.004 0.006;0.001 0.003;0.005 0.003;0.003 0.004;0.001 0.001"
+                keySplines="
+                  .52 .02 .62 .99;
+                  .52 .02 .62 .99;
+                  .52 .02 .62 .99;
+                  .52 .02 .62 .99;
+                  .52 .02 .62 .99"
+                keyTimes="
+                  0;0.2;0.4;0.6;0.8;1"
+                calcMode="spline"
+                repeatCount="indefinite"
+              />
+            </filter>
+          </svg>
+        </BackgroundImage>
+      </div>
       <div className="container">
         <section className="post-feed post-feed--index">
           {posts.map(({ node }) => {
@@ -61,7 +114,7 @@ const BlogIndex = ({ data, location }: PageProps<Data>) => {
               node.frontmatter.featuredImage.childImageSharp.fluid
             const title = node.frontmatter.title || node.fields.slug
             return (
-              <Link to={node.fields.slug}>
+              <Link key={node.fields.slug} to={node.fields.slug}>
                 <div className="card">
                   <div className="card-image">
                     <Img
@@ -78,6 +131,15 @@ const BlogIndex = ({ data, location }: PageProps<Data>) => {
                           __html: node.frontmatter.description || node.excerpt,
                         }}
                       />
+                      <button className="button is-primary">
+                        <span>See Post</span>
+                        <span className="icon is-small">
+                          <FontAwesomeIcon
+                            icon={faArrowRight}
+                            className="fas fa-times"
+                          />
+                        </span>
+                      </button>
                     </div>
                   </div>
                 </div>
@@ -112,12 +174,19 @@ export const pageQuery = graphql`
             description
             featuredImage {
               childImageSharp {
-                fluid(quality: 70, maxWidth: 960) {
+                fluid(maxWidth: 720) {
                   ...GatsbyImageSharpFluid_withWebp
                 }
               }
             }
           }
+        }
+      }
+    }
+    file(relativePath: { eq: "banner.png" }) {
+      childImageSharp {
+        fluid(quality: 100, maxWidth: 1200) {
+          ...GatsbyImageSharpFluid_withWebp
         }
       }
     }

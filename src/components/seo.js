@@ -10,6 +10,8 @@ import PropTypes from "prop-types"
 import { Helmet } from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
 
+import { useMediaPredicate } from "react-media-hook"
+
 const SEO = ({ description, lang, meta, title }) => {
   const { site } = useStaticQuery(
     graphql`
@@ -28,6 +30,9 @@ const SEO = ({ description, lang, meta, title }) => {
   )
 
   const metaDescription = description || site.siteMetadata.description
+  const isDark = useMediaPredicate("(prefers-color-scheme: dark)")
+    ? "/favicon-white.png"
+    : "/favicon-black.png"
 
   return (
     <Helmet
@@ -70,7 +75,15 @@ const SEO = ({ description, lang, meta, title }) => {
           content: metaDescription,
         },
       ].concat(meta)}
-    />
+    >
+      <link
+        key={`gatsby-plugin-manifest-icon-link`}
+        rel="icon"
+        type="image/png"
+        href={isDark}
+        sizes="32x32"
+      />
+    </Helmet>
   )
 }
 

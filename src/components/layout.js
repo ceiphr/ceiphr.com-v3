@@ -6,12 +6,16 @@
 
 import React from "react"
 import { Link } from "gatsby"
+import { useMediaPredicate } from "react-media-hook";
 
 import "../styles/index.scss"
 
 const Layout = ({ location, title, children }) => {
   const rootPath = `${__PATH_PREFIX__}/`
   let header
+  
+  // TODO Get dark mark
+  const themeLogo = useMediaPredicate("(prefers-color-scheme: dark)") ? "/logo-black.svg" : "/logo-white.svg";
 
   // Display the navigation bar on pages that aren't the homepage
   if (location.pathname !== rootPath) {
@@ -23,7 +27,7 @@ const Layout = ({ location, title, children }) => {
       >
         <div className="navbar-brand">
           <Link className="navbar-item" to={`/`}>
-            {title}
+            <img src={themeLogo} alt={title} width="64" height="64"/>
           </Link>
         </div>
       </nav>
@@ -35,12 +39,10 @@ const Layout = ({ location, title, children }) => {
       <header>{header}</header>
       <main className="site-main">{children}</main>{" "}
       <div className="section">
-        
         {/* The footer at the very bottom of the screen */}
         <footer className="footer">
           <div className="container">
             <div className="columns is-desktop">
-
               {/* Left side of footer: social links and copyright notice */}
               <div className="column">
                 <span className="footer-links">
@@ -64,6 +66,13 @@ const Layout = ({ location, title, children }) => {
                     href="https://twitter.com/ceiphr/"
                   >
                     Twitter
+                  </a>
+                  <a
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    href="https://changelog.ceiphr.com/"
+                  >
+                    Changelog
                   </a>
                 </span>
                 <p>
