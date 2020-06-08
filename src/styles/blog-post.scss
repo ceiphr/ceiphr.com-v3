@@ -158,10 +158,14 @@ article {
 .commento-sort-policy-button-selected,
 .commento-login-box-container,
 .commento-email-button,
+.commento-submit-button,
 .commento-email-button:hover,
-.commento-root a,
 .commento-mod-tools::before {
-    color: $primary;
+    color: $primary !important;
+}
+
+.commento-root a {
+    color: $link !important;
 }
 
 .commento-avatar {
@@ -170,10 +174,6 @@ article {
 
 .commento-root {
     margin-bottom: -4rem;
-
-    .commento-submit-button {
-        background: $primary;
-    }
 }
 
 .commento-logo-text {

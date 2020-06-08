@@ -1,10 +1,6 @@
 // Styles for overriding the generic styles
 // used on carbon ads
 
-.carbon-ads-wrapper {
-    margin-top: 2em !important;
-}
-
 #carbonads {
     overflow: hidden;
     width: 100%;
@@ -15,6 +11,7 @@
         0 0px 0 1px rgba($scheme-invert, 0.02) !important;
     padding: 1em;
     transition-duration: 200ms;
+    font-size: 1em !important;
 
     .carbon-img img {
         border-radius: 2px !important;

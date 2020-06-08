@@ -10,7 +10,6 @@ import type { FluidObject } from "gatsby-image"
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons"
-// import Lottie from 'react-lottie'
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
@@ -52,9 +51,9 @@ const BlogIndex = ({ data, location }: PageProps<Data>) => {
     autoplay: true,
     animationData: animationData,
     rendererSettings: {
-        preserveAspectRatio: `xMidYMid slice`,
+      preserveAspectRatio: `xMidYMid slice`,
     },
-}
+  }
 
   return (
     <Layout location={location} title={siteTitle}>
@@ -67,7 +66,6 @@ const BlogIndex = ({ data, location }: PageProps<Data>) => {
             </div>
           </div>
         </div>
-        {/* <Lottie options={lottieOptions} /> */}
       </section>
       <div className="container">
         <section className="post-feed post-feed--index">
