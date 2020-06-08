@@ -158,7 +158,8 @@ article {
     background: $primary !important;
 }
 
-.commento-root a {
+.commento-root a,
+.commento-mod-tools::before {
     color: $link !important;
 }
 
@@ -167,7 +168,8 @@ article {
 }
 
 .commento-root {
-    margin-bottom: -4rem;
+    margin-bottom: -5rem;
+    margin-top: 2rem;
 }
 
 .commento-logo-text {
