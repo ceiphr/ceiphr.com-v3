@@ -2,6 +2,45 @@
   "version": 2,
   "routes": [
     {
+      "src": "/(.*)",
+      "headers": {
+        "Referrer-Policy": "no-referrer-when-downgrade",
+        "Strict-Transport-Security": "max-age=31536000",
+        "X-Content-Type-Options": "nosniff",
+        "X-Frame-Options": "SAMEORIGIN",
+        "X-Xss-Protection": "1; mode=block",
+        "Feature-Policy": "accelerometer 'none'; camera 'none'; geolocation 'none'; gyroscope 'none'; magnetometer 'none'; microphone 'none'; payment 'none'; usb 'none'",
+        "Cache-Control": "max-age=31536000"
+      },
+      "continue": true
+    },
+    {
+      "src": "/sw.js",
+      "headers": {
+        "Cache-Control": "no-cache"
+      }
+    },
+    {
+      "src": "/rss.xml",
+      "headers": {
+        "content-type": "application/rss+xml; charset=UTF-8"
+      }
+    },
+    {
+      "src": "/rss",
+      "dest": "/rss.xml"
+    },
+    {
+      "src": "/sitemap.xml",
+      "headers": {
+        "content-type": "application/xml; charset=UTF-8"
+      }
+    },
+    {
+      "src": "/sitemap",
+      "dest": "/sitemap.xml"
+    },
+    {
       "src": "/blog/(.*)",
       "status": 301,
       "headers": { "Location": "/$1" }

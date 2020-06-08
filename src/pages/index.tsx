@@ -80,7 +80,7 @@ const BlogIndex = ({ data, location }: PageProps<Data>) => {
               <animate
                 xlinkHref="#fluid"
                 attributeName="baseFrequency"
-                dur="10s"
+                dur="60s"
                 values="0.001 0.001;0.004 0.006;0.001 0.003;0.005 0.003;0.003 0.004;0.001 0.001"
                 keySplines="
                   .52 .02 .62 .99;
