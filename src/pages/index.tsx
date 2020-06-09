@@ -29,7 +29,7 @@ type Data = {
         excerpt: string
         frontmatter: {
           title: string
-          datePub: string
+          date: string
           description: string
           featuredImage: {
             childImageSharp: {
@@ -98,7 +98,7 @@ const BlogIndex = ({ data, location }: PageProps<Data>) => {
                   <div className="card-content">
                     <div className="content">
                       <p className="title is-4">{title}</p>
-                      <p className="subtitle is-6">{node.frontmatter.datePub}</p>
+                      <p className="subtitle is-6">{node.frontmatter.date}</p>
                       <p
                         dangerouslySetInnerHTML={{
                           __html: node.frontmatter.description || node.excerpt,
@@ -134,7 +134,7 @@ export const pageQuery = graphql`
         title
       }
     }
-    allMarkdownRemark(sort: { fields: [frontmatter___datePub], order: DESC }) {
+    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
       edges {
         node {
           excerpt
@@ -142,7 +142,7 @@ export const pageQuery = graphql`
             slug
           }
           frontmatter {
-            datePub(formatString: "MMMM DD, YYYY")
+            date(formatString: "MMMM DD, YYYY")
             title
             description
             featuredImage {

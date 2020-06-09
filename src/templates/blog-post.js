@@ -68,7 +68,7 @@ const BlogPostTemplate = ({ data, location }) => {
         image: [
           post.frontmatter.featuredImage.childImageSharp.fluid.src,
         ],
-        datePublished: post.frontmatter.datePub,
+        datelished: post.frontmatter.date,
         dateModified: post.frontmatter.dateMod,
         author: {
           "@type": "Person",
@@ -105,7 +105,7 @@ const BlogPostTemplate = ({ data, location }) => {
           <div className="hero-body"></div>
           <div className="hero-footer">
             <div className="container">
-              <p className="article-date subtitle">{post.frontmatter.datePub}</p>
+              <p className="article-date subtitle">{post.frontmatter.date}</p>
               <h1 className="article-title title is-uppercase">
                 {post.frontmatter.title}
               </h1>
@@ -181,7 +181,7 @@ export const pageQuery = graphql`
       }
       frontmatter {
         title
-        datePub(formatString: "MMMM DD, YYYY")
+        date(formatString: "MMMM DD, YYYY")
         dateMod(formatString: "MMMM DD, YYYY")
         description
         featuredImage {
@@ -195,7 +195,7 @@ export const pageQuery = graphql`
       }
     }
     allMarkdownRemark(
-      sort: { fields: [frontmatter___datePub], order: DESC }
+      sort: { fields: [frontmatter___date], order: DESC }
       limit: 2
       filter: { fields: { slug: { ne: $slug } } }
     ) {
@@ -206,7 +206,7 @@ export const pageQuery = graphql`
             slug
           }
           frontmatter {
-            datePub(formatString: "MMMM DD, YYYY")
+            date(formatString: "MMMM DD, YYYY")
             title
             description
             featuredImage {

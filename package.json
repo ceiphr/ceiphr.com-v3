@@ -1,11 +1,11 @@
 {
-  "name": "gatsby-starter-blog",
+  "name": "gatsby-ceiphr",
   "private": true,
-  "description": "A starter for a blog powered by Gatsby and Markdown",
+  "description": "A pure Gatsby.js blog hosted on Vercel.",
   "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": "Ari Birnbaum <ari@ceiphr.com>",
   "bugs": {
-    "url": "https://github.com/gatsbyjs/gatsby/issues"
+    "url": "https://github.com/ceiphr/gatsby-ceiphr/issues"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.28",
@@ -46,15 +46,16 @@
   "devDependencies": {
     "prettier": "2.0.5"
   },
-  "homepage": "https://github.com/gatsbyjs/gatsby-starter-blog#readme",
+  "homepage": "https://github.com/ceiphr/gatsby-ceiphr",
   "keywords": [
-    "gatsby"
+    "gatsby",
+    "ceiphr"
   ],
-  "license": "MIT",
+  "license": "GPL v3.0",
   "main": "n/a",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/gatsbyjs/gatsby-starter-blog.git"
+    "url": "git+https://github.com/ceiphr/gatsby-ceiphr.git"
   },
   "scripts": {
     "build": "gatsby build",
