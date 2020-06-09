@@ -24,7 +24,7 @@ const Recommendation = ({ post }) => {
           <div className="media">
             <div className="media-content">
               <p className="title is-4">{title}</p>
-              <p className="subtitle is-6">{post.frontmatter.date}</p>
+              <p className="subtitle is-6">{post.frontmatter.datePub}</p>
             </div>
           </div>
           <div className="content">

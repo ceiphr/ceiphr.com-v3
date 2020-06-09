@@ -8,6 +8,9 @@ import { PageProps, Link, graphql } from "gatsby"
 import Img from "gatsby-image"
 import type { FluidObject } from "gatsby-image"
 
+import { Person } from "schema-dts"
+import { JsonLd } from "react-schemaorg"
+
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons"
 
@@ -26,7 +29,7 @@ type Data = {
         excerpt: string
         frontmatter: {
           title: string
-          date: string
+          datePub: string
           description: string
           featuredImage: {
             childImageSharp: {
@@ -46,9 +49,22 @@ const BlogIndex = ({ data, location }: PageProps<Data>) => {
   const siteTitle = data.site.siteMetadata.title
   const posts = data.allMarkdownRemark.edges
 
+  const schema = (
+    <JsonLd<Person>
+      item={{
+        "@context": "https://schema.org",
+        "@type": "Person",
+        name: "Ari Birnbaum",
+        alternateName: "Ceiphr",
+        url: "https://www.ceiphr.com",
+      }}
+    />
+  )
+
   return (
     <Layout location={location} title={siteTitle}>
       <SEO title="Ari Birnbaum" />
+      {schema}
 
       <section className="hero hero-homepage is-halfheight is-primary">
         <div className="hero-body">
@@ -82,7 +98,7 @@ const BlogIndex = ({ data, location }: PageProps<Data>) => {
                   <div className="card-content">
                     <div className="content">
                       <p className="title is-4">{title}</p>
-                      <p className="subtitle is-6">{node.frontmatter.date}</p>
+                      <p className="subtitle is-6">{node.frontmatter.datePub}</p>
                       <p
                         dangerouslySetInnerHTML={{
                           __html: node.frontmatter.description || node.excerpt,
@@ -118,7 +134,7 @@ export const pageQuery = graphql`
         title
       }
     }
-    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
+    allMarkdownRemark(sort: { fields: [frontmatter___datePub], order: DESC }) {
       edges {
         node {
           excerpt
@@ -126,7 +142,7 @@ export const pageQuery = graphql`
             slug
           }
           frontmatter {
-            date(formatString: "MMMM DD, YYYY")
+            datePub(formatString: "MMMM DD, YYYY")
             title
             description
             featuredImage {

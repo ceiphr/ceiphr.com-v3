@@ -7,6 +7,8 @@ import React from "react"
 import { graphql } from "gatsby"
 import BackgroundImage from "gatsby-background-image"
 
+import { JsonLd } from "react-schemaorg"
+
 import { useMediaPredicate } from "react-media-hook"
 
 import {
@@ -53,13 +55,46 @@ const BlogPostTemplate = ({ data, location }) => {
   // Data for two article cards at the bottom of the template
   const recommendedPosts = data.allMarkdownRemark.edges
 
+  const schema = (
+    <JsonLd
+      item={{
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        mainEntityOfPage: {
+          "@type": "WebPage",
+          "@id": post.fields.slug,
+        },
+        headline: post.frontmatter.title,
+        image: [
+          post.frontmatter.featuredImage.childImageSharp.fluid.src,
+        ],
+        datePublished: post.frontmatter.datePub,
+        dateModified: post.frontmatter.dateMod,
+        author: {
+          "@type": "Person",
+          name: "Ari Birnbaum",
+        },
+        publisher: {
+          "@type": "Organization",
+          name: "Ari Birnbaum (Ceiphr)",
+          logo: {
+            "@type": "ImageObject",
+            url: "/icon.png",
+          },
+        },
+      }}
+    />
+  )
+
   return (
     <Layout location={location} title={siteTitle}>
       {/* SEO data */}
       <SEO
         title={post.frontmatter.title}
         description={post.frontmatter.description || post.excerpt}
+        image={post.frontmatter.featuredImage.childImageSharp.fluid.src}
       />
+      {schema}
       <article className="content">
         {/* Header background image and title */}
         <BackgroundImage
@@ -70,7 +105,7 @@ const BlogPostTemplate = ({ data, location }) => {
           <div className="hero-body"></div>
           <div className="hero-footer">
             <div className="container">
-              <p className="article-date subtitle">{post.frontmatter.date}</p>
+              <p className="article-date subtitle">{post.frontmatter.datePub}</p>
               <h1 className="article-title title is-uppercase">
                 {post.frontmatter.title}
               </h1>
@@ -105,7 +140,10 @@ const BlogPostTemplate = ({ data, location }) => {
             <section className="post-sidebar">
               <div className="post-sidebar-widgets">
                 <Referral />
-                <CarbonAds customClass="carbonads__wrapper" carbonUrl="https://cdn.carbonads.com/carbon.js?serve=CK7I62QM&placement=ceiphrcom" />
+                <CarbonAds
+                  customClass="carbonads__wrapper"
+                  carbonUrl="https://cdn.carbonads.com/carbon.js?serve=CK7I62QM&placement=ceiphrcom"
+                />
               </div>
             </section>
           </div>
@@ -138,21 +176,26 @@ export const pageQuery = graphql`
       id
       excerpt(pruneLength: 160)
       html
+      fields {
+        slug
+      }
       frontmatter {
         title
-        date(formatString: "MMMM DD, YYYY")
+        datePub(formatString: "MMMM DD, YYYY")
+        dateMod(formatString: "MMMM DD, YYYY")
         description
         featuredImage {
           childImageSharp {
             fluid(quality: 100, maxWidth: 960) {
               ...GatsbyImageSharpFluid_withWebp
+              src
             }
           }
         }
       }
     }
     allMarkdownRemark(
-      sort: { fields: [frontmatter___date], order: DESC }
+      sort: { fields: [frontmatter___datePub], order: DESC }
       limit: 2
       filter: { fields: { slug: { ne: $slug } } }
     ) {
@@ -163,7 +206,7 @@ export const pageQuery = graphql`
             slug
           }
           frontmatter {
-            date(formatString: "MMMM DD, YYYY")
+            datePub(formatString: "MMMM DD, YYYY")
             title
             description
             featuredImage {

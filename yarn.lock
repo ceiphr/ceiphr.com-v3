@@ -12939,6 +12939,11 @@ react-remove-scroll@^2.3.0:
     use-callback-ref "^1.2.3"
     use-sidecar "^1.0.1"
 
+react-schemaorg@^1.0.2:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/react-schemaorg/-/react-schemaorg-1.0.2.tgz#3ae275f8033084441ba48809e0f0d73590e7a6ac"
+  integrity sha512-V3+7QNOsKW5I8eaTxfpaFMVCnODcv42mg6t9n+R2Sc10nzaHqmSlIIMv5HgJ7mRw4UionHnHRL4z7Vs0YQmwlg==
+
 react-side-effect@^1.1.0:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/react-side-effect/-/react-side-effect-1.2.0.tgz#0e940c78faba0c73b9b0eba9cd3dda8dfb7e7dae"
@@ -13713,6 +13718,11 @@ scheduler@^0.19.1:
   dependencies:
     loose-envify "^1.1.0"
     object-assign "^4.1.1"
+
+schema-dts@^0.6.0:
+  version "0.6.0"
+  resolved "https://registry.yarnpkg.com/schema-dts/-/schema-dts-0.6.0.tgz#1700eadcc384d39341e0f90ad15d708504124166"
+  integrity sha512-mYfPlwuIssnlBkqcwalddhJp23grXIlpI9sDBQuTzM46pftdzXGhbMMzwoszuWZHsH5Zki+LVDeMKjTPRWiAlw==
 
 schema-utils@^0.4.5:
   version "0.4.7"

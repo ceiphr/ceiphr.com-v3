@@ -1,6 +1,7 @@
 ---
 title: Ceiphr v0.2.0
-date: "2019-06-04T22:40:32.169Z"
+datePub: "2019-06-04T22:40:32.169Z"
+dateMod: "2019-06-04T22:40:32.169Z"
 featuredImage: ceiphr.png
 description: This site has been completely revamped for improved performance with more dynamic content.
 ---

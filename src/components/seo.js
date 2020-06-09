@@ -12,7 +12,7 @@ import { useStaticQuery, graphql } from "gatsby"
 
 import { useMediaPredicate } from "react-media-hook"
 
-const SEO = ({ description, lang, meta, title }) => {
+const SEO = ({ description, lang, meta, title, image, schema }) => {
   const { site } = useStaticQuery(
     graphql`
       query {
@@ -20,6 +20,7 @@ const SEO = ({ description, lang, meta, title }) => {
           siteMetadata {
             title
             description
+            siteUrl
             social {
               twitter
             }
@@ -30,6 +31,7 @@ const SEO = ({ description, lang, meta, title }) => {
   )
 
   const metaDescription = description || site.siteMetadata.description
+  const metaImage = "https://www.ceiphr.com" + (image || "/banner.jpeg")
   const isDark = useMediaPredicate("(prefers-color-scheme: dark)")
     ? "/favicon-white.png"
     : "/favicon-black.png"
@@ -47,6 +49,10 @@ const SEO = ({ description, lang, meta, title }) => {
           content: metaDescription,
         },
         {
+          property: `image`,
+          content: metaImage,
+        },
+        {
           property: `og:title`,
           content: title,
         },
@@ -55,12 +61,20 @@ const SEO = ({ description, lang, meta, title }) => {
           content: metaDescription,
         },
         {
+          property: `og:image`,
+          content: metaImage,
+        },
+        {
           property: `og:type`,
           content: `website`,
         },
         {
           name: `twitter:card`,
           content: `summary`,
+        },
+        {
+          name: `twitter:image`,
+          content: metaImage,
         },
         {
           name: `twitter:creator`,
@@ -91,6 +105,7 @@ SEO.defaultProps = {
   lang: `en`,
   meta: [],
   description: ``,
+  image: ``,
 }
 
 SEO.propTypes = {
@@ -98,6 +113,7 @@ SEO.propTypes = {
   lang: PropTypes.string,
   meta: PropTypes.arrayOf(PropTypes.object),
   title: PropTypes.string.isRequired,
+  image: PropTypes.string,
 }
 
 export default SEO

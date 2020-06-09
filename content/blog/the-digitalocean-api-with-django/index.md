@@ -1,7 +1,8 @@
 ---
 title: The DigitalOcean API with Django
+datePub: "2019-12-20T23:46:37.121Z"
+dateMod: "2019-12-20T23:46:37.121Z"
 featuredImage: digitalocean.jpeg
-date: "2019-12-20T23:46:37.121Z"
 ---
 
 ## Introduction

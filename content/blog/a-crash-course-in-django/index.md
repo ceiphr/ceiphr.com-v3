@@ -1,6 +1,7 @@
 ---
 title: A Crash Course in Django
-date: "2019-06-28T22:12:03.284Z"
+datePub: "2019-06-28T22:12:03.284Z"
+dateMod: "2019-06-28T22:12:03.284Z"
 featuredImage: fabian-grohs-unsplash.jpg
 description: "This crash course is a quick way to get started making a basic Django website without going in-depth about the underlying concepts."
 ---
