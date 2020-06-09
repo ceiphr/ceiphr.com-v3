@@ -43,6 +43,11 @@ type Data = {
       }
     }[]
   }
+  banner: {
+    childImageSharp: {
+      fluid: FluidObject
+    }
+  }
 }
 
 const BlogIndex = ({ data, location }: PageProps<Data>) => {
@@ -78,20 +83,18 @@ const BlogIndex = ({ data, location }: PageProps<Data>) => {
       <div className="hero-background__wrapper">
         <video
           className="hero-background"
-          poster={`/banner.png`}
+          poster={data.banner.childImageSharp.fluid.srcWebp}
           autoPlay
           loop
           muted
         >
-          <source
-            src={`/banner.webm`}
-            type="video/webm"
+          <source src={`/banner.webm`} type="video/webm" />
+          <img
+            src={data.banner.childImageSharp.fluid.srcWebp}
           />
-          {/* <source
-            src={`/banner.mp4`}
-            type="video/mp4; codecs='avc1.42E01E, mp4a.40.2'"
-          /> */}
-          <img src={`/banner.png`} title="Your browser does not support the <video> tag" />
+          <img
+            src={data.banner.childImageSharp.fluid.src}
+          />
         </video>
       </div>
       <div className="container">
@@ -167,6 +170,14 @@ export const pageQuery = graphql`
               }
             }
           }
+        }
+      }
+    }
+    banner: file(relativePath: { eq: "banner.png" }) {
+      childImageSharp {
+        fluid(maxWidth: 960) {
+          src
+          srcWebp
         }
       }
     }
