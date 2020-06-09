@@ -1,0 +1,20 @@
+// Mobile version of the sidebar
+
+.referral a {
+    color: $dark;
+}
+
+@media (max-width: 680px) {
+    .referral a {
+        display: flex;
+        .referral__logo {
+            margin-right: 1em;
+
+            img {
+                min-width: 130px;
+                margin-top: -0.5rem;
+                margin-bottom: -0.5rem;
+            }
+        }
+    }
+}

@@ -10,7 +10,9 @@ import PropTypes from "prop-types"
 import { Helmet } from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
 
-const SEO = ({ description, lang, meta, title }) => {
+import { useMediaPredicate } from "react-media-hook"
+
+const SEO = ({ description, lang, meta, title, image }) => {
   const { site } = useStaticQuery(
     graphql`
       query {
@@ -18,6 +20,7 @@ const SEO = ({ description, lang, meta, title }) => {
           siteMetadata {
             title
             description
+            siteUrl
             social {
               twitter
             }
@@ -28,6 +31,10 @@ const SEO = ({ description, lang, meta, title }) => {
   )
 
   const metaDescription = description || site.siteMetadata.description
+  const metaImage = "https://www.ceiphr.com" + (image || "/banner.jpeg")
+  const isDark = useMediaPredicate("(prefers-color-scheme: dark)")
+    ? "/favicon-white.png"
+    : "/favicon-black.png"
 
   return (
     <Helmet
@@ -42,6 +49,10 @@ const SEO = ({ description, lang, meta, title }) => {
           content: metaDescription,
         },
         {
+          property: `image`,
+          content: metaImage,
+        },
+        {
           property: `og:title`,
           content: title,
         },
@@ -50,12 +61,20 @@ const SEO = ({ description, lang, meta, title }) => {
           content: metaDescription,
         },
         {
+          property: `og:image`,
+          content: metaImage,
+        },
+        {
           property: `og:type`,
           content: `website`,
         },
         {
           name: `twitter:card`,
           content: `summary`,
+        },
+        {
+          name: `twitter:image`,
+          content: metaImage,
         },
         {
           name: `twitter:creator`,
@@ -70,7 +89,15 @@ const SEO = ({ description, lang, meta, title }) => {
           content: metaDescription,
         },
       ].concat(meta)}
-    />
+    >
+      <link
+        key={`gatsby-plugin-manifest-icon-link`}
+        rel="icon"
+        type="image/png"
+        href={isDark}
+        sizes="32x32"
+      />
+    </Helmet>
   )
 }
 
@@ -78,6 +105,7 @@ SEO.defaultProps = {
   lang: `en`,
   meta: [],
   description: ``,
+  image: ``,
 }
 
 SEO.propTypes = {
@@ -85,6 +113,7 @@ SEO.propTypes = {
   lang: PropTypes.string,
   meta: PropTypes.arrayOf(PropTypes.object),
   title: PropTypes.string.isRequired,
+  image: PropTypes.string,
 }
 
 export default SEO

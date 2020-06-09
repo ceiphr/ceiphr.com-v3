@@ -1,0 +1,247 @@
+@charset "utf-8";
+
+$primary: #ef486c;
+
+@import "../../node_modules/bulma/sass/utilities/_all.sass";
+@import url(https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital@0;1&family=IBM+Plex+Sans:ital,wght@0,100;0,400;0,700;1,100;1,400;1,700&display=swap);
+
+// Update some of Bulma's component variables
+
+$body-family: "IBM Plex Sans",
+sans-serif;
+
+$family-code: "IBM Plex Mono",
+monospace;
+
+$radius-large: 8px;
+
+$widescreen-enabled: false;
+$fullhd-enabled: false;
+$easing: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+
+$card-background-color: $white-bis;
+$card-shadow: 0 0.2em 0.5em -0.125em rgba($scheme-invert, 0.1),
+0 0px 0 1px rgba($scheme-invert, 0.02);
+
+$input-border-color: transparent;
+$input-shadow: none;
+
+html,
+body {
+    background-color: $white;
+}
+
+// Component styles used for generaly styling
+// generic components which are frequently used
+
+.hero-background__wrapper {
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 50vh;
+
+    @media (max-height: 680px) {
+        height: 70vh;
+    }
+}
+
+video {
+    position: absolute;
+
+    @media (min-width: 680px) {
+        top: 50%;
+        left: 50%;    
+        transform: translate(-50%, -50%);
+    }
+    @media (max-width: 680px) {
+        top: 0;
+        left: 25%;    
+        transform: translate(-40%, -25%);
+    }
+
+    min-width: 100%;
+    min-height: 100%;
+    max-width: none !important;
+    width: auto;
+    height: auto;
+}
+
+.hero-banner {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+
+    img {
+        width: 100%;
+        position: relative;
+        z-index: 1;
+    }
+
+    @media (max-width: 680px) {
+        & {
+            width: 100%;
+        }
+    }
+}
+
+@media (max-width: 1024px) {
+    .container {
+        padding: 0 1.5rem 0 1.5rem;
+    }
+
+    .section {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+}
+
+.card {
+    border-radius: $radius-large;
+    transition-duration: 200ms;
+
+    .media-content {
+        overflow: hidden;
+    }
+
+    .card-image__content {
+        margin: 0 0 10px 0;
+        width: auto;
+        height: 200px;
+        background: no-repeat center center;
+        background-size: cover;
+    }
+
+    &:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 0.5em 1em -0.125em rgba($scheme-invert, 0.1),
+            0 0px 0 1px rgba($scheme-invert, 0.02);
+    }
+}
+
+.footer-links a {
+    &:after {
+        color: $black;
+        content: " \00b7 ";
+    }
+
+    &:last-child:after {
+        content: none;
+    }
+}
+
+// Navigation styles for home page, templates
+// and for handling mobile nav visibility
+
+.navbar {
+    position: absolute !important;
+
+    .navbar-brand {
+        .navbar-item {
+            padding: 0;
+
+            img {
+                max-height: 3rem;
+
+                @media (min-width: 680px) {
+
+                    max-height: 100%;
+                }
+            }
+        }
+
+        position: inherit;
+
+        left: 50vw;
+        transform: translateX(-50%);
+
+        width: 64px;
+        height: 64px;
+
+        @media (min-width: 680px) {
+            margin-top: 1em;
+        }
+    }
+
+    &.is-transparent {
+        background-color: transparent;
+        background-image: none;
+    }
+}
+
+// Index styling used for formatting
+// the main feed based on media width
+
+.card-content .button {
+    margin-top: 1em;
+}
+
+.post-feed--index {
+    @media (min-height: 680px) {
+        transform: translateY(-5rem);
+        margin-bottom: -5rem;
+    }
+}
+
+.post-feed {
+    display: grid;
+    justify-content: space-between;
+    grid-gap: 2em;
+    grid-template-columns: 1fr;
+
+    @media (min-width: 980px) {
+        .card {
+            height: 14rem;
+        }
+
+        .card-image {
+            float: right;
+            width: 40%;
+
+            .card-image__content {
+                border-top-right-radius: $radius-large;
+                border-bottom-right-radius: $radius-large;
+
+                height: 14rem;
+                margin: 0;
+                object-fit: cover;
+                position: relative;
+            }
+        }
+
+        .card-content {
+            float: left;
+            width: 60%;
+        }
+    }
+
+    @media (max-width: 980px) {
+        .card {
+            .card-image__content {
+                border-top-left-radius: $radius-large;
+                border-top-right-radius: $radius-large;
+            }
+        }
+    }
+}
+
+// Theme Stylings
+@import "dark-theme";
+
+// Template Stylings
+@import "blog-post";
+
+// Bulma styles
+@import "../../node_modules/bulma/sass/base/_all.sass";
+@import "../../node_modules/bulma/sass/elements/button.sass";
+@import "../../node_modules/bulma/sass/elements/container.sass";
+@import "../../node_modules/bulma/sass/elements/title.sass";
+@import "../../node_modules/bulma/sass/elements/image.sass";
+@import "../../node_modules/bulma/sass/components/navbar.sass";
+@import "../../node_modules/bulma/sass/components/card.sass";
+@import "../../node_modules/bulma/sass/components/media.sass";
+@import "../../node_modules/bulma/sass/grid/_all.sass";
+@import "../../node_modules/bulma/sass/layout/hero.sass";
+@import "../../node_modules/bulma/sass/layout/section.sass";

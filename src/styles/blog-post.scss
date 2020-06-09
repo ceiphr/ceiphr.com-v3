@@ -1,0 +1,198 @@
+@import "markdown";
+@import "syntax-highlighting";
+@import "carbonads";
+@import "referral";
+
+@keyframes slideUp {
+    0% {
+        transform: translateY(125%);
+    }
+
+    100% {
+        transform: translateY(6px);
+    }
+}
+
+// Post styling used for formatting
+// images, the body and sidebar content
+
+article {
+    .bio {
+        margin-top: 2em;
+
+        @media (min-width: 680px) {
+            margin-top: 3.2em;
+        }
+
+        img {
+            border-radius: 100%;
+        }
+    }
+
+    .article-title {
+        color: $white;
+        line-height: .85;
+
+        @media (min-width: 680px) {
+            animation: .65s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s slideUp;
+            font-size: 6rem;
+            line-height: .85;
+            transform: translateY(6px);
+        }
+
+        @media (max-width: 680px) {
+            font-size: 2.5rem;
+            transform: translateY(2px);
+        }
+    }
+
+    .article-date {
+        color: $white;
+
+        @media (min-width: 680px) {
+            font-size: 2rem;
+
+        }
+
+        @media (max-width: 680px) {
+            font-size: 1rem;
+        }
+    }
+
+    .hero-body {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .post-columns {
+        display: grid;
+        justify-content: space-between;
+        grid-gap: 2em;
+        grid-template-columns: 4fr;
+
+        .post-full-content {
+            grid-column: 1 / span 3;
+        }
+
+        .post-sidebar {
+            grid-column: 4 / span 1;
+        }
+
+        .post-sidebar {
+            max-width: 158px;
+            font-size: 0.8em;
+            margin-top: 4em;
+            margin-bottom: 2em;
+
+            @media (max-width: 680px) {
+                margin-top: 0;
+                margin-bottom: 16px;
+            }
+
+            .post-sidebar-widgets {
+                .card {
+                    padding: 1em;
+                }
+
+                position: -webkit-sticky;
+                /* Safari */
+                position: sticky;
+
+                @media (min-width: 680px) {
+                    top: 1em;
+                }
+            }
+        }
+
+        @media (max-width: 680px) {
+            .post-full-content {
+                grid-column: 1 / span 4;
+            }
+
+            .post-sidebar {
+                grid-column: 1 / span 4;
+                max-width: 100%;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
+
+                .post-side-widgets,
+                #carbonads {
+                    height: 140px;
+                    font-size: 12px;
+                    width: 100%;
+                    display: block;
+                }
+            }
+        }
+    }
+}
+
+// Footer recommendations for the most recent
+// articles published
+
+.post-recommendations {
+    display: grid;
+    justify-content: space-between;
+    grid-gap: 1em;
+    margin-bottom: 1em;
+
+    @media (min-width: 680px) {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    @media (max-width: 680px) {
+        grid-template-columns: 1fr;
+    }
+
+    .card-image__content {
+        border-top-left-radius: $radius-large;
+        border-top-right-radius: $radius-large;
+    }
+}
+
+// Commento tweaks for looking
+// similar to Bulma styles
+
+#commento-error {
+    margin-bottom: 5em;
+}
+
+.commento-root-font * {
+    font-family: $body-family !important;
+}
+
+.commento-submit-button {
+    background: $primary !important;
+    text-transform: none !important;
+}
+
+.commento-root a,
+.commento-mod-tools::before {
+    color: $link !important;
+}
+
+.commento-avatar {
+    background: rgb(57, 106, 177) none repeat scroll 0% 0%; //change
+}
+
+.commento-root {
+    margin-bottom: -5rem;
+    margin-top: 2rem;
+}
+
+.commento-logo-text {
+    display: none !important;
+}
+
+.commento-markdown-help {
+    pre {
+        padding: 0 0 !important;
+        border-radius: 2px;
+    }
+}
+
+#commento-textarea-container-root,
+.commento-root textarea {
+    border-radius: $radius-large !important;
+}
