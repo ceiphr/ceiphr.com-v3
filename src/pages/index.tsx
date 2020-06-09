@@ -76,8 +76,22 @@ const BlogIndex = ({ data, location }: PageProps<Data>) => {
         </div>
       </section>
       <div className="hero-background__wrapper">
-        <video className="hero-background" autoPlay loop muted>
-          <source src={`/banner.webm`} type="video/webm" />
+        <video
+          className="hero-background"
+          poster={`/banner.png`}
+          autoPlay
+          loop
+          muted
+        >
+          <source
+            src={`/banner.webm`}
+            type="video/webm"
+          />
+          {/* <source
+            src={`/banner.mp4`}
+            type="video/mp4; codecs='avc1.42E01E, mp4a.40.2'"
+          /> */}
+          <img src="{`/banner.png`}" title="Your browser does not support the <video> tag" />
         </video>
       </div>
       <div className="container">

@@ -12,7 +12,7 @@ import { useStaticQuery, graphql } from "gatsby"
 
 import { useMediaPredicate } from "react-media-hook"
 
-const SEO = ({ description, lang, meta, title, image, schema }) => {
+const SEO = ({ description, lang, meta, title, image }) => {
   const { site } = useStaticQuery(
     graphql`
       query {
