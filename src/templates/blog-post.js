@@ -68,7 +68,7 @@ const BlogPostTemplate = ({ data, location }) => {
         image: [
           post.frontmatter.featuredImage.childImageSharp.fluid.src,
         ],
-        datelished: post.frontmatter.date,
+        datePublished: post.frontmatter.date,
         dateModified: post.frontmatter.dateMod,
         author: {
           "@type": "Person",
