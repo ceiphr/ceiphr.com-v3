@@ -7,7 +7,6 @@ import React from "react"
 import { PageProps, Link, graphql } from "gatsby"
 import Img from "gatsby-image"
 import type { FluidObject } from "gatsby-image"
-import BackgroundImage from "gatsby-background-image"
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons"
@@ -41,11 +40,6 @@ type Data = {
       }
     }[]
   }
-  file: {
-    childImageSharp: {
-      fluid: FluidObject
-    }
-  }
 }
 
 const BlogIndex = ({ data, location }: PageProps<Data>) => {
@@ -66,48 +60,9 @@ const BlogIndex = ({ data, location }: PageProps<Data>) => {
         </div>
       </section>
       <div className="hero-background__wrapper">
-        <div className="hero-background"></div>
-        {/* TODO: This only works well in Firefox. Chrome is laggy. Safari is broken. */}
-        {/* <BackgroundImage
-          Tag="section"
-          className="hero-background"
-          fluid={data.file.childImageSharp.fluid}
-        >
-          <svg>
-            <filter id="turbulence" x="0" y="0" width="100%" height="100%">
-              <feTurbulence
-                id="fluid"
-                numOctaves="0.1"
-                seed="1"
-                baseFrequency="0.001 0.001"
-                type="fractalNoise"
-              ></feTurbulence>
-              <feDisplacementMap
-                in2="turbulence"
-                in="SourceGraphic"
-                scale="155"
-                xChannelSelector="R"
-                yChannelSelector="G"
-              ></feDisplacementMap>
-              <animate
-                xlinkHref="#fluid"
-                attributeName="baseFrequency"
-                dur="60s"
-                values="0.001 0.001;0.004 0.006;0.001 0.003;0.005 0.003;0.003 0.004;0.001 0.001"
-                keySplines="
-                  .52 .02 .62 .99;
-                  .52 .02 .62 .99;
-                  .52 .02 .62 .99;
-                  .52 .02 .62 .99;
-                  .52 .02 .62 .99"
-                keyTimes="
-                  0;0.2;0.4;0.6;0.8;1"
-                calcMode="spline"
-                repeatCount="indefinite"
-              />
-            </filter>
-          </svg>
-        </BackgroundImage> */}
+        <video className="hero-background" autoPlay loop muted>
+          <source src={`/banner.webm`} type="video/webm" />
+        </video>
       </div>
       <div className="container">
         <section className="post-feed post-feed--index">
@@ -182,13 +137,6 @@ export const pageQuery = graphql`
               }
             }
           }
-        }
-      }
-    }
-    file(relativePath: { eq: "banner.png" }) {
-      childImageSharp {
-        fluid(quality: 100, maxWidth: 1200) {
-          ...GatsbyImageSharpFluid_withWebp
         }
       }
     }

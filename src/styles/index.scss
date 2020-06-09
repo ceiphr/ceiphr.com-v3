@@ -43,16 +43,16 @@ body {
     height: 50vh;
 }
 
-.hero-background {
+video {
     position: absolute;
-    top: -5vh;
-    left: -5vw;
-    width: 110vw;
-    height: 60vh;
-    background-image: url("/banner.gif");
-    background-size: cover;
-    background-position: center;
-    // filter: url("#turbulence");
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    min-width: 100%; 
+    min-height: 100%; 
+    max-width: none !important;
+    width: auto;
+    height: auto;
 }
 
 .hero-banner {
