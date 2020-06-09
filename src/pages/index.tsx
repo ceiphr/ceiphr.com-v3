@@ -83,7 +83,7 @@ const BlogIndex = ({ data, location }: PageProps<Data>) => {
       <div className="hero-background__wrapper">
         <video
           className="hero-background"
-          poster={data.banner.childImageSharp.fluid.srcWebp}
+          poster={data.banner.childImageSharp.fluid.src}
           autoPlay
           loop
           muted
