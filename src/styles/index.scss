@@ -49,9 +49,10 @@ body {
     left: -5vw;
     width: 110vw;
     height: 60vh;
+    background-image: url("/banner.gif");
     background-size: cover;
     background-position: center;
-    filter: url("#turbulence");
+    // filter: url("#turbulence");
 }
 
 .hero-banner {

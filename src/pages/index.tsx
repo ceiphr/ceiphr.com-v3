@@ -66,7 +66,9 @@ const BlogIndex = ({ data, location }: PageProps<Data>) => {
         </div>
       </section>
       <div className="hero-background__wrapper">
-        <BackgroundImage
+        <div className="hero-background"></div>
+        {/* TODO: This only works well in Firefox. Chrome is laggy. Safari is broken. */}
+        {/* <BackgroundImage
           Tag="section"
           className="hero-background"
           fluid={data.file.childImageSharp.fluid}
@@ -105,7 +107,7 @@ const BlogIndex = ({ data, location }: PageProps<Data>) => {
               />
             </filter>
           </svg>
-        </BackgroundImage>
+        </BackgroundImage> */}
       </div>
       <div className="container">
         <section className="post-feed post-feed--index">
