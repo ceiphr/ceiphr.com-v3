@@ -55,6 +55,11 @@ video {
         left: 50%;    
         transform: translate(-50%, -50%);
     }
+    @media (max-width: 680px) {
+        top: 0;
+        left: 25%;    
+        transform: translate(-40%, -25%);
+    }
 
     min-width: 100%;
     min-height: 100%;
