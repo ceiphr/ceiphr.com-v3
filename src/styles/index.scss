@@ -41,15 +41,23 @@ body {
     left: 0;
     width: 100vw;
     height: 50vh;
+
+    @media (max-height: 680px) {
+        height: 70vh;
+    }
 }
 
 video {
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-    min-width: 100%; 
-    min-height: 100%; 
+
+    @media (min-width: 680px) {
+        top: 50%;
+        left: 50%;    
+        transform: translate(-50%, -50%);
+    }
+
+    min-width: 100%;
+    min-height: 100%;
     max-width: none !important;
     width: auto;
     height: auto;
@@ -166,14 +174,9 @@ video {
 }
 
 .post-feed--index {
-
-    @media (max-height: 680px) {
-        transform: translateY(2rem);
-    }
-
     @media (min-height: 680px) {
-        transform: translateY(-6rem);
-        margin-bottom: -6rem;
+        transform: translateY(-5rem);
+        margin-bottom: -5rem;
     }
 }
 
