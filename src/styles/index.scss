@@ -1,17 +1,14 @@
 @charset "utf-8";
 
 $primary: #ef486c;
-
 @import "../../node_modules/bulma/sass/utilities/_all.sass";
-@import url(https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital@0;1&family=IBM+Plex+Sans:ital,wght@0,100;0,400;0,700;1,100;1,400;1,700&display=swap);
+@import "../../node_modules/@ibm/plex/css/ibm-plex.min.css";
 
 // Update some of Bulma's component variables
 
-$body-family: "IBM Plex Sans",
-sans-serif;
+$body-family: "IBM Plex Sans", "Helvetica Neue", Arial, sans-serif;
 
-$family-code: "IBM Plex Mono",
-monospace;
+$family-code: "IBM Plex Mono", "Menlo", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", Courier, monospace;
 
 $radius-large: 8px;
 

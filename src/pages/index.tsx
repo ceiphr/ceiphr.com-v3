@@ -89,10 +89,10 @@ const BlogIndex = ({ data, location }: PageProps<Data>) => {
           muted
         >
           <source src={`/banner.webm`} type="video/webm" />
-          <img
+          <img alt="Banner Image"
             src={data.banner.childImageSharp.fluid.srcWebp}
           />
-          <img
+          <img alt="Banner Image"
             src={data.banner.childImageSharp.fluid.src}
           />
         </video>
@@ -121,7 +121,7 @@ const BlogIndex = ({ data, location }: PageProps<Data>) => {
                           __html: node.frontmatter.description || node.excerpt,
                         }}
                       />
-                      <button className="button is-primary">
+                      <button className="button has-dark-text is-primary">
                         <span>See Post</span>
                         <span className="icon is-small">
                           <FontAwesomeIcon

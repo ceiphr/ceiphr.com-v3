@@ -56,6 +56,12 @@ module.exports = {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
         trackingId: `UA-158198449-1`,
+        head: false,
+        anonymize: true,
+        respectDNT: true,
+        defer: true,
+        cookieExpires: 0,
+        cookieDomain: "ceiphr.com",
       },
     },
     `gatsby-plugin-feed`,
@@ -70,19 +76,21 @@ module.exports = {
         display: `minimal-ui`,
         icon: `content/assets/icon.png`,
         include_favicon: false,
-        theme_color_in_head: false
-      }
+        theme_color_in_head: false,
+      },
     },
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-offline`,
     {
       resolve: "gatsby-plugin-sentry",
       options: {
-        dsn: "https://cb72ea3603084a5e844f43999cf429a5@o248021.ingest.sentry.io/5270757",
+        dsn:
+          "https://cb72ea3603084a5e844f43999cf429a5@o248021.ingest.sentry.io/5270757",
         environment: process.env.NODE_ENV,
-        enabled: (() => ["production", "stage"].indexOf(process.env.NODE_ENV) !== -1)()
-      }
-    }
+        enabled: (() =>
+          ["production", "stage"].indexOf(process.env.NODE_ENV) !== -1)(),
+      },
+    },
   ],
 }
 

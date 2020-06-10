@@ -4,11 +4,12 @@
  */
 
 import React from "react"
+import { OutboundLink } from "gatsby-plugin-google-analytics"
 
 const Referral = () => {
   return (
     <div className="card referral">
-    <a
+    <OutboundLink
       href="https://m.do.co/c/b95c2a8a5568"
       aria-label="DigitalOcean"
       rel="noopener"
@@ -21,7 +22,7 @@ const Referral = () => {
         Host your Django API, Headless CMS, and more on
         DigitalOcean.
       </p>
-    </a>
+    </OutboundLink>
   </div>
   )
 }
