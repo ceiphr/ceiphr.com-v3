@@ -40,9 +40,19 @@
 
     .commento-email,
     .commento-email *,
+    .commento-textarea-container,
+    .commento-root textarea,
     html,
     body {
         background-color: $scheme-invert-ter !important;
+    }
+
+    .commento-login-box-container .commento-login-box .commento-login-box-close {
+        opacity: 1 !important;
+    }
+
+    .commento-root textarea {
+        border: 1px solid rgba(255, 255, 255, 0.1) !important;
     }
 
     .commento-root .commento-card {
@@ -59,9 +69,7 @@
     }
 
     code,
-    .card,
-    .commento-textarea-container,
-    .commento-root textarea {
+    .card {
         background-color: $dark !important;
     }
 
