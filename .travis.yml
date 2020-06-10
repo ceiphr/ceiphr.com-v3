@@ -1,0 +1,13 @@
+language: node_js
+node_js:
+  - "11"
+cache: yarn
+branches:
+  only:
+    - master
+before_script:
+  - "yarn global add gatsby"
+script:
+  - "yarn build"
+  # TODO Add tests
+  - "yarn test"

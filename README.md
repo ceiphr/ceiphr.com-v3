@@ -1,12 +1,8 @@
-<!-- <p align="center">
-  <a href="https://www.gatsbyjs.org">
-    <img alt="Gatsby" src="https://www.gatsbyjs.org/monogram.svg" width="60" />
-  </a>
-</p> -->
-
 # Gatsby Ceiphr
 
-This is a Gatsby blog designed by Ari Birnbaum for ceiphr.com. This project is based on [gatsby-starter-blog](https://github.com/gatsbyjs/gatsby-starter-blog). The majority of the Sass and some of the components for this project are derived from [gatsby-theme-ceiphr](https://github.com/ceiphr/gatsby-theme-ceiphr) (deprecated, used a headless Ghost CMS). The article heading is inspired by [Valorant's news site](https://playvalorant.com/en-us/news/game-updates/what-is-the-valorant-battlepass/). This project is hosted on Vercel.
+[![Build Status](https://travis-ci.com/ceiphr/gatsby-ceiphr.svg?branch=master)](https://travis-ci.com/ceiphr/gatsby-ceiphr)
+
+This is a Gatsby blog designed by Ari Birnbaum for ceiphr.com. This project is based on [gatsby-starter-blog](https://github.com/gatsbyjs/gatsby-starter-blog). The majority of the Sass and some of the components for this project are derived from [gatsby-theme-ceiphr](https://github.com/ceiphr/gatsby-theme-ceiphr) (deprecated, used a headless Ghost CMS). The blog tempplate's article heading was inspired by [Valorant's news site](https://playvalorant.com/en-us/news/game-updates/what-is-the-valorant-battlepass/). This project is hosted on Vercel.
 
 ## Quick start
 
