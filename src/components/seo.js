@@ -97,6 +97,10 @@ const SEO = ({ description, lang, meta, title, image }) => {
         href={isDark}
         sizes="32x32"
       />
+      <link
+        href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;700&family=IBM+Plex+Sans:ital,wght@0,400;0,700;1,400&display=swap"
+        rel="stylesheet"
+      />
     </Helmet>
   )
 }
