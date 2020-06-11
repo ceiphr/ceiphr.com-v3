@@ -6,16 +6,18 @@
 
 import React from "react"
 import { Link } from "gatsby"
-import { useMediaPredicate } from "react-media-hook";
+import { useMediaPredicate } from "react-media-hook"
 
 import "../styles/index.scss"
 
 const Layout = ({ location, title, children }) => {
   const rootPath = `${__PATH_PREFIX__}/`
   let header
-  
+
   // TODO Get dark mark
-  const themeLogo = useMediaPredicate("(prefers-color-scheme: dark)") ? "/logo-black.svg" : "/logo-white.svg";
+  const themeLogo = useMediaPredicate("(prefers-color-scheme: dark)")
+    ? "/logo-black.svg"
+    : "/logo-white.svg"
 
   // Display the navigation bar on pages that aren't the homepage
   if (location.pathname !== rootPath) {
@@ -27,7 +29,7 @@ const Layout = ({ location, title, children }) => {
       >
         <div className="navbar-brand">
           <Link className="navbar-item" to={`/`}>
-            <img src={themeLogo} alt={title} width="64" height="64"/>
+            <img src={themeLogo} alt={title} width="64" height="64" />
           </Link>
         </div>
       </nav>
@@ -116,6 +118,10 @@ const Layout = ({ location, title, children }) => {
           </div>
         </footer>
       </div>
+      <link
+        href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;700&family=IBM+Plex+Sans:ital,wght@0,400;0,700;1,400&display=swap"
+        rel="stylesheet"
+      />
     </div>
   )
 }
