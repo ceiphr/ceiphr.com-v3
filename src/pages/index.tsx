@@ -6,7 +6,7 @@
 import React from "react"
 import { PageProps, Link, graphql } from "gatsby"
 import Img from "gatsby-image"
-import type { FluidObject } from "gatsby-image"
+import type { FluidObject, FixedObject } from "gatsby-image"
 
 import { Person } from "schema-dts"
 import { JsonLd } from "react-schemaorg"
@@ -45,7 +45,7 @@ type Data = {
   }
   banner: {
     childImageSharp: {
-      fluid: FluidObject
+      fixed: FixedObject
     }
   }
 }
@@ -83,17 +83,17 @@ const BlogIndex = ({ data, location }: PageProps<Data>) => {
       <div className="hero-background__wrapper">
         <video
           className="hero-background"
-          poster={data.banner.childImageSharp.fluid.src}
+          poster={data.banner.childImageSharp.fixed.src}
           autoPlay
           loop
           muted
         >
           <source src={`/banner.webm`} type="video/webm" />
           <img alt="Banner Image"
-            src={data.banner.childImageSharp.fluid.srcWebp}
+            src={data.banner.childImageSharp.fixed.srcWebp}
           />
           <img alt="Banner Image"
-            src={data.banner.childImageSharp.fluid.src}
+            src={data.banner.childImageSharp.fixed.src}
           />
         </video>
       </div>
@@ -175,7 +175,7 @@ export const pageQuery = graphql`
     }
     banner: file(relativePath: { eq: "banner.png" }) {
       childImageSharp {
-        fluid(maxWidth: 960) {
+        fixed(width: 960, height: 540) {
           src
           srcWebp
         }
