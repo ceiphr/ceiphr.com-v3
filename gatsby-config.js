@@ -3,9 +3,9 @@ module.exports = {
     title: `Ceiphr`,
     author: {
       name: `Ari Birnbaum`,
-      summary: `Studying Computational Mathematics at RIT. Freelance Technical Writer at DigitalOcean.`,
+      summary: `Studying Computer Science at Stevens. Freelance Technical Writer at DigitalOcean.`,
     },
-    description: `I'm Ari Birnbaum, an aspiring software engineer currently studying Computational Mathematics as a sophomore at the Rochester Institute of Technology.`,
+    description: `I'm Ari Birnbaum, an aspiring software engineer currently studying Computer Science as a sophomore at Stevens Institute of Technology.`,
     siteUrl: `https://www.ceiphr.com`,
     social: {
       twitter: `ceiphr`,
