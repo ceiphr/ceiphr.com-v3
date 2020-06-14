@@ -1,8 +1,8 @@
 ---
 new_page_extension: md
 auto_deploy: false
-admin_path: 
-webhook_url: 
+admin_path: ''
+webhook_url: https://api.zeit.co/v1/integrations/deploy/QmNwejSLh88SVxavkDaEsmWz9kzahncdkzRnENMsHy4aYM/01ComJsm7Q
 sections:
 - type: heading
   label: Blog
