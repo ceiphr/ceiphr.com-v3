@@ -4,16 +4,26 @@ hide_body: false
 fields:
 - type: text
   name: title
-  label: title
+  label: Title
+  config:
+    required: true
 - type: datetime
   name: date
-  label: date
+  label: Date Published
+  default: now
+  config:
+    required: true
+  hidden: true
 - type: datetime
   name: dateMod
-  label: dateMod
+  label: Date Modified
+  default: now
+  hidden: true
 - type: file
   name: featuredImage
-  label: featuredImage
+  label: Featured Image
+  default: "/content/assets/banner.png"
 - type: textarea
   name: description
-  label: description
+  label: Description
+  default: ''
