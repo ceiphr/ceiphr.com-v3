@@ -3,10 +3,11 @@ title: A Crash Course in Django
 date: 2019-06-28T22:12:03.284Z
 dateMod: 2019-06-28T22:12:03.284Z
 featuredImage: fabian-grohs-unsplash.jpg
-description: This crash course is a quick way to get started making a basic Django
+description:
+  This crash course is a quick way to get started making a basic Django
   website without going in-depth about the underlying concepts.
-
 ---
+
 ## Introduction
 
 **This is not a tutorial.** This crash course is a quick way to get started making a basic Django website **without** going in-depth about the underlying concepts that are required to make complex web applications. For every step of this crash course I will link a more thorough explanation of the tools and concept you're using so you can get a better understanding of Django while creating your first project.
@@ -32,7 +33,7 @@ Making stuff in Django follows this pattern:
 
 Django does more complex (and really fun) things, but if you're starting out that's all you need to know _for now_. [\[in-depth\]](https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django/Introduction#What_is_Django)
 
-***
+---
 
 ## Setting up our project
 
@@ -155,7 +156,7 @@ if settings.DEBUG:
 
 Great, our project is now set up, and we can begin by writing our models.
 
-***
+---
 
 ## Writing our models
 
@@ -172,7 +173,7 @@ class Post(models.Model):
     date = models.DateField(default=datetime.date.today)
 ```
 
-`models.FileField(upload_to='images/')` acts as a field where we will upload images to an image folder in the media directory we configured in settings. 
+`models.FileField(upload_to='images/')` acts as a field where we will upload images to an image folder in the media directory we configured in settings.
 
 `models.CharField(default="", max_length=n)` is a basic text field where the max character length is **n**.
 
@@ -237,7 +238,7 @@ Once completed head over to [`127.0.0.1:8000/admin`](http://127.0.0.1:8000/admin
 
 From here you can add posts to your Django project. We are officially done with our models. Next will design our view so Django can serve our posts.
 
-***
+---
 
 ## View logic
 
@@ -262,7 +263,7 @@ class PostFeed(TemplateView):
 
 `PostFeed` is our basic template view that will use an `index.html` file we will create next to render our database contents.
 
-`get_context_data` is how we will send our template the information from the database.`context["posts"] = Post.objects.all()` Our template will refer to `posts` within our `context` dictionary for a list of all posts that is collected from the database using `Post.objects.all()`
+`get_context_data` is how we will send our template the information from the database. `context["posts"] = Post.objects.all()` Our template will refer to `posts` within our `context` dictionary for a list of all posts that is collected from the database using `Post.objects.all()`
 
 [\[in-depth\]](https://docs.djangoproject.com/en/2.2/ref/class-based-views/base/)
 
@@ -293,7 +294,7 @@ if settings.DEBUG:
 
 Our basic view logic is now complete, now we need to build our index template for displaying our posts.
 
-***
+---
 
 ## Templates with Style
 
@@ -356,7 +357,7 @@ Now we have a website that displays what we add to our control panel in Bulma ca
 
 [\[in-depth\]](https://docs.djangoproject.com/en/2.2/topics/templates/)
 
-***
+---
 
 ## Wrap Up
 

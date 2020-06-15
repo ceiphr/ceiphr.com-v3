@@ -8,7 +8,6 @@ import { graphql } from "gatsby"
 import BackgroundImage from "gatsby-background-image"
 
 import { JsonLd } from "react-schemaorg"
-
 import { useMediaPredicate } from "react-media-hook"
 
 import {
