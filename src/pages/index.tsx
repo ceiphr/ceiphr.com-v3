@@ -31,6 +31,7 @@ type Data = {
           title: string
           date: string
           description: string
+          redirect: string
           featuredImage: {
             childImageSharp: {
               fluid: FluidObject
@@ -89,12 +90,11 @@ const BlogIndex = ({ data, location }: PageProps<Data>) => {
           muted
         >
           <source src={`/banner.webm`} type="video/webm" />
-          <img alt="Banner Image"
+          <img
+            alt="Banner Image"
             src={data.banner.childImageSharp.fixed.srcWebp}
           />
-          <img alt="Banner Image"
-            src={data.banner.childImageSharp.fixed.src}
-          />
+          <img alt="Banner Image" src={data.banner.childImageSharp.fixed.src} />
         </video>
       </div>
       <div className="container">
@@ -103,6 +103,46 @@ const BlogIndex = ({ data, location }: PageProps<Data>) => {
             const featuredImgFluid =
               node.frontmatter.featuredImage.childImageSharp.fluid
             const title = node.frontmatter.title || node.fields.slug
+            // Is this post a post or does it redirect to the real post?
+            // This is used for publications on other platforms
+            const IsRedirect = node.frontmatter.redirect || null
+
+            if (IsRedirect) {
+              return (
+                <a href={IsRedirect}>
+                  <div className="card">
+                    <div className="card-image">
+                      <Img
+                        className="card-image__content"
+                        fluid={featuredImgFluid}
+                      />
+                    </div>
+                    <div className="card-content">
+                      <div className="content">
+                        <p className="title is-4">{title}</p>
+                        <p className="subtitle is-6">{node.frontmatter.date}</p>
+                        <p
+                          dangerouslySetInnerHTML={{
+                            __html:
+                              node.frontmatter.description || node.excerpt,
+                          }}
+                        />
+                        <button className="button has-dark-text is-primary">
+                          <span>See Post</span>
+                          <span className="icon is-small">
+                            <FontAwesomeIcon
+                              icon={faArrowRight}
+                              className="fas fa-times"
+                            />
+                          </span>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+              )
+            }
+
             return (
               <Link key={node.fields.slug} to={node.fields.slug}>
                 <div className="card">
@@ -162,6 +202,7 @@ export const pageQuery = graphql`
             date(formatString: "MMMM DD, YYYY")
             title
             description
+            redirect
             featuredImage {
               childImageSharp {
                 fluid(maxWidth: 720) {
