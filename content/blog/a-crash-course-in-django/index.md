@@ -298,7 +298,7 @@ Our basic view logic is now complete, now we need to build our index template fo
 
 ## Templates with Style
 
-In the root of our Django project where you can find our `database` and `django_cc` folders create a `templates` folder and make an `index.html` file inside. For the design of our site we're going to use the framework [Bulma](https://bulma.io/documentation/) so we won't need to write any CSS. Here is a boilerplate we can use for our template.
+In the root of our Django project where you can find our `blog` and `django_cc` folders create a `templates` folder and make an `index.html` file inside. For the design of our site we're going to use the framework [Bulma](https://bulma.io/documentation/) so we won't need to write any CSS. Here is a boilerplate we can use for our template.
 
 ```html
 <!DOCTYPE html>

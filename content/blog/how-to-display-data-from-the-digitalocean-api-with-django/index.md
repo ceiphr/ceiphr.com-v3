@@ -1,8 +1,8 @@
 ---
-title: The DigitalOcean API with Django
+title: How To Display Data from the DigitalOcean API with Django
 date: 2019-12-20T23:46:37.121+00:00
-featuredImage: digitalocean.jpeg
-description: In this tutorial you will build a Django project that will display your DigitalOcean account's Droplet information.
+featuredImage: do_django.png
+description: This is a tutorial for using Django with DigitalOcean's API.
 redirect: https://www.digitalocean.com/community/tutorials/how-to-display-data-from-the-digitalocean-api-with-django
 ---
 
