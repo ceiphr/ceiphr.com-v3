@@ -64,9 +64,7 @@ const BlogPostTemplate = ({ data, location }) => {
           "@id": post.fields.slug,
         },
         headline: post.frontmatter.title,
-        image: [
-          post.frontmatter.featuredImage.childImageSharp.fluid.src,
-        ],
+        image: [post.frontmatter.featuredImage.childImageSharp.fluid.src],
         datePublished: post.frontmatter.date,
         dateModified: post.frontmatter.dateMod,
         author: {
@@ -84,6 +82,10 @@ const BlogPostTemplate = ({ data, location }) => {
       }}
     />
   )
+
+  const isRedirect = post.frontmatter.redirect || null
+  if (isRedirect && typeof window !== `undefined`)
+    window.location.replace(isRedirect)
 
   return (
     <Layout location={location} title={siteTitle}>
@@ -183,6 +185,7 @@ export const pageQuery = graphql`
         date(formatString: "MMMM DD, YYYY")
         dateMod(formatString: "MMMM DD, YYYY")
         description
+        redirect
         featuredImage {
           childImageSharp {
             fluid(quality: 100, maxWidth: 960) {

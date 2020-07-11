@@ -12,7 +12,7 @@ import { Person } from "schema-dts"
 import { JsonLd } from "react-schemaorg"
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faArrowRight } from "@fortawesome/free-solid-svg-icons"
+import { faArrowRight, faExternalLinkAlt } from "@fortawesome/free-solid-svg-icons"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
@@ -131,7 +131,7 @@ const BlogIndex = ({ data, location }: PageProps<Data>) => {
                           <span>See Post</span>
                           <span className="icon is-small">
                             <FontAwesomeIcon
-                              icon={faArrowRight}
+                              icon={faExternalLinkAlt}
                               className="fas fa-times"
                             />
                           </span>

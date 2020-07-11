@@ -8,7 +8,7 @@ import Img from "gatsby-image"
 import { Link } from "gatsby"
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faArrowRight } from "@fortawesome/free-solid-svg-icons"
+import { faArrowRight, faExternalLinkAlt } from "@fortawesome/free-solid-svg-icons"
 
 const Recommendation = ({ post }) => {
   const featuredImgFluid = post.frontmatter.featuredImage.childImageSharp.fluid
@@ -41,7 +41,7 @@ const Recommendation = ({ post }) => {
                 <span>See Post</span>
                 <span className="icon is-small">
                   <FontAwesomeIcon
-                    icon={faArrowRight}
+                    icon={faExternalLinkAlt}
                     className="fas fa-times"
                   />
                 </span>

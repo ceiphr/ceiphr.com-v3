@@ -14,10 +14,8 @@ const Layout = ({ location, title, children }) => {
   const rootPath = `${__PATH_PREFIX__}/`
   let header
 
-  // TODO Get dark mark
-  const themeLogo = useMediaPredicate("(prefers-color-scheme: dark)")
-    ? "/logo-black.svg"
-    : "/logo-white.svg"
+  const isDark = useMediaPredicate("(prefers-color-scheme: dark)")
+  const themeLogo = isDark ? "/logo-black.svg" : "/logo-white.svg"
 
   // Display the navigation bar on pages that aren't the homepage
   if (location.pathname !== rootPath) {
