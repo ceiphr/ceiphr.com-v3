@@ -83,10 +83,6 @@ const BlogPostTemplate = ({ data, location }) => {
     />
   )
 
-  const isRedirect = post.frontmatter.redirect || null
-  if (isRedirect && typeof window !== `undefined`)
-    window.location.replace(isRedirect)
-
   return (
     <Layout location={location} title={siteTitle}>
       {/* SEO data */}
