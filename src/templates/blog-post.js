@@ -11,7 +11,7 @@ import { JsonLd } from "react-schemaorg"
 import { useMediaPredicate } from "react-media-hook"
 
 import {
-  Commento,
+  // Commento,
   CarbonAds,
   Recommendation,
   SEO,
@@ -154,7 +154,7 @@ const BlogPostTemplate = ({ data, location }) => {
             <Recommendation key={node.fields.slug} post={node} />
           ))}
         </div>
-        <Commento id={post.id} />
+        {/* <Commento id={post.id} /> */}
       </section>
     </Layout>
   )
