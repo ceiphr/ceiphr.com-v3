@@ -8,6 +8,8 @@ import React from "react"
 import { Link } from "gatsby"
 import { useMediaPredicate } from "react-media-hook"
 
+import DarkLogo from "../../static/logo-black.svg"
+import LightLogo from "../../static/logo-white.svg"
 import "../styles/index.scss"
 
 const Layout = ({ location, title, children }) => {
@@ -15,7 +17,6 @@ const Layout = ({ location, title, children }) => {
   let header
 
   const isDark = useMediaPredicate("(prefers-color-scheme: dark)")
-  const themeLogo = isDark ? "/logo-black.svg" : "/logo-white.svg"
 
   // Display the navigation bar on pages that aren't the homepage
   if (location.pathname !== rootPath) {
@@ -27,7 +28,11 @@ const Layout = ({ location, title, children }) => {
       >
         <div className="navbar-brand">
           <Link className="navbar-item" to={`/`}>
-            <img src={themeLogo} alt={title} width="64" height="64" />
+            {isDark ? (
+              <DarkLogo alt={title} width="64" height="64" />
+            ) : (
+              <LightLogo alt={title} width="64" height="64" />
+            )}
           </Link>
         </div>
       </nav>

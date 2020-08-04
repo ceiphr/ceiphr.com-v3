@@ -15,6 +15,14 @@ module.exports = {
     `gatsby-plugin-sitemap`,
     `gatsby-plugin-sass`,
     {
+      resolve: `gatsby-plugin-react-svg`,
+      options: {
+        rule: {
+          include: /static/
+        }
+      }
+    },
+    {
       resolve: `gatsby-source-filesystem`,
       options: {
         path: `${__dirname}/content/blog`,
@@ -57,17 +65,13 @@ module.exports = {
       options: {
         trackingId: `UA-158198449-1`,
         head: false,
-        anonymize: true,
         anonymizeIp: true,
         respectDNT: true,
         defer: true,
-        name: "ceiphrAnalytics",
-        cookieExpires: 0,
-        cookieName: "ceiphrGACookie",
-        cookieDomain: "www.ceiphr.com",
         storeGac: false,
         allowAdFeatures: false,
         forceSSL: true,
+        siteSpeedSampleRate: 10,
       },
     },
     {
