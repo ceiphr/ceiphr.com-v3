@@ -21,6 +21,16 @@
 
 .gatsby-highlight-code-line {
     background-color: hsl(0, 0%, 92%);
+    text-shadow: none !important;
+
+    .token.operator,
+    .token.entity,
+    .token.url,
+    .language-css .token.string,
+    .style .token.string {
+        background-color: hsl(0, 0%, 92%);
+    }
+
     display: block;
     margin-right: -1em;
     margin-left: -4em;
@@ -226,6 +236,14 @@ pre[class*="language-"] {
 
     .gatsby-highlight-code-line {
         background-color: hsl(0, 0%, 28%);
+
+        .token.operator,
+        .token.entity,
+        .token.url,
+        .language-css .token.string,
+        .style .token.string {
+            background-color: hsl(0, 0%, 28%);
+        }
     }
 
     .command-line-prompt > span:before {
