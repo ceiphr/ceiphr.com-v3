@@ -87,7 +87,7 @@ python manage.py startapp blog
 
 In order for our core project to recognize this app we need to let it know our `blog` app exists by adding it to `INSTALLED_APPS` in `django_cc/settings.py` like so:
 
-```python
+```python{numberLines: true}
 # Application definition
 
 INSTALLED_APPS = [
@@ -105,7 +105,7 @@ INSTALLED_APPS = [
 
 Let's add the following to the bottom of `settings.py` so Django knows where to store media files such as the images that we upload:
 
-```python
+```python{numberLines: true}
 # Media file support
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
@@ -114,7 +114,7 @@ MEDIA_URL = '/media/'
 
 We'll need to do the same for our templates folder by updating `DIRS` to handle `[os.path.join(BASE_DIR, 'templates')]` instead of the default `[]`:
 
-```python
+```python{numberLines: true}
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
@@ -134,7 +134,7 @@ TEMPLATES = [
 
 We will also need to add a few imports and a conditional at the bottom of `django_cc/urls.py` so the files are accessible on the development server:
 
-```python
+```python{numberLines: true}
 from django.conf.urls import url
 from django.contrib import admin
 
@@ -162,7 +162,7 @@ Great, our project is now set up, and we can begin by writing our models.
 
 Inside our new `blog` app we will find a `models.py` file where we will write our models for our database. The class `Post` will act as our first model for uploading a post with an image, title, description, and date published.
 
-```python
+```python{numberLines: true}
 from django.db import models
 import datetime
 
@@ -183,7 +183,7 @@ class Post(models.Model):
 
 To finish off our models let's tell Django to order them based newest to oldest:
 
-```python
+```python{numberLines: true}
 class Post(models.Model):
     image = models.FileField(upload_to='images/')
     title = models.CharField(default="", max_length=64)
@@ -212,7 +212,7 @@ Congratulations! Our database is all set up for our posts. There is one issue, t
 
 Inside our `blog` app go to `admin.py` and add the following:
 
-```python
+```python{numberLines: true}
 from django.contrib import admin
 from blog.models import Post
 
@@ -223,8 +223,8 @@ admin.site.register(Post)
 
 Next we will create a superuser, so we can log into the admin panel. Type the following command and follow the prompts. You only need to fill out the username and passwords prompts.
 
-```bash
-$ python3 manage.py createsuperuser
+```bash{outputLines: 2-6}
+python3 manage.py createsuperuser
 Username (leave blank to use 'ari'):
 Email address:
 Password:
@@ -244,7 +244,7 @@ From here you can add posts to your Django project. We are officially done with 
 
 A view is how Django knows what to do when we ask for a page. The first thing we have to do is create a `views.py` file in `django_cc`. In that file paste the following:
 
-```python
+```python{numberLines: true}
 from django.shortcuts import render
 from django.views.generic.base import View
 from django.views.generic import TemplateView
@@ -269,7 +269,7 @@ class PostFeed(TemplateView):
 
 In `urls.py` we will need to add a new path so Django knows when that URL is requested to call our view:
 
-```python
+```python{numberLines: true}
 from django.conf.urls import url
 from django.contrib import admin
 from django.conf.urls.static import static
@@ -300,7 +300,7 @@ Our basic view logic is now complete, now we need to build our index template fo
 
 In the root of our Django project where you can find our `blog` and `django_cc` folders create a `templates` folder and make an `index.html` file inside. For the design of our site we're going to use the framework [Bulma](https://bulma.io/documentation/) so we won't need to write any CSS. Here is a boilerplate we can use for our template.
 
-```html
+```html{numberLines: true}
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -318,7 +318,7 @@ In the root of our Django project where you can find our `blog` and `django_cc` 
 
 Django templates utilize a DRY version of HTML called Django HTML. This is how we will send our context to render in our `index.html` template. In the body of the boilerplate let's add a basic card with the context for our posts.
 
-```html
+```html{numberLines: true}
 <div class="container">
   {% for post in posts %}
   <div class="card">

@@ -8,12 +8,46 @@
 }
 
 .gatsby-highlight-code-line {
-    background-color:  hsl(0, 0%, 92%);
+    background-color: hsl(0, 0%, 92%);
     display: block;
     margin-right: -1em;
     margin-left: -4em;
     padding-right: 1em;
     padding-left: 4em;
+}
+
+.command-line-prompt > span:before {
+    color: $dark;
+    content: " ";
+    display: block;
+    padding-right: 0.8em;
+}
+
+/* Prompt for all users */
+.command-line-prompt > span[data-user]:before {
+    content: "$";
+}
+
+/* Prompt for root */
+.command-line-prompt > span[data-user="root"]:before {
+    content: "#";
+}
+
+.command-line-prompt > span[data-prompt]:before {
+    content: attr(data-prompt);
+}
+
+.command-line-prompt {
+    border-right: 0px;
+    display: block;
+    float: left;
+    font-size: 100%;
+    letter-spacing: -1px;
+    margin-right: 0em;
+    pointer-events: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
 .line-numbers .line-numbers-rows {
@@ -173,15 +207,19 @@ pre[class*="language-"] {
     font-style: italic;
 }
 
-@media (prefers-color-scheme: dark) {    
+@media (prefers-color-scheme: dark) {
     .gatsby-highlight-code-line {
         background-color: hsl(0, 0%, 28%);
     }
-    
+
+    .command-line-prompt > span:before {
+        color: #eee;
+    }
+
     .line-numbers .line-numbers-rows {
         border-right: 1px solid hsl(0, 0%, 30%);
     }
-    
+
     .line-numbers-rows > span:before {
         color: hsl(0, 0%, 48%);
     }
