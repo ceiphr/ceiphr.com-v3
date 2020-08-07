@@ -13,6 +13,7 @@ const Referral = () => {
       <OutboundLink
         href="https://m.do.co/c/b95c2a8a5568"
         aria-label="DigitalOcean"
+        target="_blank"
         rel="noopener"
       >
         <div className="referral__logo">

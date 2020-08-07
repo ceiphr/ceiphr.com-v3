@@ -18,9 +18,9 @@ module.exports = {
       resolve: `gatsby-plugin-react-svg`,
       options: {
         rule: {
-          include: /static/
-        }
-      }
+          include: /static/,
+        },
+      },
     },
     {
       resolve: `gatsby-source-filesystem`,
@@ -52,7 +52,19 @@ module.exports = {
               wrapperStyle: `margin-bottom: 1.0725rem`,
             },
           },
-          `gatsby-remark-prismjs`,
+          {
+            resolve: `gatsby-remark-prismjs`,
+            options: {
+              inlineCodeMarker: '±',
+              showLineNumbers: true,
+              noInlineHighlight: true,
+              prompt: {
+                user: "ari",
+                host: "localhost",
+                global: false,
+              },
+            },
+          },
           `gatsby-remark-copy-linked-files`,
           `gatsby-remark-smartypants`,
         ],

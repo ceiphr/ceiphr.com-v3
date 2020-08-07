@@ -3,6 +3,53 @@
  * Inspired by Github syntax coloring
  */
 
+.gatsby-highlight pre[class*="language-"].line-numbers {
+    padding-left: 3.4em;
+}
+
+.gatsby-highlight-code-line {
+    background-color:  hsl(0, 0%, 92%);
+    display: block;
+    margin-right: -1em;
+    margin-left: -4em;
+    padding-right: 1em;
+    padding-left: 4em;
+}
+
+.line-numbers .line-numbers-rows {
+    position: absolute;
+    pointer-events: none;
+    padding-top: 16px;
+    padding-left: 12px;
+    padding-bottom: 16px;
+    top: 0;
+    font-size: 100%;
+    left: -3em;
+    width: 3em; /* works for line-numbers below 1000 lines */
+    letter-spacing: -1px;
+    text-shadow: none;
+    border-right: 1px solid hsl(0, 0%, 90%);
+
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.line-numbers-rows > span {
+    pointer-events: none;
+    display: block;
+    counter-increment: linenumber;
+}
+
+.line-numbers-rows > span:before {
+    content: counter(linenumber);
+    color: hsl(0, 0%, 80%);
+    display: block;
+    padding-right: 0.8em;
+    text-align: right;
+}
+
 code[class*="language-"],
 pre[class*="language-"] {
     color: #393a34;
@@ -12,8 +59,8 @@ pre[class*="language-"] {
     word-spacing: normal;
     word-break: normal;
     font-family: $code-family;
-    font-size: 0.9em;
-    line-height: 1.2em;
+    font-size: 1em;
+    line-height: 1.5em;
 
     -moz-tab-size: 4;
     -o-tab-size: 4;
@@ -126,7 +173,19 @@ pre[class*="language-"] {
     font-style: italic;
 }
 
-@media (prefers-color-scheme: dark) {
+@media (prefers-color-scheme: dark) {    
+    .gatsby-highlight-code-line {
+        background-color: hsl(0, 0%, 28%);
+    }
+    
+    .line-numbers .line-numbers-rows {
+        border-right: 1px solid hsl(0, 0%, 30%);
+    }
+    
+    .line-numbers-rows > span:before {
+        color: hsl(0, 0%, 48%);
+    }
+
     pre {
         color: $white !important;
         background-color: $dark !important;
@@ -134,26 +193,10 @@ pre[class*="language-"] {
 
     code[class*="language-"],
     pre[class*="language-"] {
-        text-align: left;
-        white-space: pre;
-        word-spacing: normal;
-        word-break: normal;
-        word-wrap: normal;
         color: #eee;
         text-shadow: none;
         background: $dark;
         font-family: $code-family;
-        font-size: 1em;
-        line-height: 1.5em;
-
-        -moz-tab-size: 4;
-        -o-tab-size: 4;
-        tab-size: 4;
-
-        -webkit-hyphens: none;
-        -moz-hyphens: none;
-        -ms-hyphens: none;
-        hyphens: none;
     }
 
     code[class*="language-"]::-moz-selection,
@@ -168,19 +211,6 @@ pre[class*="language-"] {
     code[class*="language-"] ::selection,
     pre[class*="language-"] ::selection {
         background: #464646;
-    }
-
-    :not(pre) > code[class*="language-"] {
-        white-space: normal;
-        border-radius: 0.2em;
-        padding: 0.1em;
-    }
-
-    pre[class*="language-"] {
-        overflow: auto;
-        position: relative;
-        margin: 0.5em 0;
-        padding: 1.25em 1em;
     }
 
     .language-css > code,
