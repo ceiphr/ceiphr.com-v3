@@ -110,7 +110,7 @@ const BlogIndex = ({ data, location }: PageProps<Data>) => {
 
             if (IsRedirect) {
               return (
-                <a href={IsRedirect} target="_blank">
+                <a href={IsRedirect} target="_blank" rel="noreferrer">
                   <div className="card">
                     <div className="card-image">
                       <Img

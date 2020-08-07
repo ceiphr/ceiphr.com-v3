@@ -3,7 +3,7 @@ module.exports = {
     title: `Ceiphr`,
     author: {
       name: `Ari Birnbaum`,
-      summary: `Studying Computer Science at Stevens. Freelance Technical Writer at DigitalOcean.`,
+      summary: `Studying Computer Science at Stevens.`,
     },
     description: `I'm Ari Birnbaum, an aspiring software engineer currently studying Computer Science as a sophomore at Stevens Institute of Technology.`,
     siteUrl: `https://www.ceiphr.com`,
