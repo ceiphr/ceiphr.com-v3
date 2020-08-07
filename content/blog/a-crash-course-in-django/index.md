@@ -97,6 +97,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    # highlight-next-line
     'blog',
 ]
 ```
@@ -118,6 +119,7 @@ We'll need to do the same for our templates folder by updating `DIRS` to handle 
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
+        # highlight-next-line
         'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
@@ -140,16 +142,20 @@ from django.contrib import admin
 
 # Add these imports for static file support and to get
 # directory details from Django's settings.py
+# highlight-start
 from django.conf.urls.static import static
 from django.conf import settings
+# highlight-end
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
 ]
 
 # Add this to enable media file support on the development server
+# highlight-start
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+# highlight-end
 ```
 
 [\[in-depth\]](https://docs.djangoproject.com/en/2.2/howto/static-files/)
@@ -276,14 +282,15 @@ from django.conf.urls.static import static
 from django.conf import settings
 
 # import path for easy urls
-from django.urls import path
+from django.urls import path # highlight-line
 
 # import our views so urls.py can call them
-from django_cc.views import PostFeed
+from django_cc.views import PostFeed # highlight-line
 
 urlpatterns = [
 
     # Path for root of our website that will display the post feed
+     # highlight-next-line
     path('', PostFeed.as_view(template_name="index.html"), name="PostFeed"),
     url(r'^admin/', admin.site.urls),
 ]

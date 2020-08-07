@@ -33,7 +33,9 @@
     // }
 
     .article-title,
-    .article-date {
+    .article-date,
+    .is-404 .title,
+    .is-404 .subtitle {
         color: $scheme-invert-ter !important;
     }
 

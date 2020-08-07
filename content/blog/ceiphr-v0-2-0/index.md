@@ -24,7 +24,7 @@ All images are now properly sized to avoid using extra bandwidth. JazzBand's [So
 
 Safari doesn't support modern image formats, like Google's WebP, so every image in each Django template had to be rewritten in order for Apple devices to use, the more widely supported, JPEG:
 
-```html
+```html{numberLines: true}
 <picture>
   <!-- WebP image -->
   {% thumbnail image_name "120x120" format="WEBP" as webp %}
@@ -48,7 +48,7 @@ In order for web crawlers to establish what pages to look at they visit the [sit
 
 Django comes with a [sitemap framework](https://docs.djangoproject.com/en/2.1/ref/contrib/sitemaps/) by default where I make a basic `sitemaps.py` file and have it talk to `urls.py` to generate a sitemap based on article entries and static pages. Django does a really great job of making this simple and easy to implement since below is **all** the code I had to write for the sitemap generator:
 
-```python
+```python{numberLines: true}
 from django.urls import reverse
 from django.contrib.sitemaps import Sitemap
 from database.models import Article

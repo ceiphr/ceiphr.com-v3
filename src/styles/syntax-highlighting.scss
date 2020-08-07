@@ -3,6 +3,8 @@
  * Inspired by Github syntax coloring
  */
 
+// Prism.js formatting
+
 .gatsby-highlight pre[class*="language-"].line-numbers {
     padding-left: 3.4em;
 }
@@ -83,6 +85,8 @@
     padding-right: 0.8em;
     text-align: right;
 }
+
+// General Syntax Highlighting
 
 code[class*="language-"],
 pre[class*="language-"] {
@@ -208,6 +212,8 @@ pre[class*="language-"] {
 }
 
 @media (prefers-color-scheme: dark) {
+    // Prism.js formatting
+
     .gatsby-highlight-code-line {
         background-color: hsl(0, 0%, 28%);
     }
@@ -223,6 +229,8 @@ pre[class*="language-"] {
     .line-numbers-rows > span:before {
         color: hsl(0, 0%, 48%);
     }
+
+    // General Syntax Highlighting
 
     pre {
         color: $white !important;
@@ -241,14 +249,14 @@ pre[class*="language-"] {
     pre[class*="language-"]::-moz-selection,
     code[class*="language-"] ::-moz-selection,
     pre[class*="language-"] ::-moz-selection {
-        background: #464646;
+        background: #4e4e4e;
     }
 
     code[class*="language-"]::selection,
     pre[class*="language-"]::selection,
     code[class*="language-"] ::selection,
     pre[class*="language-"] ::selection {
-        background: #464646;
+        background: #4e4e4e;
     }
 
     .language-css > code,
