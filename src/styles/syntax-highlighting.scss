@@ -7,12 +7,24 @@
 
 .gatsby-highlight {
     overflow: auto;
+
+    .token.operator,
+    .token.entity,
+    .token.url,
+    .language-css .token.string,
+    .style .token.string {
+        background: transparent;
+    }
+
+    span {
+        text-shadow: none !important;
+    }
 }
 
 .gatsby-highlight pre[class*="language-"] {
     overflow: initial;
-    float: left; /* 1 */
-    min-width: 100%; /* 2 */
+    float: left;
+    min-width: 100%;
 }
 
 .gatsby-highlight pre[class*="language-"].line-numbers {
@@ -21,15 +33,6 @@
 
 .gatsby-highlight-code-line {
     background-color: hsl(0, 0%, 92%);
-    text-shadow: none !important;
-
-    .token.operator,
-    .token.entity,
-    .token.url,
-    .language-css .token.string,
-    .style .token.string {
-        background-color: hsl(0, 0%, 92%);
-    }
 
     display: block;
     margin-right: -1em;
@@ -162,7 +165,6 @@ pre[class*="language-"] {
     padding: 0.2em;
     padding-top: 1px;
     padding-bottom: 1px;
-    background: #f8f8f8;
     border: 1px solid #dddddd;
 }
 
