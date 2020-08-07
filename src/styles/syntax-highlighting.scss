@@ -5,6 +5,16 @@
 
 // Prism.js formatting
 
+.gatsby-highlight {
+    overflow: auto;
+}
+
+.gatsby-highlight pre[class*="language-"] {
+    overflow: initial;
+    float: left; /* 1 */
+    min-width: 100%; /* 2 */
+}
+
 .gatsby-highlight pre[class*="language-"].line-numbers {
     padding-left: 3.4em;
 }

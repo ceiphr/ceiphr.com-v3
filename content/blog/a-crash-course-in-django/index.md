@@ -142,20 +142,16 @@ from django.contrib import admin
 
 # Add these imports for static file support and to get
 # directory details from Django's settings.py
-# highlight-start
 from django.conf.urls.static import static
 from django.conf import settings
-# highlight-end
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
 ]
 
 # Add this to enable media file support on the development server
-# highlight-start
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
-# highlight-end
 ```
 
 [\[in-depth\]](https://docs.djangoproject.com/en/2.2/howto/static-files/)
@@ -282,10 +278,10 @@ from django.conf.urls.static import static
 from django.conf import settings
 
 # import path for easy urls
-from django.urls import path # highlight-line
+from django.urls import path
 
 # import our views so urls.py can call them
-from django_cc.views import PostFeed # highlight-line
+from django_cc.views import PostFeed
 
 urlpatterns = [
 
