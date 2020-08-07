@@ -9,15 +9,18 @@
 .post-full-content {
     overflow: hidden;
 
-    code {
-        border-radius: 2px !important;
+    p code {
+        padding-left: 4px !important;
+        padding-right: 4px !important;
+
+        border-radius: 4px !important;
         border-width: 0 !important;
     }
 
     pre {
         border-radius: $radius-large !important;
         border-width: 0 !important;
-        background: $white-bis
+        background:  $white-ter;
     }
 
     hr {

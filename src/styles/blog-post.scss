@@ -9,7 +9,7 @@
     }
 
     100% {
-        transform: translateY(6px);
+        transform: translateY(8px);
     }
 }
 
@@ -35,18 +35,19 @@ article {
 
     .article-title {
         color: $white;
-        line-height: .85;
+        line-height: 0.85;
+        font-family: $heading-family;
 
         @media (min-width: 680px) {
-            animation: .65s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s slideUp;
-            font-size: 6rem;
-            line-height: .85;
-            transform: translateY(6px);
+            animation: 0.65s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s slideUp;
+            font-size: 7.5rem;
+            line-height: 0.85;
+            transform: translateY(8px);
         }
 
         @media (max-width: 680px) {
-            font-size: 2.5rem;
-            transform: translateY(2px);
+            font-size: 3rem;
+            transform: translateY(4px);
         }
     }
 
@@ -55,7 +56,6 @@ article {
 
         @media (min-width: 680px) {
             font-size: 2rem;
-
         }
 
         @media (max-width: 680px) {
@@ -139,6 +139,8 @@ article {
     display: grid;
     justify-content: space-between;
     grid-gap: 1em;
+
+    margin-top: 3em;
     margin-bottom: 1em;
 
     @media (min-width: 680px) {
@@ -158,45 +160,45 @@ article {
 // Commento tweaks for looking
 // similar to Bulma styles
 
-#commento-error {
-    margin-bottom: 5em;
-}
+// #commento-error {
+//     margin-bottom: 5em;
+// }
 
-.commento-root-font * {
-    font-family: $body-family !important;
-}
+// .commento-root-font * {
+//     font-family: $body-family !important;
+// }
 
-.commento-submit-button {
-    background: $primary !important;
-    text-transform: none !important;
-}
+// .commento-submit-button {
+//     background: $primary !important;
+//     text-transform: none !important;
+// }
 
-.commento-root a,
-.commento-mod-tools::before {
-    color: $link !important;
-}
+// .commento-root a,
+// .commento-mod-tools::before {
+//     color: $link !important;
+// }
 
-.commento-avatar {
-    background: rgb(57, 106, 177) none repeat scroll 0% 0%; //change
-}
+// .commento-avatar {
+//     background: rgb(57, 106, 177) none repeat scroll 0% 0%; //change
+// }
 
-.commento-root {
-    margin-bottom: -5rem;
-    margin-top: 2rem;
-}
+// .commento-root {
+//     margin-bottom: -5rem;
+//     margin-top: 2rem;
+// }
 
-.commento-logo-text {
-    display: none !important;
-}
+// .commento-logo-text {
+//     display: none !important;
+// }
 
-.commento-markdown-help {
-    pre {
-        padding: 0 0 !important;
-        border-radius: 2px;
-    }
-}
+// .commento-markdown-help {
+//     pre {
+//         padding: 0 0 !important;
+//         border-radius: 2px;
+//     }
+// }
 
-#commento-textarea-container-root,
-.commento-root textarea {
-    border-radius: $radius-large !important;
-}
+// #commento-textarea-container-root,
+// .commento-root textarea {
+//     border-radius: $radius-large !important;
+// }

@@ -67,6 +67,7 @@ module.exports = {
         head: false,
         anonymizeIp: true,
         respectDNT: true,
+        cookieExpires: 0,
         defer: true,
         storeGac: false,
         allowAdFeatures: false,

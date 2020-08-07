@@ -363,7 +363,7 @@ Now we have a website that displays what we add to our control panel in Bulma ca
 
 Django is a wonderful framework for building websites and other complex things. Today you've created a very basic website that is capable of displaying posts akin to Instagram and in the future hopefully you can build Instagram yourself. For now, I suggest learning more about Django either through [their documentation](https://docs.djangoproject.com/en/2.2/) or [this introduction (which got me started)](https://rnvarma.gitbooks.io/intro-to-django-real/content/).
 
-**FYI** — Follow [this tutorial by Digital Ocean](https://www.digitalocean.com/community/tutorials/how-to-set-up-django-with-postgres-nginx-and-gunicorn-on-ubuntu-18-04) so you can learn how to host your Django creations for the world to see. If you want to host with Digital Ocean, [use my referral link for a discount](https://m.do.co/c/b95c2a8a5568).
+**FYI** — Follow [this tutorial by DigitalOcean](https://www.digitalocean.com/community/tutorials/how-to-set-up-django-with-postgres-nginx-and-gunicorn-on-ubuntu-18-04) so you can learn how to host your Django creations for the world to see. If you want to host with DigitalOcean, [use my referral link for a discount](https://m.do.co/c/b95c2a8a5568).
 
 Article cover photo by [Fabian Grohs](https://unsplash.com/@grohsfabian?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/@ceiphr/likes?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText).
 

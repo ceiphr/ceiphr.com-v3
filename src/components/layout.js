@@ -91,7 +91,7 @@ const Layout = ({ location, title, children }) => {
                   <a
                     target="_blank"
                     rel="noopener noreferrer"
-                    href="https://www.iubenda.com/privacy-policy/18781590"
+                    href="https://www.iubenda.com/privacy-policy/18781590/legal"
                   >
                     Privacy Policy
                   </a>
@@ -122,7 +122,7 @@ const Layout = ({ location, title, children }) => {
         </footer>
       </div>
       <link
-        href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;700&family=IBM+Plex+Sans:ital,wght@0,400;0,700;1,400&display=swap"
+        href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;700&family=IBM+Plex+Sans+Condensed:ital,wght@1,700&family=IBM+Plex+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap"
         rel="stylesheet"
       />
     </div>

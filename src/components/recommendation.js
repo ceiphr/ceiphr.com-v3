@@ -19,7 +19,7 @@ const Recommendation = ({ post }) => {
 
   if (IsRedirect) {
     return (
-      <a href={IsRedirect}>
+      <a href={IsRedirect} target="_blank">
         <div className="card">
           <div className="card-image">
             <Img className="card-image__content" fluid={featuredImgFluid} />

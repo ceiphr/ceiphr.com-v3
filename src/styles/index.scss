@@ -5,9 +5,11 @@ $primary: #ef486c;
 
 // Update some of Bulma's component variables
 
+$heading-family: "IBM Plex Sans Condensed", sans-serif;
+
 $body-family: "IBM Plex Sans", "Helvetica Neue", Arial, sans-serif;
 
-$family-code: "IBM Plex Mono", "Menlo", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", Courier, monospace;
+$code-family: "IBM Plex Mono", "Menlo", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", Courier, monospace;
 
 $radius-large: 8px;
 
@@ -15,7 +17,7 @@ $widescreen-enabled: false;
 $fullhd-enabled: false;
 $easing: cubic-bezier(0.25, 0.46, 0.45, 0.94);
 
-$card-background-color: $white-bis;
+$card-background-color: $white-ter;
 $card-shadow: 0 0.2em 0.5em -0.125em rgba($scheme-invert, 0.1),
 0 0px 0 1px rgba($scheme-invert, 0.02);
 
@@ -70,7 +72,7 @@ video {
     margin-right: auto;
     width: 50%;
 
-    img {
+    svg {
         width: 100%;
         position: relative;
         z-index: 1;

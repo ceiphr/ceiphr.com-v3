@@ -16,6 +16,7 @@ import { faArrowRight, faExternalLinkAlt } from "@fortawesome/free-solid-svg-ico
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+import Logo from "../../static/gradient-logo.svg"
 
 type Data = {
   site: {
@@ -76,7 +77,7 @@ const BlogIndex = ({ data, location }: PageProps<Data>) => {
         <div className="hero-body">
           <div className="container">
             <div className="hero-banner">
-              <img src={`/gradient-logo.svg`} alt={siteTitle} />
+              <Logo alt={siteTitle} />
             </div>
           </div>
         </div>
@@ -109,7 +110,7 @@ const BlogIndex = ({ data, location }: PageProps<Data>) => {
 
             if (IsRedirect) {
               return (
-                <a href={IsRedirect}>
+                <a href={IsRedirect} target="_blank">
                   <div className="card">
                     <div className="card-image">
                       <Img

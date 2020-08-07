@@ -5,6 +5,7 @@
 
 import React from "react"
 import { OutboundLink } from "gatsby-plugin-google-analytics"
+import DOLogo from "../../static/do.svg"
 
 const Referral = () => {
   return (
@@ -16,7 +17,7 @@ const Referral = () => {
     >
       <div className="referral__logo">
         {/* The DigitalOcean SVG can be found in the root of static */}
-        <img src={`/do.svg`} alt="DigitalOcean" />{" "}
+        <DOLogo alt="DigitalOcean" />{" "}
       </div>
       <p>
         Host your Django API, Headless CMS, and more on
