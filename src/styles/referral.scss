@@ -4,6 +4,13 @@
     color: $dark;
 }
 
+@media (min-width: 680px) {
+    .referral svg {
+        margin-top: -10px;
+        margin-bottom: -10px;
+    }
+}
+
 @media (max-width: 680px) {
     .referral a {
         display: flex;
