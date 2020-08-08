@@ -17,10 +17,11 @@
         border-width: 0 !important;
     }
 
-    pre {
+    .gatsby-highlight {
         border-radius: $radius-large !important;
         border-width: 0 !important;
         background:  $white-ter;
+        margin-bottom: 1em;
     }
 
     hr {
