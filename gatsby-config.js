@@ -52,7 +52,14 @@ module.exports = {
           {
             resolve: `gatsby-remark-images`,
             options: {
+              linkImagesToOriginal: false,
               maxWidth: 590,
+            },
+          },
+          {
+            resolve: `gatsby-remark-images-zoom`,
+            options: {
+              background: "#242424",
             },
           },
           {
