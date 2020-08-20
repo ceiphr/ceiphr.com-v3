@@ -105,16 +105,31 @@ const Layout = ({ location, title, children }) => {
                   </a>
                 </span>
                 <p>
-                  Source code licensed
+                  Developing with
                   {` `}
                   <a
                     target="_blank"
                     rel="noopener noreferrer"
-                    href="https://github.com/ceiphr/gatsby-ceiphr/blob/master/LICENSE"
+                    href="https://www.gatsbyjs.com/"
                   >
-                    GNU GPL v3.0
+                    Gatsby.js
                   </a>
-                  .{` `}Fork it on GitHub.
+                  {` `}and{` `}
+                  <a
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    href="https://bulma.io/"
+                  >
+                    Bulma
+                  </a>
+                  .{` `}Hosted on{` `}
+                  <a
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    href="https://vercel.com/"
+                  >
+                    Vercel
+                  </a>.
                 </p>
               </div>
             </div>

@@ -118,7 +118,7 @@ const BlogPostTemplate = ({ data, location }) => {
                 dangerouslySetInnerHTML={{ __html: post.html }}
               />
               <div>
-                This article is licensed under{" "}
+                This article is licensed under{` `}
                 <a
                   rel="license noopener noreferrer"
                   target="_blank"
@@ -127,7 +127,23 @@ const BlogPostTemplate = ({ data, location }) => {
                   Creative Commons Attribution-NonCommercial-ShareAlike 4.0
                   International
                 </a>
-                .
+                .<br />
+                Found an error in this article? Email me{" "}
+                <a
+                  rel="license noopener noreferrer"
+                  target="_blank"
+                  href="mailto:ari+error@ceiphr.com"
+                >
+                  ari@ceiphr.com
+                </a>
+                {` `}or tweet at me{` `}
+                <a
+                  rel="license noopener noreferrer"
+                  target="_blank"
+                  href="https://twitter.com/ceiphr"
+                >
+                  @ceiphr
+                </a>.
               </div>
               <br />
             </section>
