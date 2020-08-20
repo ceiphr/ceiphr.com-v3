@@ -105,7 +105,7 @@ const Layout = ({ location, title, children }) => {
                   </a>
                 </span>
                 <p>
-                  Developing with
+                  Developed with
                   {` `}
                   <a
                     target="_blank"
