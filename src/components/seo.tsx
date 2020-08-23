@@ -6,13 +6,26 @@
  */
 
 import React from "react"
-import PropTypes from "prop-types"
+// @ts-expect-error ts-migrate(7016) FIXME: Try `npm install @types/react-helmet` if it exists... Remove this comment to see the full error message
 import { Helmet } from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
 
+// @ts-expect-error ts-migrate(7016) FIXME: Try `npm install @types/react-media-hook` if it ex... Remove this comment to see the full error message
 import { useMediaPredicate } from "react-media-hook"
 
-const SEO = ({ description, lang, meta, title, image }) => {
+type OwnProps = {
+    description?: string;
+    lang?: string;
+    meta?: any[];
+    title: string;
+    image?: string;
+};
+
+// @ts-expect-error ts-migrate(2456) FIXME: Type alias 'Props' circularly references itself.
+type Props = OwnProps & typeof SEO.defaultProps;
+
+// @ts-expect-error ts-migrate(7022) FIXME: 'SEO' implicitly has type 'any' because it does no... Remove this comment to see the full error message
+const SEO = ({ description, lang, meta, title, image }: Props) => {
   const { site } = useStaticQuery(
     graphql`
       query {
@@ -37,6 +50,7 @@ const SEO = ({ description, lang, meta, title, image }) => {
     : "/favicon-black.png"
 
   return (
+    // @ts-expect-error ts-migrate(17004) FIXME: Cannot use JSX unless the '--jsx' flag is provided... Remove this comment to see the full error message
     <Helmet
       htmlAttributes={{
         lang,
@@ -90,6 +104,7 @@ const SEO = ({ description, lang, meta, title, image }) => {
         },
       ].concat(meta)}
     >
+      {/* @ts-expect-error ts-migrate(17004) FIXME: Cannot use JSX unless the '--jsx' flag is provided... Remove this comment to see the full error message */}
       <link
         key={`gatsby-plugin-manifest-icon-link`}
         rel="icon"
@@ -106,14 +121,6 @@ SEO.defaultProps = {
   meta: [],
   description: ``,
   image: ``,
-}
-
-SEO.propTypes = {
-  description: PropTypes.string,
-  lang: PropTypes.string,
-  meta: PropTypes.arrayOf(PropTypes.object),
-  title: PropTypes.string.isRequired,
-  image: PropTypes.string,
 }
 
 export default SEO
