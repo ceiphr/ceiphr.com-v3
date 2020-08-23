@@ -8,6 +8,7 @@ import { graphql } from "gatsby"
 import BackgroundImage from "gatsby-background-image"
 
 import { JsonLd } from "react-schemaorg"
+// @ts-expect-error ts-migrate(7016) FIXME: Try `npm install @types/react-media-hook` if it ex... Remove this comment to see the full error message
 import { useMediaPredicate } from "react-media-hook"
 
 import {
@@ -19,7 +20,7 @@ import {
   Referral,
 } from "../components"
 
-function dimBackground(post, isDark) {
+function dimBackground(post: any, isDark: any) {
   // Uses gatsby-background-image for an opacity gradient
   // then a lazy-loaded and optimized background image
   if (isDark) {
@@ -40,7 +41,10 @@ function dimBackground(post, isDark) {
   ]
 }
 
-const BlogPostTemplate = ({ data, location }) => {
+const BlogPostTemplate = ({
+  data,
+  location
+}: any) => {
   // Site data from gatsby-config
   const siteTitle = data.site.siteMetadata.title
 
@@ -165,13 +169,15 @@ const BlogPostTemplate = ({ data, location }) => {
       {/* Post blog-post recommendations and comment section */}
       <section className="container">
         <div className="post-recommendations">
-          {recommendedPosts.map(({ node }) => (
+          {recommendedPosts.map(({
+            node
+          }: any) => (
             <Recommendation key={node.fields.slug} post={node} />
           ))}
         </div>
       </section>
     </Layout>
-  )
+  );
 }
 
 export default BlogPostTemplate

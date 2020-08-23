@@ -6,13 +6,21 @@
 
 import React from "react"
 import { Link } from "gatsby"
+// @ts-expect-error ts-migrate(7016) FIXME: Try `npm install @types/react-media-hook` if it ex... Remove this comment to see the full error message
 import { useMediaPredicate } from "react-media-hook"
 
+// @ts-expect-error ts-migrate(2307) FIXME: Cannot find module '../../static/logo-black.svg' o... Remove this comment to see the full error message
 import DarkLogo from "../../static/logo-black.svg"
+// @ts-expect-error ts-migrate(2307) FIXME: Cannot find module '../../static/logo-white.svg' o... Remove this comment to see the full error message
 import LightLogo from "../../static/logo-white.svg"
 import "../styles/index.scss"
 
-const Layout = ({ location, title, children }) => {
+const Layout = ({
+  location,
+  title,
+  children
+}: any) => {
+  // @ts-expect-error ts-migrate(2304) FIXME: Cannot find name '__PATH_PREFIX__'.
   const rootPath = `${__PATH_PREFIX__}/`
   let header
 

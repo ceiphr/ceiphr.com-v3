@@ -1,10 +1,14 @@
 import React, { Component } from 'react';
 
-class carbonAds extends Component {
-    constructor(props) {
+type State = any;
+
+class carbonAds extends Component<{}, State> {
+    constructor(props: {}) {
         super(props)
         this.state = {
+            // @ts-expect-error ts-migrate(2339) FIXME: Property 'customClass' does not exist on type 'Rea... Remove this comment to see the full error message
             customClass: this.props.customClass,
+            // @ts-expect-error ts-migrate(2339) FIXME: Property 'carbonUrl' does not exist on type 'Reado... Remove this comment to see the full error message
             carbonUrl: this.props.carbonUrl,
             aSync: true
         };
@@ -16,6 +20,7 @@ class carbonAds extends Component {
         script.src = this.state.carbonUrl;
         script.async = this.state.aSync;
         script.id = "_carbonads_js"
+        // @ts-expect-error ts-migrate(2531) FIXME: Object is possibly 'null'.
         carbon_wrapper.appendChild(script);
     }
 

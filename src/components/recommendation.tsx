@@ -10,7 +10,9 @@ import { Link } from "gatsby"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faArrowRight, faExternalLinkAlt } from "@fortawesome/free-solid-svg-icons"
 
-const Recommendation = ({ post }) => {
+const Recommendation = ({
+  post
+}: any) => {
   const featuredImgFluid = post.frontmatter.featuredImage.childImageSharp.fluid
   const title = post.frontmatter.title || post.fields.slug
   // Is this post a post or does it redirect to the real post?
