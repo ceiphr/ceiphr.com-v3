@@ -50,7 +50,6 @@ const SEO = ({ description, lang, meta, title, image }: Props) => {
     : "/favicon-black.png"
 
   return (
-    // @ts-expect-error ts-migrate(17004) FIXME: Cannot use JSX unless the '--jsx' flag is provided... Remove this comment to see the full error message
     <Helmet
       htmlAttributes={{
         lang,
@@ -104,7 +103,6 @@ const SEO = ({ description, lang, meta, title, image }: Props) => {
         },
       ].concat(meta)}
     >
-      {/* @ts-expect-error ts-migrate(17004) FIXME: Cannot use JSX unless the '--jsx' flag is provided... Remove this comment to see the full error message */}
       <link
         key={`gatsby-plugin-manifest-icon-link`}
         rel="icon"

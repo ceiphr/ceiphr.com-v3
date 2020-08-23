@@ -29,21 +29,16 @@ const Layout = ({
   // Display the navigation bar on pages that aren't the homepage
   if (location.pathname !== rootPath) {
     header = (
-      // @ts-expect-error ts-migrate(17004) FIXME: Cannot use JSX unless the '--jsx' flag is provided... Remove this comment to see the full error message
       <nav
         className="navbar is-transparent"
         role="navigation"
         aria-label="main navigation"
       >
-        {/* @ts-expect-error ts-migrate(17004) FIXME: Cannot use JSX unless the '--jsx' flag is provided... Remove this comment to see the full error message */}
         <div className="navbar-brand">
-          {/* @ts-expect-error ts-migrate(17004) FIXME: Cannot use JSX unless the '--jsx' flag is provided... Remove this comment to see the full error message */}
           <Link className="navbar-item" to={`/`}>
             {isDark ? (
-              // @ts-expect-error ts-migrate(17004) FIXME: Cannot use JSX unless the '--jsx' flag is provided... Remove this comment to see the full error message
               <DarkLogo alt={title} width="64" height="64" />
             ) : (
-              // @ts-expect-error ts-migrate(17004) FIXME: Cannot use JSX unless the '--jsx' flag is provided... Remove this comment to see the full error message
               <LightLogo alt={title} width="64" height="64" />
             )}
           </Link>
@@ -53,27 +48,17 @@ const Layout = ({
   }
 
   return (
-    // @ts-expect-error ts-migrate(17004) FIXME: Cannot use JSX unless the '--jsx' flag is provided... Remove this comment to see the full error message
     <div>
-      {/* @ts-expect-error ts-migrate(17004) FIXME: Cannot use JSX unless the '--jsx' flag is provided... Remove this comment to see the full error message */}
       <header>{header}</header>
-      {/* @ts-expect-error ts-migrate(17004) FIXME: Cannot use JSX unless the '--jsx' flag is provided... Remove this comment to see the full error message */}
       <main className="site-main">{children}</main>{" "}
-      {/* @ts-expect-error ts-migrate(17004) FIXME: Cannot use JSX unless the '--jsx' flag is provided... Remove this comment to see the full error message */}
       <div className="section">
         {/* The footer at the very bottom of the screen */}
-        {/* @ts-expect-error ts-migrate(17004) FIXME: Cannot use JSX unless the '--jsx' flag is provided... Remove this comment to see the full error message */}
         <footer className="footer">
-          {/* @ts-expect-error ts-migrate(17004) FIXME: Cannot use JSX unless the '--jsx' flag is provided... Remove this comment to see the full error message */}
           <div className="container">
-            {/* @ts-expect-error ts-migrate(17004) FIXME: Cannot use JSX unless the '--jsx' flag is provided... Remove this comment to see the full error message */}
             <div className="columns is-desktop">
               {/* Left side of footer: social links and copyright notice */}
-              {/* @ts-expect-error ts-migrate(17004) FIXME: Cannot use JSX unless the '--jsx' flag is provided... Remove this comment to see the full error message */}
               <div className="column">
-                {/* @ts-expect-error ts-migrate(17004) FIXME: Cannot use JSX unless the '--jsx' flag is provided... Remove this comment to see the full error message */}
                 <span className="footer-links">
-                  {/* @ts-expect-error ts-migrate(17004) FIXME: Cannot use JSX unless the '--jsx' flag is provided... Remove this comment to see the full error message */}
                   <a
                     target="_blank"
                     rel="noopener noreferrer"
@@ -81,7 +66,6 @@ const Layout = ({
                   >
                     GitHub
                   </a>
-                  {/* @ts-expect-error ts-migrate(17004) FIXME: Cannot use JSX unless the '--jsx' flag is provided... Remove this comment to see the full error message */}
                   <a
                     target="_blank"
                     rel="noopener noreferrer"
@@ -89,7 +73,6 @@ const Layout = ({
                   >
                     LinkedIn
                   </a>
-                  {/* @ts-expect-error ts-migrate(17004) FIXME: Cannot use JSX unless the '--jsx' flag is provided... Remove this comment to see the full error message */}
                   <a
                     target="_blank"
                     rel="noopener noreferrer"
@@ -97,7 +80,6 @@ const Layout = ({
                   >
                     Twitter
                   </a>
-                  {/* @ts-expect-error ts-migrate(17004) FIXME: Cannot use JSX unless the '--jsx' flag is provided... Remove this comment to see the full error message */}
                   <a
                     target="_blank"
                     rel="noopener noreferrer"
@@ -106,18 +88,14 @@ const Layout = ({
                     Changelog
                   </a>
                 </span>
-                {/* @ts-expect-error ts-migrate(17004) FIXME: Cannot use JSX unless the '--jsx' flag is provided... Remove this comment to see the full error message */}
                 <p>
                   Unless otherwise noted, all content © 2016-2020 Ari Birnbaum.
                 </p>
               </div>
 
               {/* Right side of footer: privacy notice and OSS license */}
-              {/* @ts-expect-error ts-migrate(17004) FIXME: Cannot use JSX unless the '--jsx' flag is provided... Remove this comment to see the full error message */}
               <div className="column">
-                {/* @ts-expect-error ts-migrate(17004) FIXME: Cannot use JSX unless the '--jsx' flag is provided... Remove this comment to see the full error message */}
                 <span className="footer-links">
-                  {/* @ts-expect-error ts-migrate(17004) FIXME: Cannot use JSX unless the '--jsx' flag is provided... Remove this comment to see the full error message */}
                   <a
                     target="_blank"
                     rel="noopener noreferrer"
@@ -126,7 +104,6 @@ const Layout = ({
                     Privacy Policy
                   </a>
                   {` `}
-                  {/* @ts-expect-error ts-migrate(17004) FIXME: Cannot use JSX unless the '--jsx' flag is provided... Remove this comment to see the full error message */}
                   <a
                     target="_blank"
                     rel="noopener noreferrer"
@@ -135,11 +112,9 @@ const Layout = ({
                     Cookie Policy
                   </a>
                 </span>
-                {/* @ts-expect-error ts-migrate(17004) FIXME: Cannot use JSX unless the '--jsx' flag is provided... Remove this comment to see the full error message */}
                 <p>
                   Developed with
                   {` `}
-                  {/* @ts-expect-error ts-migrate(17004) FIXME: Cannot use JSX unless the '--jsx' flag is provided... Remove this comment to see the full error message */}
                   <a
                     target="_blank"
                     rel="noopener noreferrer"
@@ -148,7 +123,6 @@ const Layout = ({
                     Gatsby.js
                   </a>
                   {` `}and{` `}
-                  {/* @ts-expect-error ts-migrate(17004) FIXME: Cannot use JSX unless the '--jsx' flag is provided... Remove this comment to see the full error message */}
                   <a
                     target="_blank"
                     rel="noopener noreferrer"
@@ -157,7 +131,6 @@ const Layout = ({
                     Bulma
                   </a>
                   .{` `}Hosted on{` `}
-                  {/* @ts-expect-error ts-migrate(17004) FIXME: Cannot use JSX unless the '--jsx' flag is provided... Remove this comment to see the full error message */}
                   <a
                     target="_blank"
                     rel="noopener noreferrer"
@@ -171,7 +144,6 @@ const Layout = ({
           </div>
         </footer>
       </div>
-      {/* @ts-expect-error ts-migrate(17004) FIXME: Cannot use JSX unless the '--jsx' flag is provided... Remove this comment to see the full error message */}
       <link
         href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;700&family=IBM+Plex+Sans+Condensed:ital,wght@1,700&family=IBM+Plex+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap"
         rel="stylesheet"
