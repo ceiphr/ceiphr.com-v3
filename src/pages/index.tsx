@@ -12,10 +12,14 @@ import { Person } from "schema-dts"
 import { JsonLd } from "react-schemaorg"
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faArrowRight, faExternalLinkAlt } from "@fortawesome/free-solid-svg-icons"
+import {
+  faArrowRight,
+  faExternalLinkAlt,
+} from "@fortawesome/free-solid-svg-icons"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+// @ts-expect-error ts-migrate(2307) FIXME: Cannot find module '../../static/gradient-logo.svg' o... Remove this comment to see the full error message
 import Logo from "../../static/gradient-logo.svg"
 
 type Data = {
@@ -77,7 +81,9 @@ const BlogIndex = ({ data, location }: PageProps<Data>) => {
         <div className="hero-body">
           <div className="container">
             <div className="hero-banner">
-              <Logo alt={siteTitle} />
+              <h1>
+                <Logo alt={siteTitle} />
+              </h1>
             </div>
           </div>
         </div>
@@ -110,7 +116,7 @@ const BlogIndex = ({ data, location }: PageProps<Data>) => {
 
             if (IsRedirect) {
               return (
-                <a href={IsRedirect} target="_blank" rel="noreferrer">
+                <a href={IsRedirect} target="_blank" rel="noreferrer"  aria-label={`Read the article: ${title}. This is an external link.`}>
                   <div className="card">
                     <div className="card-image">
                       <Img
@@ -120,8 +126,8 @@ const BlogIndex = ({ data, location }: PageProps<Data>) => {
                     </div>
                     <div className="card-content">
                       <div className="content">
-                        <p className="title is-4">{title}</p>
-                        <p className="subtitle is-6">{node.frontmatter.date}</p>
+                        <h2 className="title is-4">{title}</h2>
+                        <h3 className="subtitle is-6">{node.frontmatter.date}</h3>
                         <p
                           dangerouslySetInnerHTML={{
                             __html:
@@ -145,7 +151,7 @@ const BlogIndex = ({ data, location }: PageProps<Data>) => {
             }
 
             return (
-              <Link key={node.fields.slug} to={node.fields.slug}>
+              <Link key={node.fields.slug} to={node.fields.slug} aria-label={`Read the article: ${title}.`}>
                 <div className="card">
                   <div className="card-image">
                     <Img
@@ -155,8 +161,8 @@ const BlogIndex = ({ data, location }: PageProps<Data>) => {
                   </div>
                   <div className="card-content">
                     <div className="content">
-                      <p className="title is-4">{title}</p>
-                      <p className="subtitle is-6">{node.frontmatter.date}</p>
+                      <h2 className="title is-4">{title}</h2>
+                      <h3 className="subtitle is-6">{node.frontmatter.date}</h3>
                       <p
                         dangerouslySetInnerHTML={{
                           __html: node.frontmatter.description || node.excerpt,

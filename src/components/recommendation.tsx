@@ -21,7 +21,7 @@ const Recommendation = ({
 
   if (IsRedirect) {
     return (
-      <a href={IsRedirect} target="_blank" rel="noreferrer">
+      <a href={IsRedirect} target="_blank" rel="noreferrer" aria-label={`Read the article: ${title}. This is an external link.`}>
         <div className="card">
           <div className="card-image">
             <Img className="card-image__content" fluid={featuredImgFluid} />
@@ -56,7 +56,7 @@ const Recommendation = ({
   }
 
   return (
-    <Link to={post.fields.slug}>
+    <Link to={post.fields.slug} aria-label={`Read the article: ${title}.`}>
       <div className="card">
         <div className="card-image">
           <Img className="card-image__content" fluid={featuredImgFluid} />

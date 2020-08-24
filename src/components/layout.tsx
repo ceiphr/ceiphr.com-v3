@@ -15,11 +15,7 @@ import DarkLogo from "../../static/logo-black.svg"
 import LightLogo from "../../static/logo-white.svg"
 import "../styles/index.scss"
 
-const Layout = ({
-  location,
-  title,
-  children
-}: any) => {
+const Layout = ({ location, title, children }: any) => {
   // @ts-expect-error ts-migrate(2304) FIXME: Cannot find name '__PATH_PREFIX__'.
   const rootPath = `${__PATH_PREFIX__}/`
   let header
@@ -35,7 +31,7 @@ const Layout = ({
         aria-label="main navigation"
       >
         <div className="navbar-brand">
-          <Link className="navbar-item" to={`/`}>
+          <Link className="navbar-item" to={`/`} aria-label={`Go to the home page of this web site.`}>
             {isDark ? (
               <DarkLogo alt={title} width="64" height="64" />
             ) : (
@@ -63,6 +59,7 @@ const Layout = ({
                     target="_blank"
                     rel="noopener noreferrer"
                     href="https://github.com/ceiphr/"
+                    aria-label="Visit the GitHub page for Ari Birnbaum."
                   >
                     GitHub
                   </a>
@@ -70,6 +67,7 @@ const Layout = ({
                     target="_blank"
                     rel="noopener noreferrer"
                     href="https://www.linkedin.com/in/ari/"
+                    aria-label="Visit the LinkedIn account for Ari Birnbaum."
                   >
                     LinkedIn
                   </a>
@@ -77,6 +75,7 @@ const Layout = ({
                     target="_blank"
                     rel="noopener noreferrer"
                     href="https://twitter.com/ceiphr/"
+                    aria-label="Visit the Twitter account for Ari Birnbaum."
                   >
                     Twitter
                   </a>
@@ -84,6 +83,7 @@ const Layout = ({
                     target="_blank"
                     rel="noopener noreferrer"
                     href="https://changelog.ceiphr.com/"
+                    aria-label="Visit the change log for projects by Ari Birnbaum."
                   >
                     Changelog
                   </a>
@@ -100,6 +100,7 @@ const Layout = ({
                     target="_blank"
                     rel="noopener noreferrer"
                     href="https://www.iubenda.com/privacy-policy/18781590/legal"
+                    aria-label="Read this site's privacy policy."
                   >
                     Privacy Policy
                   </a>
@@ -108,25 +109,37 @@ const Layout = ({
                     target="_blank"
                     rel="noopener noreferrer"
                     href="https://www.iubenda.com/privacy-policy/18781590/cookie-policy"
+                    aria-label="Read this site's cookie policy."
                   >
                     Cookie Policy
                   </a>
                 </span>
                 <p>
-                  Developed with
+                  Built with
                   {` `}
                   <a
                     target="_blank"
                     rel="noopener noreferrer"
                     href="https://www.gatsbyjs.com/"
+                    aria-label="Learn more about Gatsby.js."
                   >
                     Gatsby.js
                   </a>
-                  {` `}and{` `}
+                  , {` `}
+                  <a
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    href="https://www.typescriptlang.org/"
+                    aria-label="Learn more about Microsoft TypeScript."
+                  >
+                    TypeScript
+                  </a>
+                  ,{` `} and {` `}
                   <a
                     target="_blank"
                     rel="noopener noreferrer"
                     href="https://bulma.io/"
+                    aria-label="Learn more about Bulma CSS."
                   >
                     Bulma
                   </a>
@@ -135,9 +148,11 @@ const Layout = ({
                     target="_blank"
                     rel="noopener noreferrer"
                     href="https://vercel.com/"
+                    aria-label="Learn more about Vercel."
                   >
                     Vercel
-                  </a>.
+                  </a>
+                  .
                 </p>
               </div>
             </div>
