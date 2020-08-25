@@ -15,7 +15,7 @@ import {
   CarbonAds,
   Recommendation,
   SEO,
-  Bio,
+  Credit,
   Layout,
   Referral,
 } from "../components"
@@ -116,7 +116,7 @@ const BlogPostTemplate = ({
           <div className="post-columns">
             {/* Article body and license footer */}
             <section className="post-full-content">
-              <Bio />
+              <Credit />
               <div
                 className="content-body load-external-scripts"
                 dangerouslySetInnerHTML={{ __html: post.html }}

@@ -34,7 +34,7 @@ class carbonAds extends Component<{}, State> {
     return (
       <div
         className={`carbon-ads-wrapper ${this.state.customClass}`}
-        aria-label={`This is an Advertisement by CarbonAds.`}
+        aria-hidden="true"
       ></div>
     )
   }

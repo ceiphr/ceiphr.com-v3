@@ -21,6 +21,7 @@ const Bio = () => {
         siteMetadata {
           author {
             name
+            email
             summary
           }
           social {
@@ -33,29 +34,33 @@ const Bio = () => {
 
   const { author, social } = data.site.siteMetadata
   return (
-    <div className="media bio">
-      <figure className="media-left">
-        <div className="image">
-          <Img fixed={data.avatar.childImageSharp.fixed} alt={author.name} />
+    <div className="columns is-desktop bio">
+      <div className="column">
+        <div className="media">
+          <figure className="media-left image">
+            <Img fixed={data.avatar.childImageSharp.fixed} alt={author.name} />
+          </figure>
+          <div className="media-content">
+            <div className="content">
+              <p>
+                <strong>{author.name}</strong>
+                {` `}
+                <small>
+                  <a
+                    rel="noopener noreferrer"
+                    target="_blank"
+                    href={`https://twitter.com/${social.twitter}`}
+                  >
+                    @ceiphr
+                  </a>
+                </small>
+              </p>
+            </div>
+          </div>
         </div>
-      </figure>
-      <div className="media-content">
-        <div className="content">
-          <p>
-            <strong>{author.name}</strong>{" "}
-            <small>
-              <a
-                rel="noopener noreferrer"
-                target="_blank"
-                href={`https://twitter.com/${social.twitter}`}
-              >
-                @ceiphr
-              </a>
-            </small>
-            <br />
-            {author.summary}
-          </p>
-        </div>
+      </div>
+      <div className="column is-four-fifths">
+        <p>{author.summary}</p>
       </div>
     </div>
   )

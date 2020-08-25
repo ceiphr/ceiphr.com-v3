@@ -86,6 +86,14 @@ body {
     }
 }
 
+.bio {
+    padding-top: 1em;
+
+    img {
+        border-radius: 100%;
+    }
+}
+
 .footer-links a {
     &:after {
         color: $dark;

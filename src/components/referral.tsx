@@ -12,11 +12,10 @@ const Referral = () => {
   return (
     <div
       className="card referral"
-      aria-label={`Learn more about the DigitalOcean development platform.`}
     >
       <OutboundLink
         href="https://m.do.co/c/b95c2a8a5568"
-        aria-label="DigitalOcean"
+        aria-hidden="true"
         target="_blank"
         rel="noopener"
       >

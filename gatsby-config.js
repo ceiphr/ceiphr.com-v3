@@ -3,9 +3,11 @@ module.exports = {
     title: `Ceiphr`,
     author: {
       name: `Ari Birnbaum`,
-      summary: `Studying Computer Science at Stevens.`,
+      email: `ari@ceiphr.com`,
+      short_summary: `Technical writer featured in DigitalOcean and Medium Programming.`,
+      summary: `Technical writer featured in DigitalOcean and Medium Programming. Currently studying Computer Science at Stevens Institute of Technology.`,
     },
-    description: `I'm Ari Birnbaum, an aspiring software engineer currently studying Computer Science as a sophomore at Stevens Institute of Technology.`,
+    description: `Technical articles and crash courses pertaining to Django, Python, Node.js, Gatsby.js, TypeScript, GraphQL, and DevOps.`,
     siteUrl: `https://www.ceiphr.com`,
     social: {
       twitter: `ceiphr`,
@@ -91,7 +93,7 @@ module.exports = {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
         trackingId: `UA-158198449-1`,
-        head: false,
+        head: true,
         anonymizeIp: true,
         respectDNT: true,
         cookieExpires: 0,

@@ -21,15 +21,12 @@
 }
 
 article {
-    .bio {
+
+    .credit {
         margin-top: 2em;
 
         @media (min-width: 680px) {
             margin-top: 3.2em;
-        }
-
-        img {
-            border-radius: 100%;
         }
     }
 

@@ -17,8 +17,7 @@ import {
   faExternalLinkAlt,
 } from "@fortawesome/free-solid-svg-icons"
 
-import Layout from "../components/layout"
-import SEO from "../components/seo"
+import { Bio, Layout, SEO } from "../components"
 // @ts-expect-error ts-migrate(2307) FIXME: Cannot find module '../../static/gradient-logo.svg' o... Remove this comment to see the full error message
 import Logo from "../../static/gradient-logo.svg"
 
@@ -116,7 +115,12 @@ const BlogIndex = ({ data, location }: PageProps<Data>) => {
 
             if (IsRedirect) {
               return (
-                <a href={IsRedirect} target="_blank" rel="noreferrer"  aria-label={`Read the article: ${title}. This is an external link.`}>
+                <a
+                  href={IsRedirect}
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label={`Read the article: ${title}. This is an external link.`}
+                >
                   <div className="card">
                     <div className="card-image">
                       <Img
@@ -127,7 +131,9 @@ const BlogIndex = ({ data, location }: PageProps<Data>) => {
                     <div className="card-content">
                       <div className="content">
                         <h2 className="title is-4">{title}</h2>
-                        <h3 className="subtitle is-6">{node.frontmatter.date}</h3>
+                        <h3 className="subtitle is-6">
+                          {node.frontmatter.date}
+                        </h3>
                         <p
                           dangerouslySetInnerHTML={{
                             __html:
@@ -151,7 +157,11 @@ const BlogIndex = ({ data, location }: PageProps<Data>) => {
             }
 
             return (
-              <Link key={node.fields.slug} to={node.fields.slug} aria-label={`Read the article: ${title}.`}>
+              <Link
+                key={node.fields.slug}
+                to={node.fields.slug}
+                aria-label={`Read the article: ${title}.`}
+              >
                 <div className="card">
                   <div className="card-image">
                     <Img
@@ -183,6 +193,7 @@ const BlogIndex = ({ data, location }: PageProps<Data>) => {
               </Link>
             )
           })}
+          {/* <Bio /> */}
         </section>
       </div>
     </Layout>
