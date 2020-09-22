@@ -73,7 +73,7 @@ const BlogIndex = ({ data, location }: PageProps<Data>) => {
 
   return (
     <Layout location={location} title={siteTitle}>
-      <SEO title="No nonsense technical articles from Ari Birnbaum" />
+      <SEO title="No-nonsense technical articles from Ari Birnbaum" />
       {schema}
 
       <section className="hero hero-homepage is-halfheight is-primary">
