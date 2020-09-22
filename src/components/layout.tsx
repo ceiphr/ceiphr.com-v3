@@ -74,14 +74,6 @@ const Layout = ({ location, title, children }: any) => {
                   <a
                     target="_blank"
                     rel="noopener noreferrer"
-                    href="https://twitter.com/ceiphr/"
-                    aria-label="Visit the Twitter account for Ari Birnbaum."
-                  >
-                    Twitter
-                  </a>
-                  <a
-                    target="_blank"
-                    rel="noopener noreferrer"
                     href="https://changelog.ceiphr.com/"
                     aria-label="Visit the change log for projects by Ari Birnbaum."
                   >
