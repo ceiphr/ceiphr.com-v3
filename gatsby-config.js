@@ -89,21 +89,21 @@ module.exports = {
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
-    {
-      resolve: `gatsby-plugin-google-analytics`,
-      options: {
-        trackingId: `UA-158198449-1`,
-        head: true,
-        anonymizeIp: true,
-        respectDNT: true,
-        cookieExpires: 0,
-        defer: true,
-        storeGac: false,
-        allowAdFeatures: false,
-        forceSSL: true,
-        siteSpeedSampleRate: 10,
-      },
-    },
+    // {
+    //   resolve: `gatsby-plugin-google-analytics`,
+    //   options: {
+    //     trackingId: `UA-158198449-1`,
+    //     head: true,
+    //     anonymizeIp: true,
+    //     respectDNT: true,
+    //     cookieExpires: 0,
+    //     defer: true,
+    //     storeGac: false,
+    //     allowAdFeatures: false,
+    //     forceSSL: true,
+    //     siteSpeedSampleRate: 10,
+    //   },
+    // },
     {
       resolve: `gatsby-plugin-feed`,
       options: {

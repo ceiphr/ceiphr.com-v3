@@ -4,7 +4,7 @@
  */
 
 import React from "react"
-import { OutboundLink } from "gatsby-plugin-google-analytics"
+// import { OutboundLink } from "gatsby-plugin-google-analytics"
 // @ts-expect-error ts-migrate(2307) FIXME: Cannot find module '../../static/do.svg' or its co... Remove this comment to see the full error message
 import DOLogo from "../../static/do.svg"
 
@@ -13,7 +13,7 @@ const Referral = () => {
     <div
       className="card referral"
     >
-      <OutboundLink
+      <a
         href="https://m.do.co/c/b95c2a8a5568"
         aria-hidden="true"
         target="_blank"
@@ -27,7 +27,7 @@ const Referral = () => {
           Helping millions of developers easily build, test, manage, and scale
           applications of any size.
         </p>
-      </OutboundLink>
+      </a>
     </div>
   )
 }
