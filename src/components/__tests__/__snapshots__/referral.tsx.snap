@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Referral renders correctly 1`] = `
+<div
+  className="card referral"
+>
+  <a
+    aria-hidden="true"
+    href="https://m.do.co/c/b95c2a8a5568"
+    rel="noopener"
+    target="_blank"
+  >
+    <div
+      className="referral__logo"
+    >
+      <test-file-stub
+        alt="DigitalOcean"
+      />
+       
+    </div>
+    <p>
+      Helping millions of developers easily build, test, manage, and scale applications of any size.
+    </p>
+  </a>
+</div>
+`;

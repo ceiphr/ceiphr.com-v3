@@ -1,5 +1,7 @@
 <h1 align="center">
   <img width="500px" alt="Ceiphr" src="static/readme-banner.png">
+  
+  ![Gatsby CI](https://github.com/ceiphr/gatsby-ceiphr/workflows/Gatsby%20CI/badge.svg)
 </h1>
 
 This is a Gatsby blog designed by Ari Birnbaum for ceiphr.com. This project is based on [gatsby-starter-blog](https://github.com/gatsbyjs/gatsby-starter-blog). This project is hosted on Vercel.
