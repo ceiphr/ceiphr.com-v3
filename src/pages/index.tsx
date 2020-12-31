@@ -96,11 +96,11 @@ const BlogIndex = ({ data, location }: PageProps<Data>) => {
           muted
         >
           <source src={`/banner.webm`} type="video/webm" />
-          <img
+          {/* <img
             alt="Banner Image"
             src={data.banner.childImageSharp.fixed.srcWebp}
           />
-          <img alt="Banner Image" src={data.banner.childImageSharp.fixed.src} />
+          <img alt="Banner Image" src={data.banner.childImageSharp.fixed.src} /> */}
         </video>
       </div>
       <div className="container">

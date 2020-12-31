@@ -16,6 +16,8 @@ module.exports = {
   plugins: [
     `gatsby-plugin-sitemap`,
     `gatsby-plugin-sass`,
+    `gatsby-plugin-purgecss`,
+    `gatsby-plugin-webpack-bundle-analyser-v2`,
     {
       resolve: `gatsby-plugin-react-svg`,
       options: {
@@ -173,16 +175,16 @@ module.exports = {
     },
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-offline`,
-    {
-      resolve: "gatsby-plugin-sentry",
-      options: {
-        dsn:
-          "https://cb72ea3603084a5e844f43999cf429a5@o248021.ingest.sentry.io/5270757",
-        environment: process.env.NODE_ENV,
-        enabled: (() =>
-          ["production", "stage"].indexOf(process.env.NODE_ENV) !== -1)(),
-      },
-    },
+    // {
+    //   resolve: "gatsby-plugin-sentry",
+    //   options: {
+    //     dsn:
+    //       "https://cb72ea3603084a5e844f43999cf429a5@o248021.ingest.sentry.io/5270757",
+    //     environment: process.env.NODE_ENV,
+    //     enabled: (() =>
+    //       ["production", "stage"].indexOf(process.env.NODE_ENV) !== -1)(),
+    //   },
+    // },
     `gatsby-plugin-client-side-redirect`
   ],
 }
