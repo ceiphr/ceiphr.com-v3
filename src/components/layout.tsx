@@ -112,15 +112,6 @@ const Layout = ({ location, title, children }: any) => {
                   <a
                     target="_blank"
                     rel="noopener noreferrer"
-                    href="https://bulma.io/"
-                    aria-label="Learn more about Bulma CSS."
-                  >
-                    Bulma
-                  </a>
-                  , {` `}
-                  <a
-                    target="_blank"
-                    rel="noopener noreferrer"
                     href="https://www.gatsbyjs.com/"
                     aria-label="Learn more about Gatsby.js."
                   >
@@ -139,10 +130,10 @@ const Layout = ({ location, title, children }: any) => {
                   <a
                     target="_blank"
                     rel="noopener noreferrer"
-                    href="https://vercel.com/"
-                    aria-label="Learn more about Vercel."
+                    href="https://m.do.co/c/b95c2a8a5568"
+                    aria-label="Learn more about DigitalOcean."
                   >
-                    Vercel
+                    DigitalOcean
                   </a>
                   .
                 </p>
