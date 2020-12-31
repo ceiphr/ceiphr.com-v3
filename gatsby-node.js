@@ -43,6 +43,10 @@ exports.createPages = async ({ graphql, actions }) => {
       },
     })
   })
+
+  const {createRedirect} = actions
+  createRedirect({ fromPath: '/blog/', toPath: '/', isPermanent: true });
+  createRedirect({ fromPath: '/blog/a-crash-course-in-django/', toPath: '/a-crash-course-in-django/', isPermanent: true });
 }
 
 exports.onCreateNode = ({ node, actions, getNode }) => {
