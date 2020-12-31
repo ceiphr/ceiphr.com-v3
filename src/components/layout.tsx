@@ -81,7 +81,7 @@ const Layout = ({ location, title, children }: any) => {
                   </a>
                 </span>
                 <p>
-                  Unless otherwise noted, all content © 2016-2020 Ari Birnbaum.
+                  Unless otherwise noted, all content © 2016-2021 Ari Birnbaum.
                 </p>
               </div>
 
@@ -112,12 +112,21 @@ const Layout = ({ location, title, children }: any) => {
                   <a
                     target="_blank"
                     rel="noopener noreferrer"
+                    href="https://bulma.io/"
+                    aria-label="Learn more about Bulma CSS."
+                  >
+                    Bulma
+                  </a>
+                  , {` `}
+                  <a
+                    target="_blank"
+                    rel="noopener noreferrer"
                     href="https://www.gatsbyjs.com/"
                     aria-label="Learn more about Gatsby.js."
                   >
                     Gatsby.js
                   </a>
-                  , {` `}
+                  ,{` `} and {` `}
                   <a
                     target="_blank"
                     rel="noopener noreferrer"
@@ -125,15 +134,6 @@ const Layout = ({ location, title, children }: any) => {
                     aria-label="Learn more about Microsoft TypeScript."
                   >
                     TypeScript
-                  </a>
-                  ,{` `} and {` `}
-                  <a
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    href="https://bulma.io/"
-                    aria-label="Learn more about Bulma CSS."
-                  >
-                    Bulma
                   </a>
                   .{` `}Hosted on{` `}
                   <a
