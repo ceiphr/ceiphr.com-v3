@@ -1,6 +1,6 @@
 name: gatsby-ceiphr
 static_sites:
-  - build_command: yarn build
+  - build_command: gatsby build
     environment_slug: gatsby
     github:
       branch: master

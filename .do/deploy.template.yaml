@@ -1,8 +1,7 @@
 spec:
   name: gatsby-ceiphr
   static_sites:
-    - environment_slug: gatsby
-      git:
+    - git:
         branch: master
         repo_clone_url: https://github.com/ceiphr/gatsby-ceiphr.git
       name: gatsby-ceiphr
