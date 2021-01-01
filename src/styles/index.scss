@@ -229,13 +229,13 @@ body {
     position: absolute;
 
     @media (min-width: 680px) {
-        top: 50%;
+        top: 40%;
         left: 50%;
         transform: translate(-50%, -50%);
     }
     @media (max-width: 680px) {
         top: 0;
-        left: 25%;
+        left: 50%;
         transform: translate(-40%, -25%);
     }
 
