@@ -90,7 +90,7 @@ const BlogIndex = ({ data, location }: PageProps<Data>) => {
       <div className="hero-background__wrapper">
         <video
           className="hero-background"
-          poster={data.banner.childImageSharp.fixed.src}
+          // poster={data.banner.childImageSharp.fixed.src}
           autoPlay
           loop
           muted
@@ -229,14 +229,6 @@ export const pageQuery = graphql`
               }
             }
           }
-        }
-      }
-    }
-    banner: file(relativePath: { eq: "banner.png" }) {
-      childImageSharp {
-        fixed(width: 960, height: 540) {
-          src
-          srcWebp
         }
       }
     }

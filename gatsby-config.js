@@ -16,7 +16,7 @@ module.exports = {
   plugins: [
     `gatsby-plugin-sitemap`,
     `gatsby-plugin-sass`,
-    `gatsby-plugin-purgecss`,
+    // `gatsby-plugin-purgecss`,
     {
       resolve: `gatsby-plugin-react-svg`,
       options: {
