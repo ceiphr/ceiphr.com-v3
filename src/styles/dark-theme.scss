@@ -3,7 +3,8 @@
 
 @media (prefers-color-scheme: dark) {
     hr {
-        border-top: 1px solid $dark !important;
+        border-top: 1px solid #363636 !important;
+        background-color: transparent !important;
     }
 
     body,

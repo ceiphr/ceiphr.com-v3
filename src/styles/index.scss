@@ -112,8 +112,10 @@ body {
     position: absolute !important;
 
     .navbar-brand {
+        padding: 9px;
         .navbar-item {
             padding: 0;
+            transform: translateX(-9px);
 
             svg {
                 max-height: 3rem;
