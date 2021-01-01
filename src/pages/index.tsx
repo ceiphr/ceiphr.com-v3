@@ -90,17 +90,12 @@ const BlogIndex = ({ data, location }: PageProps<Data>) => {
       <div className="hero-background__wrapper">
         <video
           className="hero-background"
-          // poster={data.banner.childImageSharp.fixed.src}
           autoPlay
           loop
           muted
         >
           <source src={`/banner.webm`} type="video/webm" />
-          {/* <img
-            alt="Banner Image"
-            src={data.banner.childImageSharp.fixed.srcWebp}
-          />
-          <img alt="Banner Image" src={data.banner.childImageSharp.fixed.src} /> */}
+          <source src={`/banner.mp4`} type="video/mpeg" />
         </video>
       </div>
       <div className="container">

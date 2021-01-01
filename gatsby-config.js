@@ -16,7 +16,14 @@ module.exports = {
   plugins: [
     `gatsby-plugin-sitemap`,
     `gatsby-plugin-sass`,
-    // `gatsby-plugin-purgecss`,
+    {
+      resolve: `gatsby-plugin-purgecss`,
+      options: {
+        // printRejected: true, // Print removed selectors and processed file names
+        // develop: true, // Enable while using `gatsby develop`
+        ignore: ['styles/', 'prismjs/'], // Ignore files/folders
+      },
+    },
     {
       resolve: `gatsby-plugin-react-svg`,
       options: {
@@ -184,7 +191,7 @@ module.exports = {
     //       ["production", "stage"].indexOf(process.env.NODE_ENV) !== -1)(),
     //   },
     // },
-    `gatsby-plugin-client-side-redirect`
+    `gatsby-plugin-client-side-redirect`,
   ],
 }
 
