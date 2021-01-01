@@ -132,15 +132,15 @@ const BlogPostTemplate = ({
                   International
                 </a>
                 .<br />
-                Found an error in this article? Email me{" "}
+                Found an error in this article? Contact me via my email on{" "}
                 <a
                   rel="license noopener noreferrer"
                   target="_blank"
-                  href="mailto:ari+error@ceiphr.com"
+                  href="https://github.com/ceiphr/"
                 >
-                  ari@ceiphr.com
+                  GitHub
                 </a>
-                {` `}or tweet at me{` `}
+                {` `}or tweet{` `}
                 <a
                   rel="license noopener noreferrer"
                   target="_blank"

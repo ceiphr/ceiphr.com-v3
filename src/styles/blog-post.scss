@@ -35,11 +35,11 @@ article {
         line-height: 0.85;
         font-family: $heading-family;
         font-style: italic;
-        font-weight: 700;
+        font-weight: 900;
 
         @media (min-width: 680px) {
             animation: 0.65s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s slideUp;
-            font-size: 7.5rem;
+            font-size: 7rem;
             line-height: 0.85;
             transform: translateY(8px);
         }

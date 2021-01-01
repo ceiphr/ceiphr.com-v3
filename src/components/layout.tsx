@@ -142,10 +142,6 @@ const Layout = ({ location, title, children }: any) => {
           </div>
         </footer>
       </div>
-      <link
-        href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;700&family=IBM+Plex+Sans+Condensed:ital,wght@1,700&family=IBM+Plex+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap"
-        rel="stylesheet"
-      />
     </div>
   )
 }

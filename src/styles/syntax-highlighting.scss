@@ -120,6 +120,8 @@ pre[class*="language-"] {
     word-spacing: normal;
     word-break: normal;
     font-family: $code-family;
+    text-rendering: optimizeLegibility;
+    font-weight: 400;
     font-size: 1em;
     line-height: 1.5em;
 
@@ -270,6 +272,8 @@ pre[class*="language-"] {
         text-shadow: none;
         background: $dark;
         font-family: $code-family;
+        text-rendering: optimizeLegibility;
+        font-weight: 400;
     }
 
     code[class*="language-"]::-moz-selection,

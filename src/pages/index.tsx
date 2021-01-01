@@ -95,7 +95,7 @@ const BlogIndex = ({ data, location }: PageProps<Data>) => {
           muted
         >
           <source src={`/banner.webm`} type="video/webm" />
-          <source src={`/banner.mp4`} type="video/mpeg" />
+          <source src={`/banner.mp4`} type="video/mp4" />
         </video>
       </div>
       <div className="container">
