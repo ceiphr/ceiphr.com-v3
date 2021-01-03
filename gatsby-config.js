@@ -16,7 +16,17 @@ module.exports = {
     },
   },
   plugins: [
-    `gatsby-plugin-sitemap`,
+    {
+      resolve: `gatsby-plugin-sitemap`,
+      options: {
+        // Excluded DigitalOcean articles
+        // TODO automate this
+        exclude: [
+          `/how-to-display-data-from-the-digitalocean-api-with-django/`,
+          `/how-to-harden-your-production-django-project/`,
+        ],
+      },
+    },
     `gatsby-plugin-sass`,
     {
       resolve: "gatsby-plugin-web-font-loader",
@@ -31,7 +41,7 @@ module.exports = {
       options: {
         // printRejected: true, // Print removed selectors and processed file names
         // develop: true, // Enable while using `gatsby develop`
-        ignore: ['styles/', 'prismjs/'], // Ignore files/folders
+        ignore: ["styles/", "prismjs/"], // Ignore files/folders
       },
     },
     {
@@ -144,7 +154,9 @@ module.exports = {
                 return Object.assign({}, edge.node.frontmatter, {
                   description: edge.node.excerpt,
                   date: edge.node.frontmatter.date,
-                  url: site.siteMetadata.siteUrl + edge.node.fields.slug,
+                  url: edge.node.frontmatter.redirect
+                    ? edge.node.frontmatter.redirect
+                    : site.siteMetadata.siteUrl + edge.node.fields.slug,
                   guid: site.siteMetadata.siteUrl + edge.node.fields.slug,
                   custom_elements: [{ "content:encoded": edge.node.html }],
                 })
@@ -162,6 +174,7 @@ module.exports = {
                       fields { slug }
                       frontmatter {
                         title
+                        redirect
                         date
                       }
                     }
@@ -202,6 +215,13 @@ module.exports = {
     //   },
     // },
     `gatsby-plugin-client-side-redirect`,
+    {
+      resolve: `gatsby-plugin-redirect-to`,
+      options: {
+        force: true,
+        isPermanent: true,
+      },
+    },
   ],
 }
 
