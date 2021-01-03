@@ -17,7 +17,7 @@ import {
   faExternalLinkAlt,
 } from "@fortawesome/free-solid-svg-icons"
 
-import { Bio, Layout, SEO } from "../components"
+import { Bio, HeroScene, Layout, SEO } from "../components"
 // @ts-expect-error ts-migrate(2307) FIXME: Cannot find module '../../static/gradient-logo.svg' o... Remove this comment to see the full error message
 import Logo from "../../static/gradient-logo.svg"
 
@@ -88,7 +88,7 @@ const BlogIndex = ({ data, location }: PageProps<Data>) => {
         </div>
       </section>
       <div className="hero-background__wrapper">
-        <video
+        {/* <video
           className="hero-background"
           autoPlay
           loop
@@ -96,7 +96,11 @@ const BlogIndex = ({ data, location }: PageProps<Data>) => {
         >
           <source src={`/banner_fast.webm`} type="video/webm" />
           <source src={`/banner_fast.mp4`} type="video/mp4" />
-        </video>
+        </video> */}
+        <HeroScene>
+          <img src={data.banner.childImageSharp.fixed.srcWebp} alt="Banner" />
+        </HeroScene>
+        ,
       </div>
       <div className="container">
         <section className="post-feed post-feed--index">
@@ -224,6 +228,14 @@ export const pageQuery = graphql`
               }
             }
           }
+        }
+      }
+    }
+    banner: file(relativePath: { eq: "banner.png" }) {
+      childImageSharp {
+        fixed(width: 960, height: 540) {
+          src
+          srcWebp
         }
       }
     }
