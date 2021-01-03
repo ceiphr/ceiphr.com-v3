@@ -157,7 +157,6 @@ module.exports = {
                   url: edge.node.frontmatter.redirect
                     ? edge.node.frontmatter.redirect
                     : site.siteMetadata.siteUrl + edge.node.fields.slug,
-                  guid: site.siteMetadata.siteUrl + edge.node.fields.slug,
                   custom_elements: [{ "content:encoded": edge.node.html }],
                 })
               })
@@ -215,13 +214,13 @@ module.exports = {
     //   },
     // },
     `gatsby-plugin-client-side-redirect`,
-    {
-      resolve: `gatsby-plugin-redirect-to`,
-      options: {
-        force: true,
-        isPermanent: true,
-      },
-    },
+    // {
+    //   resolve: `gatsby-plugin-redirect-to`,
+    //   options: {
+    //     force: true,
+    //     isPermanent: true,
+    //   },
+    // },
   ],
 }
 

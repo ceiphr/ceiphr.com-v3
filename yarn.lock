@@ -9546,11 +9546,6 @@ gatsby-plugin-react-svg@^3.0.0:
   dependencies:
     svg-react-loader "^0.4.4"
 
-gatsby-plugin-redirect-to@^1.0.2:
-  version "1.0.2"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-redirect-to/-/gatsby-plugin-redirect-to-1.0.2.tgz#17b42dedb856f881e532b2f3f3d19f91861c2406"
-  integrity sha512-WYOnRuWCtm6kS8mmi2r4gUO1WHccMpgFn3tEMh2Bm1PVKHLkj5es7YcbiS5Lrohm4AxcFANEXKigjASrpMDP3Q==
-
 gatsby-plugin-sass@^2.3.3:
   version "2.3.3"
   resolved "https://registry.yarnpkg.com/gatsby-plugin-sass/-/gatsby-plugin-sass-2.3.3.tgz#bd2ad82a3604e86bf1923d4066e26d712db13c22"
