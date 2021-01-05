@@ -225,23 +225,24 @@ body {
     height: 100vh;
 }
 
+/* curtains canvas container */
+
 .curtains-canvas {
-    position: absolute;
+    position: fixed;
     top: 0;
-    left: -4vw;
-    width: 105vw;
-    height: 52vh;
+    left: 0;
+    right: 0;
+    width: 120vw;
+    height: 50vh;
     canvas {
-        position: absolute;
-        top: 0;
-        left: -5vw;
-        width: 115vw !important;
-        height: 52vh !important;
+        transform: scale(1.05);
     }
 }
 
+/* basic plane */
+
 .BasicPlane {
-    width: 101vw;
+    width: 100vw;
     height: 50vh;
 }
 

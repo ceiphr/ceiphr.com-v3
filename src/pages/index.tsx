@@ -76,7 +76,7 @@ const BlogIndex = ({ data, location }: PageProps<Data>) => {
       <SEO title="No-nonsense technical articles from Ari Birnbaum" />
       {schema}
 
-      <section className="hero hero-homepage is-halfheight is-primary">
+      <section className="hero hero-homepage is-halfheight is-transparent">
         <div className="hero-body">
           <div className="container">
             <div className="hero-banner">
@@ -88,17 +88,8 @@ const BlogIndex = ({ data, location }: PageProps<Data>) => {
         </div>
       </section>
       <div className="hero-background__wrapper">
-        {/* <video
-          className="hero-background"
-          autoPlay
-          loop
-          muted
-        >
-          <source src={`/banner_fast.webm`} type="video/webm" />
-          <source src={`/banner_fast.mp4`} type="video/mp4" />
-        </video> */}
         <HeroScene>
-          <img src={data.banner.childImageSharp.fluid.srcWebp} alt="Banner" />
+          <img src={data.banner.childImageSharp.fluid.srcWebp} alt="Banner" onError={`'this.src=' + ${data.banner.childImageSharp.fluid.src}`} />
         </HeroScene>
         ,
       </div>

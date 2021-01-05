@@ -56,6 +56,7 @@
     "schema-dts": "^0.6.0"
   },
   "devDependencies": {
+    "gatsby-plugin-webpack-bundle-analyser-v2": "^1.1.18",
     "prettier": "2.0.5",
     "ts-migrate": "^0.1.0"
   },
