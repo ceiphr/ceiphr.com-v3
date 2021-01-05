@@ -235,57 +235,35 @@ body {
     left: 0;
     right: 0;
     width: 120vw;
-    height: 50vh;
     canvas {
         transform: scale(1.05);
     }
 }
 
+.hero-background__wrapper .curtains-canvas {
+    height: 50vh;
+}
+
+.hero-fullheight-background__wrapper .curtains-canvas {
+    height: 100vh;
+}
+
 /* basic plane */
 
-.BasicPlane {
+.HeroPlane {
     width: 100vw;
     height: 50vh;
 }
 
-.BasicPlane img {
-    display: none;
+.FullHeroPlane {
+    width: 100vw;
+    height: 100vh;
 }
 
-// .hero-background__wrapper video {
-//     position: absolute;
-
-//     @media (min-width: 680px) {
-//         top: 40%;
-//         left: 50%;
-//         transform: translate(-50%, -50%);
-//     }
-//     @media (max-width: 680px) {
-//         top: 0;
-//         left: 50%;
-//         transform: translate(-40%, -25%);
-//     }
-
-//     min-width: 100%;
-//     min-height: 100%;
-//     max-width: none !important;
-//     width: auto;
-//     height: auto;
-// }
-
-// .hero-fullheight-background__wrapper video {
-//     position: absolute;
-
-//     top: 50%;
-//     left: 50%;
-//     transform: translate(-50%, -50%);
-
-//     min-width: 100%;
-//     min-height: 100%;
-//     max-width: none !important;
-//     width: auto;
-//     height: auto;
-// }
+.HeroPlane img,
+.FullHeroPlane img {
+    display: none;
+}
 
 // Theme Stylings
 @import "dark-theme";

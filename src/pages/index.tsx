@@ -6,7 +6,7 @@
 import React from "react"
 import { PageProps, Link, graphql } from "gatsby"
 import Img from "gatsby-image"
-import type { FluidObject, FixedObject } from "gatsby-image"
+import type { FluidObject } from "gatsby-image"
 
 import { Person } from "schema-dts"
 import { JsonLd } from "react-schemaorg"
@@ -50,7 +50,7 @@ type Data = {
   }
   banner: {
     childImageSharp: {
-      fluid: FixedObject
+      fluid: FluidObject
     }
   }
 }
@@ -76,7 +76,7 @@ const BlogIndex = ({ data, location }: PageProps<Data>) => {
       <SEO title="No-nonsense technical articles from Ari Birnbaum" />
       {schema}
 
-      <section className="hero hero-homepage is-halfheight is-transparent">
+      <section className="hero hero-homepage is-halfheight is-black">
         <div className="hero-body">
           <div className="container">
             <div className="hero-banner">
@@ -89,7 +89,20 @@ const BlogIndex = ({ data, location }: PageProps<Data>) => {
       </section>
       <div className="hero-background__wrapper">
         <HeroScene>
-          <img src={data.banner.childImageSharp.fluid.srcWebp} alt="Banner" onError={`'this.src=' + ${data.banner.childImageSharp.fluid.src}`} />
+          <picture>
+            <source
+              srcSet={data.banner.childImageSharp.fluid.srcWebp}
+              type="image/webp"
+            />
+            <source
+              srcSet={data.banner.childImageSharp.fluid.src}
+              type="image/png"
+            />
+            <img
+              src={data.banner.childImageSharp.fluid.src}
+              alt="Banner Image"
+            />
+          </picture>
         </HeroScene>
         ,
       </div>

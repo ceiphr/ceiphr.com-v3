@@ -1,9 +1,11 @@
 import React from "react"
 import { PageProps, graphql } from "gatsby"
-import type { FixedObject } from "gatsby-image"
+import type { FluidObject } from "gatsby-image"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+// @ts-expect-error curtains.js doesn't offer types
+import HeroScene from "../components/heroScene"
 
 type Data = {
   site: {
@@ -13,7 +15,7 @@ type Data = {
   }
   banner: {
     childImageSharp: {
-      fixed: FixedObject
+      fluid: FluidObject
     }
   }
 }
@@ -25,22 +27,24 @@ const NotFoundPage = ({ data, location }: PageProps<Data>) => {
     <Layout location={location} title={siteTitle}>
       <SEO title="404: Not Found" />
       <div className="hero-fullheight-background__wrapper">
-        <video
-          className="hero-background"
-          poster={data.banner.childImageSharp.fixed.src}
-          autoPlay
-          loop
-          muted
-        >
-          <source src={`/banner.webm`} type="video/webm" />
-          <img
-            alt="Banner Image"
-            src={data.banner.childImageSharp.fixed.srcWebp}
-          />
-          <img alt="Banner Image" src={data.banner.childImageSharp.fixed.src} />
-        </video>
+        <HeroScene isfull={true}>
+          <picture>
+            <source
+              srcSet={data.banner.childImageSharp.fluid.srcWebp}
+              type="image/webp"
+            />
+            <source
+              srcSet={data.banner.childImageSharp.fluid.src}
+              type="image/png"
+            />
+            <img
+              src={data.banner.childImageSharp.fluid.src}
+              alt="Banner Image"
+            />
+          </picture>
+        </HeroScene>
       </div>
-      <section className="hero is-primary is-fullheight is-404">
+      <section className="hero is-black is-fullheight is-404">
         <div className="hero-body">
           <div className="container">
             <h1 className="title">404: Not Found</h1>
@@ -65,9 +69,9 @@ export const pageQuery = graphql`
     }
     banner: file(relativePath: { eq: "banner.png" }) {
       childImageSharp {
-        fixed(width: 960, height: 540) {
+        fluid(quality: 100, maxWidth: 960) {
           src
-          srcWebp
+          ...GatsbyImageSharpFluid_withWebp
         }
       }
     }

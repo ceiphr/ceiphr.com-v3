@@ -75,7 +75,7 @@ const basicFs = `
     }
 `;
 
-const BasicPlane = ({ children }) => {
+const BasicPlane = ({ children, isfull=false }) => {
     const basicUniforms = {
         time: {
             name: "uTime",
@@ -91,13 +91,15 @@ const BasicPlane = ({ children }) => {
     return (
         <Curtains>
             <Plane
-                className="BasicPlane"
+                className= {(isfull ? "FullHeroPlane" : "HeroPlane")}
 
                 // plane init parameters
                 vertexShader={basicVs}
                 fragmentShader={basicFs}
                 uniforms={basicUniforms}
                 watchScroll={false}
+                antialias={false}
+                renderingScale={0.5}
 
                 // plane events
                 onRender={onRender}
