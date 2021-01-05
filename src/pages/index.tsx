@@ -89,20 +89,7 @@ const BlogIndex = ({ data, location }: PageProps<Data>) => {
       </section>
       <div className="hero-background__wrapper">
         <HeroScene>
-          <picture>
-            <source
-              srcSet={data.banner.childImageSharp.fluid.srcWebp}
-              type="image/webp"
-            />
-            <source
-              srcSet={data.banner.childImageSharp.fluid.src}
-              type="image/png"
-            />
-            <img
-              src={data.banner.childImageSharp.fluid.src}
-              alt="Banner Image"
-            />
-          </picture>
+          <img src={data.banner.childImageSharp.fluid.src} alt="Banner Image" />
         </HeroScene>
         ,
       </div>
@@ -235,11 +222,10 @@ export const pageQuery = graphql`
         }
       }
     }
-    banner: file(relativePath: { eq: "banner.png" }) {
+    banner: file(relativePath: { eq: "banner-alt-80.jpg" }) {
       childImageSharp {
         fluid(quality: 100, maxWidth: 960) {
           src
-          ...GatsbyImageSharpFluid_withWebp
         }
       }
     }

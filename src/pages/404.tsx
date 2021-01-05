@@ -28,20 +28,7 @@ const NotFoundPage = ({ data, location }: PageProps<Data>) => {
       <SEO title="404: Not Found" />
       <div className="hero-fullheight-background__wrapper">
         <HeroScene isfull={true}>
-          <picture>
-            <source
-              srcSet={data.banner.childImageSharp.fluid.srcWebp}
-              type="image/webp"
-            />
-            <source
-              srcSet={data.banner.childImageSharp.fluid.src}
-              type="image/png"
-            />
-            <img
-              src={data.banner.childImageSharp.fluid.src}
-              alt="Banner Image"
-            />
-          </picture>
+          <img src={data.banner.childImageSharp.fluid.src} alt="Banner Image" />
         </HeroScene>
       </div>
       <section className="hero is-black is-fullheight is-404">
@@ -71,7 +58,6 @@ export const pageQuery = graphql`
       childImageSharp {
         fluid(quality: 100, maxWidth: 960) {
           src
-          ...GatsbyImageSharpFluid_withWebp
         }
       }
     }

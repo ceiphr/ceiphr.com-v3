@@ -197,8 +197,9 @@ module.exports = {
         background_color: `#ffffff`,
         theme_color: `#ef486c`,
         display: `minimal-ui`,
-        icon: `content/assets/icon.png`,
+        icon: `content/assets/maskable/maskable_icon_x512.png`,
         include_favicon: false,
+        purpose: "any maskable"
       },
     },
     `gatsby-plugin-react-helmet`,
