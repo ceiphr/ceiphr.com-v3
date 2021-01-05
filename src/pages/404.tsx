@@ -54,7 +54,7 @@ export const pageQuery = graphql`
         title
       }
     }
-    banner: file(relativePath: { eq: "banner.png" }) {
+    banner: file(relativePath: { eq: "banner-alt-80.jpg" }) {
       childImageSharp {
         fluid(quality: 100, maxWidth: 960) {
           src
