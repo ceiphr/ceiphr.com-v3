@@ -65,6 +65,8 @@ body {
 .card {
     border-radius: $radius-large;
     transition-duration: 200ms;
+    -webkit-perspective: 1000 !important;
+    -webkit-backface-visibility: hidden !important;
 
     .media-content {
         overflow: hidden;
@@ -228,7 +230,7 @@ body {
 /* curtains canvas container */
 
 .curtains-canvas {
-    position: fixed;
+    position: absolute;
     top: 0;
     left: 0;
     right: 0;

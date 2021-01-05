@@ -97,6 +97,7 @@ const BasicPlane = ({ children }) => {
                 vertexShader={basicVs}
                 fragmentShader={basicFs}
                 uniforms={basicUniforms}
+                watchScroll={false}
 
                 // plane events
                 onRender={onRender}

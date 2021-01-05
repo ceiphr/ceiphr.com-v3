@@ -12,6 +12,8 @@
     padding: 1em;
     transition-duration: 200ms;
     font-size: 1em !important;
+    -webkit-perspective: 1000 !important;
+    -webkit-backface-visibility: hidden !important;
 
     .carbon-img img {
         border-radius: 2px !important;
