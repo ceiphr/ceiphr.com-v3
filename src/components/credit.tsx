@@ -42,7 +42,7 @@ const Bio = () => {
               <a
                 rel="noopener noreferrer"
                 target="_blank"
-                href={`https://twitter.com/${social.twitter}`}
+                href={`https://github.com/ceiphr`}
               >
                 @ceiphr
               </a>

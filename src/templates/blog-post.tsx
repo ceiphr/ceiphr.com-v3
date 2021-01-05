@@ -79,7 +79,7 @@ const BlogPostTemplate = ({
           name: "Ari Birnbaum (Ceiphr)",
           logo: {
             "@type": "ImageObject",
-            url: "/icon.png",
+            url: "/content/assets/profile-pic.png",
           },
         },
       }}
@@ -139,14 +139,6 @@ const BlogPostTemplate = ({
                   href="https://github.com/ceiphr/"
                 >
                   GitHub
-                </a>
-                {` `}or tweet{` `}
-                <a
-                  rel="license noopener noreferrer"
-                  target="_blank"
-                  href="https://twitter.com/ceiphr"
-                >
-                  @ceiphr
                 </a>.
               </div>
               <br />

@@ -230,14 +230,7 @@ module.exports = {
       },
     },
     `gatsby-plugin-react-helmet`,
-    {
-      resolve: `gatsby-plugin-offline`,
-      options: {
-        workboxConfig: {
-          globPatterns: [`content/assets/maskable/*`],
-        },
-      },
-    },
+    `gatsby-plugin-offline`,
     `gatsby-plugin-client-side-redirect`,
   ],
 }
