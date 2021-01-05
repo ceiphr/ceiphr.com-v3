@@ -117,21 +117,6 @@ module.exports = {
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
-    // {
-    //   resolve: `gatsby-plugin-google-analytics`,
-    //   options: {
-    //     trackingId: `UA-158198449-1`,
-    //     head: true,
-    //     anonymizeIp: true,
-    //     respectDNT: true,
-    //     cookieExpires: 0,
-    //     defer: true,
-    //     storeGac: false,
-    //     allowAdFeatures: false,
-    //     forceSSL: true,
-    //     siteSpeedSampleRate: 10,
-    //   },
-    // },
     {
       resolve: `gatsby-plugin-feed`,
       options: {
@@ -195,33 +180,65 @@ module.exports = {
         short_name: `Ceiphr`,
         start_url: `/`,
         background_color: `#ffffff`,
-        theme_color: `#ef486c`,
-        display: `minimal-ui`,
-        icon: `content/assets/maskable/maskable_icon_x512.png`,
+        theme_color: `#3d57a7`,
+        lang: `en`,
+        display: `standalone`,
+        icon: `content/assets/maskable/maskable_icon_x1.png`,
+        // icons: [
+        //   {
+        //     src: `content/assets/maskable/maskable_icon_x72.png`,
+        //     sizes: `72x72`,
+        //     type: `image/png`,
+        //   },
+        //   {
+        //     src: `content/assets/maskable/maskable_icon_x96.png`,
+        //     sizes: `96x96`,
+        //     type: `image/png`,
+        //   },
+        //   {
+        //     src: `content/assets/maskable/maskable_icon_x128.png`,
+        //     sizes: `128x128`,
+        //     type: `image/png`,
+        //   },
+        //   {
+        //     src: `content/assets/maskable/maskable_icon_x144.png`,
+        //     sizes: `144x144`,
+        //     type: `image/png`,
+        //   },
+        //   {
+        //     src: `content/assets/maskable/maskable_icon_x152.png`,
+        //     sizes: `152x152`,
+        //     type: `image/png`,
+        //   },
+        //   {
+        //     src: `content/assets/maskable/maskable_icon_x384.png`,
+        //     sizes: `384x384`,
+        //     type: `image/png`,
+        //   },
+        //   {
+        //     src: `content/assets/maskable/maskable_icon_x512.png`,
+        //     sizes: `512x512`,
+        //     type: `image/png`,
+        //   },
+        // ],
         include_favicon: false,
-        purpose: "any maskable"
+        icon_options: {
+          // For all the options available,
+          // please see the section "Additional Resources" below.
+          purpose: `any maskable`,
+        },
       },
     },
     `gatsby-plugin-react-helmet`,
-    `gatsby-plugin-offline`,
-    // {
-    //   resolve: "gatsby-plugin-sentry",
-    //   options: {
-    //     dsn:
-    //       "https://cb72ea3603084a5e844f43999cf429a5@o248021.ingest.sentry.io/5270757",
-    //     environment: process.env.NODE_ENV,
-    //     enabled: (() =>
-    //       ["production", "stage"].indexOf(process.env.NODE_ENV) !== -1)(),
-    //   },
-    // },
+    {
+      resolve: `gatsby-plugin-offline`,
+      options: {
+        workboxConfig: {
+          globPatterns: [`content/assets/maskable/*`],
+        },
+      },
+    },
     `gatsby-plugin-client-side-redirect`,
-    // {
-    //   resolve: `gatsby-plugin-redirect-to`,
-    //   options: {
-    //     force: true,
-    //     isPermanent: true,
-    //   },
-    // },
   ],
 }
 
