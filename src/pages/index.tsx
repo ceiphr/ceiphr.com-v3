@@ -76,7 +76,7 @@ const BlogIndex = ({ data, location }: PageProps<Data>) => {
       <SEO title="No-nonsense technical articles from Ari Birnbaum" />
       {schema}
 
-      <section className="hero hero-homepage is-halfheight is-primary">
+      <section className="hero hero-homepage is-halfheight is-transparent">
         <div className="hero-body">
           <div className="container">
             <div className="hero-banner">
