@@ -50,7 +50,7 @@ type Data = {
   }
   banner: {
     childImageSharp: {
-      fixed: FixedObject
+      fluid: FixedObject
     }
   }
 }
@@ -98,7 +98,7 @@ const BlogIndex = ({ data, location }: PageProps<Data>) => {
           <source src={`/banner_fast.mp4`} type="video/mp4" />
         </video> */}
         <HeroScene>
-          <img src={data.banner.childImageSharp.fixed.srcWebp} alt="Banner" />
+          <img src={data.banner.childImageSharp.fluid.srcWebp} alt="Banner" />
         </HeroScene>
         ,
       </div>
@@ -233,9 +233,9 @@ export const pageQuery = graphql`
     }
     banner: file(relativePath: { eq: "banner.png" }) {
       childImageSharp {
-        fixed(width: 960, height: 540) {
+        fluid(quality: 100, maxWidth: 960) {
           src
-          srcWebp
+          ...GatsbyImageSharpFluid_withWebp
         }
       }
     }
