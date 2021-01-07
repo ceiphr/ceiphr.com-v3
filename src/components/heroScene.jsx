@@ -1,5 +1,5 @@
 import React from 'react';
-import { Curtains, Plane } from 'react-curtains';
+import { Plane } from 'react-curtains';
 
 const basicVs = `
     #ifdef GL_ES
@@ -75,7 +75,7 @@ const basicFs = `
     }
 `;
 
-const BasicPlane = ({ children, isfull=false }) => {
+const BasicPlane = ({ children, isfull = false }) => {
     const basicUniforms = {
         time: {
             name: "uTime",
@@ -86,27 +86,31 @@ const BasicPlane = ({ children, isfull=false }) => {
 
     const onRender = (plane) => {
         plane.uniforms.time.value++;
+        plane.scale.x = 1.05;
+        plane.scale.y = 1.05;
     };
 
+    const onPlaneReady = (plane) => {
+        plane.updatePosition();
+    };
+
+
     return (
-        <Curtains>
-            <Plane
-                className= {(isfull ? "FullHeroPlane" : "HeroPlane")}
+        <Plane
+            className={(isfull ? "FullHeroPlane" : "HeroPlane")}
 
-                // plane init parameters
-                vertexShader={basicVs}
-                fragmentShader={basicFs}
-                uniforms={basicUniforms}
-                watchScroll={false}
-                antialias={false}
-                renderingScale={0.5}
+            // plane init parameters
+            vertexShader={basicVs}
+            fragmentShader={basicFs}
+            uniforms={basicUniforms}
+            watchScroll={false}
 
-                // plane events
-                onRender={onRender}
-            >
-                {children}
-            </Plane>
-        </Curtains>
+            // plane events
+            onRender={onRender}
+            onReady={onPlaneReady}
+        >
+            {children}
+        </Plane>
     )
 }
 

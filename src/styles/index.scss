@@ -29,6 +29,11 @@ body {
     background-color: $white;
 }
 
+.container, .content {
+    position: relative;
+    z-index: 2;
+}
+
 // Component styles used for generaly styling
 // generic components which are frequently used
 
@@ -234,17 +239,6 @@ body {
     top: 0;
     left: 0;
     right: 0;
-    width: 120vw;
-    canvas {
-        transform: scale(1.05);
-    }
-}
-
-.hero-background__wrapper .curtains-canvas {
-    height: 50vh;
-}
-
-.hero-fullheight-background__wrapper .curtains-canvas {
     height: 100vh;
 }
 
