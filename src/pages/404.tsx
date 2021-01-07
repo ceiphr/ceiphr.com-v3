@@ -31,7 +31,7 @@ const NotFoundPage = ({ data, location }: PageProps<Data>) => {
           <img src={data.banner.childImageSharp.fluid.src} alt="Banner Image" />
         </HeroScene>
       </div>
-      <section className="hero is-black is-fullheight is-404">
+      <section className="hero is-transparent is-fullheight is-404">
         <div className="hero-body">
           <div className="container">
             <h1 className="title">404: Not Found</h1>

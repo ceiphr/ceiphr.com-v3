@@ -29,9 +29,9 @@ body {
     background-color: $white;
 }
 
-.container, .content {
+#gatsby-focus-wrapper {
     position: relative;
-    z-index: 2;
+    z-index: 1;
 }
 
 // Component styles used for generaly styling
