@@ -27,7 +27,7 @@ const NotFoundPage = ({ data, location }: PageProps<Data>) => {
     <Layout location={location} title={siteTitle}>
       <SEO title="404: Not Found" />
       <div className="hero-fullheight-background__wrapper">
-        <HeroScene isfull={true}>
+        <HeroScene isFullheight={true}>
           <img src={data.banner.childImageSharp.fluid.src} alt="Banner Image" />
         </HeroScene>
       </div>

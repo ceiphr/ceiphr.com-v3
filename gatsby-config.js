@@ -16,7 +16,6 @@ module.exports = {
     },
   },
   plugins: [
-    // `gatsby-plugin-csp`,
     {
       resolve: `gatsby-plugin-sitemap`,
       options: {
