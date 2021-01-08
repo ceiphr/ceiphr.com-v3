@@ -20,7 +20,6 @@ module.exports = {
       resolve: `gatsby-plugin-sitemap`,
       options: {
         // Excluded DigitalOcean articles
-        // TODO automate this
         exclude: [
           `/how-to-display-data-from-the-digitalocean-api-with-django/`,
           `/how-to-harden-your-production-django-project/`,
@@ -184,47 +183,8 @@ module.exports = {
         lang: `en`,
         display: `standalone`,
         icon: `content/assets/maskable/maskable_icon_x1.png`,
-        // icons: [
-        //   {
-        //     src: `content/assets/maskable/maskable_icon_x72.png`,
-        //     sizes: `72x72`,
-        //     type: `image/png`,
-        //   },
-        //   {
-        //     src: `content/assets/maskable/maskable_icon_x96.png`,
-        //     sizes: `96x96`,
-        //     type: `image/png`,
-        //   },
-        //   {
-        //     src: `content/assets/maskable/maskable_icon_x128.png`,
-        //     sizes: `128x128`,
-        //     type: `image/png`,
-        //   },
-        //   {
-        //     src: `content/assets/maskable/maskable_icon_x144.png`,
-        //     sizes: `144x144`,
-        //     type: `image/png`,
-        //   },
-        //   {
-        //     src: `content/assets/maskable/maskable_icon_x152.png`,
-        //     sizes: `152x152`,
-        //     type: `image/png`,
-        //   },
-        //   {
-        //     src: `content/assets/maskable/maskable_icon_x384.png`,
-        //     sizes: `384x384`,
-        //     type: `image/png`,
-        //   },
-        //   {
-        //     src: `content/assets/maskable/maskable_icon_x512.png`,
-        //     sizes: `512x512`,
-        //     type: `image/png`,
-        //   },
-        // ],
         include_favicon: false,
         icon_options: {
-          // For all the options available,
-          // please see the section "Additional Resources" below.
           purpose: `any maskable`,
         },
       },

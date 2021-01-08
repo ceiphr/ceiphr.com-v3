@@ -75,7 +75,7 @@ const basicFs = `
     }
 `;
 
-const BasicPlane = ({ children, isfull = false }) => {
+const HeroPlane = ({ children, isFullheight = false }) => {
     const basicUniforms = {
         time: {
             name: "uTime",
@@ -97,7 +97,7 @@ const BasicPlane = ({ children, isfull = false }) => {
 
     return (
         <Plane
-            className={(isfull ? "FullHeroPlane" : "HeroPlane")}
+            className={(isFullheight ? "fullheight-heroplane" : "heroplane")}
 
             // plane init parameters
             vertexShader={basicVs}
@@ -114,4 +114,4 @@ const BasicPlane = ({ children, isfull = false }) => {
     )
 }
 
-export default BasicPlane
+export default HeroPlane

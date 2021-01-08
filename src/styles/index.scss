@@ -70,8 +70,6 @@ body {
 .card {
     border-radius: $radius-large;
     transition-duration: 200ms;
-    -webkit-perspective: 1000 !important;
-    -webkit-backface-visibility: hidden !important;
 
     .media-content {
         overflow: hidden;
@@ -240,22 +238,33 @@ body {
     left: 0;
     right: 0;
     height: 100vh;
+    opacity: 1;
+    animation: 0.65s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s fadeInOpacity;
+}
+
+@keyframes fadeInOpacity {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
 }
 
 /* basic plane */
 
-.HeroPlane {
+.heroplane {
     width: 100vw;
     height: 50vh;
 }
 
-.FullHeroPlane {
+.fullheight-heroplane {
     width: 100vw;
     height: 100vh;
 }
 
-.HeroPlane img,
-.FullHeroPlane img {
+.heroplane img,
+.fullheight-heroplane img {
     display: none;
 }
 

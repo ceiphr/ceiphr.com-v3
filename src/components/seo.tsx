@@ -14,15 +14,15 @@ import { useStaticQuery, graphql } from "gatsby"
 import { useMediaPredicate } from "react-media-hook"
 
 type OwnProps = {
-    description?: string;
-    lang?: string;
-    meta?: any[];
-    title: string;
-    image?: string;
-};
+  description?: string
+  lang?: string
+  meta?: any[]
+  title: string
+  image?: string
+}
 
 // @ts-expect-error ts-migrate(2456) FIXME: Type alias 'Props' circularly references itself.
-type Props = OwnProps & typeof SEO.defaultProps;
+type Props = OwnProps & typeof SEO.defaultProps
 
 // @ts-expect-error ts-migrate(7022) FIXME: 'SEO' implicitly has type 'any' because it does no... Remove this comment to see the full error message
 const SEO = ({ description, lang, meta, title, image }: Props) => {
@@ -110,6 +110,7 @@ const SEO = ({ description, lang, meta, title, image }: Props) => {
         href={isDark}
         sizes="32x32"
       />
+      <meta name="color-scheme" content="dark light" />
     </Helmet>
   )
 }
