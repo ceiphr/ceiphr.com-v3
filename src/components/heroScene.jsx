@@ -1,5 +1,5 @@
 import React from 'react';
-import { Plane } from 'react-curtains';
+import { Plane, useCurtains } from 'react-curtains';
 
 const basicVs = `
     #ifdef GL_ES
@@ -86,14 +86,17 @@ const HeroPlane = ({ children, isFullheight = false }) => {
 
     const onRender = (plane) => {
         plane.uniforms.time.value++;
+    };
+
+    const onPlaneReady = (plane) => {
         plane.scale.x = 1.05;
         plane.scale.y = 1.05;
     };
 
-    const onPlaneReady = (plane) => {
-        plane.updatePosition();
-    };
-
+    useCurtains((curtains) => {
+        // force the curtains instance to update its bounding rect values
+        curtains.resize();
+    });
 
     return (
         <Plane
