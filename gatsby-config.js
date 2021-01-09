@@ -13,6 +13,7 @@ module.exports = {
     siteUrl: `https://www.ceiphr.com`,
     social: {
       twitter: `ceiphr`,
+      github: `ceiphr`,
     },
   },
   plugins: [

@@ -1,13 +1,13 @@
 /**
- * Bio component that queries for data
+ * Credit component that queries for data
  * with Gatsby's useStaticQuery component
  */
 
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
-import Img from "gatsby-image"
+// import Img from "gatsby-image"
 
-const Bio = () => {
+const Credit = ({ dateMod }: any) => {
   const data = useStaticQuery(graphql`
     query CreditQuery {
       avatar: file(absolutePath: { regex: "/profile-pic.png/" }) {
@@ -24,7 +24,7 @@ const Bio = () => {
             short_summary
           }
           social {
-            twitter
+            github
           }
         }
       }
@@ -37,18 +37,25 @@ const Bio = () => {
       <div className="media-content">
         <div className="content">
           <p>
-            Article by <strong>{author.name}</strong>{` `}
+            Article by <strong>{author.name}</strong>
+            {` `}
             <small>
               <a
                 rel="noopener noreferrer"
                 target="_blank"
-                href={`https://github.com/ceiphr`}
+                href={`https://github.com/` + social.github}
               >
-                @ceiphr
+                @{social.github}
               </a>
             </small>
             <br />
             {author.short_summary}
+            {dateMod && (
+              <div>
+                <br />
+                <i>Article last modified on {dateMod}.</i>
+              </div>
+            )}
           </p>
         </div>
       </div>
@@ -56,4 +63,4 @@ const Bio = () => {
   )
 }
 
-export default Bio
+export default Credit
