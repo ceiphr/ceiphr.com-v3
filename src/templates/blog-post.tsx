@@ -41,14 +41,19 @@ function dimBackground(post: any, isDark: any) {
   ]
 }
 
-const BlogPostTemplate = ({
-  data,
-  location
-}: any) => {
+const BlogPostTemplate = ({ data, location }: any) => {
   // Site data from gatsby-config
   const siteTitle = data.site.siteMetadata.title
 
   // Data for the article
+  const titleMaxLength = 27
+  var articleTitle
+  if (data.markdownRemark.frontmatter.title.length > titleMaxLength) {
+    articleTitle =
+      data.markdownRemark.frontmatter.title.substring(0, titleMaxLength) + "..."
+  } else {
+    articleTitle = data.markdownRemark.frontmatter.title
+  }
   const post = data.markdownRemark
 
   const isDark = useMediaPredicate("(prefers-color-scheme: dark)")
@@ -105,9 +110,11 @@ const BlogPostTemplate = ({
           <div className="hero-body"></div>
           <div className="hero-footer">
             <div className="container">
-              <p className="article-date subtitle">{post.frontmatter.date}</p>
+              <p className="article-date subtitle">
+                Published on {post.frontmatter.date}
+              </p>
               <h1 className="article-title title is-uppercase">
-                {post.frontmatter.title}
+                {articleTitle}
               </h1>
             </div>
           </div>
@@ -116,7 +123,7 @@ const BlogPostTemplate = ({
           <div className="post-columns">
             {/* Article body and license footer */}
             <section className="post-full-content">
-              <Credit />
+              <Credit dateMod={post.frontmatter.dateMod} />
               <div
                 className="content-body load-external-scripts"
                 dangerouslySetInnerHTML={{ __html: post.html }}
@@ -136,10 +143,13 @@ const BlogPostTemplate = ({
                 <a
                   rel="license noopener noreferrer"
                   target="_blank"
-                  href="https://github.com/ceiphr/"
+                  href={
+                    `https://github.com/` + data.site.siteMetadata.social.github
+                  }
                 >
                   GitHub
-                </a>.
+                </a>
+                .
               </div>
               <br />
             </section>
@@ -161,15 +171,13 @@ const BlogPostTemplate = ({
       {/* Post blog-post recommendations and comment section */}
       <section className="container">
         <div className="post-recommendations">
-          {recommendedPosts.map(({
-            node
-          }: any) => (
+          {recommendedPosts.map(({ node }: any) => (
             <Recommendation key={node.fields.slug} post={node} />
           ))}
         </div>
       </section>
     </Layout>
-  );
+  )
 }
 
 export default BlogPostTemplate
@@ -179,6 +187,9 @@ export const pageQuery = graphql`
     site {
       siteMetadata {
         title
+        social {
+          github
+        }
       }
     }
     markdownRemark(fields: { slug: { eq: $slug } }) {
