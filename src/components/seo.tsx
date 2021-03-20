@@ -56,52 +56,6 @@ const SEO = ({ description, lang, meta, title, image }: Props) => {
       }}
       title={title}
       titleTemplate={`%s | ${site.siteMetadata.title}`}
-      meta={[
-        {
-          name: `description`,
-          content: metaDescription,
-        },
-        {
-          property: `image`,
-          content: metaImage,
-        },
-        {
-          property: `og:title`,
-          content: title,
-        },
-        {
-          property: `og:description`,
-          content: metaDescription,
-        },
-        {
-          property: `og:image`,
-          content: metaImage,
-        },
-        {
-          property: `og:type`,
-          content: `website`,
-        },
-        {
-          name: `twitter:card`,
-          content: `summary`,
-        },
-        {
-          name: `twitter:image`,
-          content: metaImage,
-        },
-        {
-          name: `twitter:creator`,
-          content: site.siteMetadata.social.twitter,
-        },
-        {
-          name: `twitter:title`,
-          content: title,
-        },
-        {
-          name: `twitter:description`,
-          content: metaDescription,
-        },
-      ].concat(meta)}
     >
       <link
         key={`gatsby-plugin-manifest-icon-link`}
@@ -110,6 +64,18 @@ const SEO = ({ description, lang, meta, title, image }: Props) => {
         href={isDark}
         sizes="32x32"
       />
+      <meta charSet="utf-8" />
+      <meta name="description" content={metaDescription} />
+      <meta name="image" content={metaImage} />
+      <meta property="og:type" content="website" />
+      <meta property="og:title" content={title} />
+      <meta property="og:description" content={metaDescription} />
+      <meta property="og:image" content={metaImage} />
+      <meta property="twitter:card" content="summary" />
+      <meta property="twitter:image" content={metaImage} />
+      <meta property="twitter:creator" content={site.siteMetadata.social.twitter} />
+      <meta property="twitter:title" content={title} />
+      <meta property="twitter:description" content={metaDescription} />
       <meta name="color-scheme" content="dark light" />
     </Helmet>
   )
