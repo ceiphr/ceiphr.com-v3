@@ -27,7 +27,7 @@ workbox.core.clientsClaim();
  */
 self.__precacheManifest = [
   {
-    "url": "webpack-runtime-edd72e7b0cbd8a79443a.js"
+    "url": "webpack-runtime-f304f4b6fc9ec33be30e.js"
   },
   {
     "url": "styles.53e1153910b2ae4f34bd.css"
@@ -45,21 +45,29 @@ self.__precacheManifest = [
     "url": "dc6a8720040df98778fe970bf6c000a41750d3ae-c4d2eaf39ac273281b7f.js"
   },
   {
-    "url": "app-e927cb471f510010c714.js"
+    "url": "app-ff65a0a5a2c529dd372b.js"
   },
   {
     "url": "offline-plugin-app-shell-fallback/index.html",
-    "revision": "2a674759ae7316b2f7bfffc3e4f5ce0b"
+    "revision": "33224d352317036a1be7301aa449d1df"
   },
   {
     "url": "component---cache-caches-gatsby-plugin-offline-app-shell-js-2f9004dcb1f826313e67.js"
+  },
+  {
+    "url": "page-data/offline-plugin-app-shell-fallback/page-data.json",
+    "revision": "f6081b83111aea4128c98944b7fafccc"
+  },
+  {
+    "url": "page-data/app-data.json",
+    "revision": "fec06a7475ecf377ae4f651565134077"
   },
   {
     "url": "polyfill-9617cdeb27474bcf1b11.js"
   },
   {
     "url": "manifest.webmanifest",
-    "revision": "9b796e7b881e1413bbfe0f21d4f0a71b"
+    "revision": "a393d6d9f752e4b2f61dc5be7b9badd8"
   }
 ].concat(self.__precacheManifest || []);
 workbox.precaching.precacheAndRoute(self.__precacheManifest, {});
@@ -146,12 +154,12 @@ const navigationRoute = new NavigationRoute(async ({ event }) => {
   lastNavigationRequest = event.request.url
 
   let { pathname } = new URL(event.request.url)
-  pathname = pathname.replace(new RegExp(`^`), ``)
+  pathname = pathname.replace(new RegExp(`^/ceiphr.com-v3`), ``)
 
   // Check for resources + the app bundle
   // The latter may not exist if the SW is updating to a new version
   const resources = await idbKeyval.get(`resources:${pathname}`)
-  if (!resources || !(await caches.match(`/app-e927cb471f510010c714.js`))) {
+  if (!resources || !(await caches.match(`/ceiphr.com-v3/app-ff65a0a5a2c529dd372b.js`))) {
     return await fetch(event.request)
   }
 
@@ -164,7 +172,7 @@ const navigationRoute = new NavigationRoute(async ({ event }) => {
     }
   }
 
-  const offlineShell = `/offline-plugin-app-shell-fallback/index.html`
+  const offlineShell = `/ceiphr.com-v3/offline-plugin-app-shell-fallback/index.html`
   const offlineShellWithKey = workbox.precaching.getCacheKeyForURL(offlineShell)
   return await caches.match(offlineShellWithKey)
 })
