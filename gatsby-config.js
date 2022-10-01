@@ -11,7 +11,7 @@ module.exports = {
       summary: `Technical writer featured in DigitalOcean and Medium Programming. Currently studying Computer Science at Stevens Institute of Technology.`,
     },
     description: `Technical articles and crash courses pertaining to Django, Python, Node.js, Gatsby.js, TypeScript, GraphQL, and DevOps.`,
-    siteUrl: `https://www.ceiphr.com`,
+    siteUrl: `https://ceiphr.io/ceiphr.com-v3/`,
     social: {
       twitter: `ceiphr`,
       github: `ceiphr`,
@@ -169,7 +169,7 @@ module.exports = {
             `,
             output: "/rss.xml",
             title: "Ceiphr RSS",
-            link: "https://www.ceiphr.com/",
+            link: "https://ceiphr.io/ceiphr.com-v3/",
           },
         ],
       },

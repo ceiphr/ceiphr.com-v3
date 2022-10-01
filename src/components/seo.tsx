@@ -44,10 +44,10 @@ const SEO = ({ description, lang, meta, title, image }: Props) => {
   )
 
   const metaDescription = description || site.siteMetadata.description
-  const metaImage = "https://www.ceiphr.com" + (image || "/banner.jpeg")
+  const metaImage = "https://ceiphr.io/ceiphr.com-v3" + (image || "/banner.jpeg")
   const isDark = useMediaPredicate("(prefers-color-scheme: dark)")
-    ? "/favicon-white.png"
-    : "/favicon-black.png"
+    ? "https://ceiphr.io/ceiphr.com-v3/favicon-white.png"
+    : "https://ceiphr.io/ceiphr.com-v3/favicon-black.png"
 
   return (
     <Helmet

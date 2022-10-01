@@ -66,7 +66,7 @@ const BlogIndex = ({ data, location }: PageProps<Data>) => {
         "@type": "Person",
         name: "Ari Birnbaum",
         alternateName: "Ceiphr",
-        url: "https://www.ceiphr.com",
+        url: "https://ceiphr.io/ceiphr.com-v3/",
       }}
     />
   )
