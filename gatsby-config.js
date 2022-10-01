@@ -1,6 +1,7 @@
 require("dotenv").config()
 
 module.exports = {
+  pathPrefix: "/ceiphr.com-v3",
   siteMetadata: {
     title: `Ceiphr`,
     author: {
