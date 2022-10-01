@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.ceiphr.com/sitemap.xml
+Sitemap: https://ceiphr.io/ceiphr.com-v3/sitemap.xml
