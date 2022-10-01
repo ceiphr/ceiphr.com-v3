@@ -158,10 +158,10 @@ const BlogPostTemplate = ({ data, location }: any) => {
             <section className="post-sidebar">
               <div className="post-sidebar-widgets">
                 <Referral />
-                <CarbonAds
+                {/* <CarbonAds
                   customClass="carbonads__wrapper"
                   carbonUrl="https://cdn.carbonads.com/carbon.js?serve=CK7I62QM&placement=ceiphrcom"
-                />
+                /> */}
               </div>
             </section>
           </div>
